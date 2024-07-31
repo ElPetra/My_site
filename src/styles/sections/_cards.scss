@@ -1,0 +1,36 @@
+.manuscripts {
+  max-width: calc(var(--index) * 30);
+  margin: 0 auto;
+  padding-top: 100px;
+  // padding-bottom: 100px;
+}
+.cover {
+  // border: 1px solid grey;
+  min-height: 400px;
+  position: relative;
+}
+.card {
+  width: 80%;
+  height: 80%;
+  box-shadow: 3px 3px 5px #333;
+  position: absolute;
+  transition: all ease 5s;
+  left: 10%;
+  top: 15%;
+  max-width: calc(var(--index) * 28);
+}
+.go {
+  left: -999999px;
+}
+.cardInside {
+  position: relative;
+}
+.link {
+  position: absolute;
+  top: 50px;
+  left: 55%;
+  font-family: "Maxmillion";
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  font-size: calc(var(--index) * 0.7);
+}

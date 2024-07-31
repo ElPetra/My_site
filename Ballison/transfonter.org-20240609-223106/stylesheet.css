@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Ballison';
+    src: url('Ballison.eot');
+    src: url('Ballison.eot?#iefix') format('embedded-opentype'),
+        url('Ballison.woff2') format('woff2'),
+        url('Ballison.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ballison';
+    src: url('Ballison.eot');
+    src: url('Ballison.eot?#iefix') format('embedded-opentype'),
+        url('Ballison.woff2') format('woff2'),
+        url('Ballison.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

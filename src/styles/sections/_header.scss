@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  // position: relative;
+}
+.container_header {
+  overflow: hidden;
+}
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #543d3d;
+  padding: 15px;
+  display: flex;
+}
+.header__content-black {
+  background-color: black;
+}
+.header__content-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.ink-bottle {
+  max-width: calc(var(--index) * 3);
+  transition: 3s;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  pointer-events: auto;
+}
+.ink_flow {
+  max-width: calc(var(--index) * 53);
+  transition: 3s;
+  opacity: 0;
+}
+.header-link {
+  width: 100%;
+  transition: 2s;
+  border: none;
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+.header_black {
+  background-color: #000;
+  transition: 4s;
+}
+.btn-img {
+  max-width: calc(var(--index) * 5);
+  // position: relative;
+}
+.btn-txt {
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 0.6);
+  position: absolute;
+  top: calc(var(--index) * 0.9);
+  left: calc(var(--index) * 2.5);
+  transform: translate(-50%, -50%);
+}
+.links {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}

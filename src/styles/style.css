@@ -1,0 +1,772 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: url(../../src/images/pero40.png), auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  border: none;
+}
+
+@font-face {
+  font-family: "Arnold BocklinC";
+  src: url("../fonts/ArnoldBocklinC.eot");
+  src: url("../fonts/ArnoldBocklinC.eot?#iefix") format("embedded-opentype"), url("../fonts/ArnoldBocklinC.woff2") format("woff2"), url("../fonts/ArnoldBocklinC.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vezitsa";
+  src: url("../fonts/VezitsaCyrillic.eot");
+  src: url("../fonts/VezitsaCyrillic.eot?#iefix") format("embedded-opentype"), url("../fonts/VezitsaCyrillic.woff2") format("woff2"), url("../fonts/VezitsaCyrillic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Old Soviet";
+  src: url("../fonts/OldSovietRegular.eot");
+  src: url("../fonts/OldSovietRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OldSovietRegular.woff2") format("woff2"), url("../fonts/OldSovietRegular.woff") format("woff"), url("../fonts/OldSovietRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GNUTypewriter";
+  src: url("../fonts/GNUTypewriter.eot");
+  src: url("../fonts/GNUTypewriter.eot?#iefix") format("embedded-opentype"), url("../fonts/GNUTypewriter.woff2") format("woff2"), url("../fonts/GNUTypewriter.woff") format("woff"), url("../fonts/GNUTypewriter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ballison";
+  src: url("../fonts/Ballison.eot");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"), url("../fonts/Ballison.woff2") format("woff2"), url("../fonts/Ballison.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ballison";
+  src: url("../fonts/Ballison.eot");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"), url("../fonts/Ballison.woff2") format("woff2"), url("../fonts/Ballison.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "England";
+  src: url("../fonts/EnglandBold-Bold.eot");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EnglandBold-Bold.woff2") format("woff2"), url("../fonts/EnglandBold-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "England";
+  src: url("../fonts/EnglandBold-Bold.eot");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EnglandBold-Bold.woff2") format("woff2"), url("../fonts/EnglandBold-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maxmillion";
+  src: url("../fonts/MaxmillionDEMO.eot");
+  src: url("../fonts/MaxmillionDEMO.eot?#iefix") format("embedded-opentype"), url("../fonts/MaxmillionDEMO.woff2") format("woff2"), url("../fonts/MaxmillionDEMO.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Olietta script-Poesia";
+  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot");
+  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Oliettascript-Poesia-BoldItalic.woff2") format("woff2"), url("../fonts/Oliettascript-Poesia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Boyarsky";
+  src: url("../fonts/ScriptPlain.eot");
+  src: url("../fonts/ScriptPlain.eot?#iefix") format("embedded-opentype"), url("../fonts/ScriptPlain.woff2") format("woff2"), url("../fonts/ScriptPlain.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.eot");
+  src: url("../fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Bold.eot");
+  src: url("../fonts/Rubik-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Rubik-Bold.woff2") format("woff2"), url("../fonts/Rubik-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: calc(var(--index) * 53);
+  margin: 0 auto;
+  box-sizing: content-box;
+  background-color: #f0e4e4;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.body-bgr {
+  background-color: #E1EDE6;
+}
+
+.container_main {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 15px 10px;
+}
+
+.main__left, .main__right {
+  position: relative;
+  width: 100%;
+}
+
+.puzzles {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.puz {
+  max-width: calc(var(--index) * 150);
+  border-radius: 20%;
+  left: 0;
+  top: 0;
+  transform: scale(0.13) translate(-331%, -330%);
+  position: absolute;
+}
+
+@keyframes move-puzzl-1 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-50%, -50%) rotate(-30deg);
+  }
+}
+.puzzl1 {
+  animation: move-puzzl-1;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-2 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(50%, -100%) rotate(25deg);
+  }
+}
+.puzzl2 {
+  animation: move-puzzl-2;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-3 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(200%, -100%) rotate(55deg);
+  }
+}
+.puzzl3 {
+  animation: move-puzzl-3;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-4 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, -80%) rotate(-70deg);
+  }
+}
+.puzzl4 {
+  animation: move-puzzl-4;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-5 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, -150%) rotate(300deg);
+  }
+}
+.puzzl5 {
+  animation: move-puzzl-5;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-6 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(900%, -150%) rotate(-90deg);
+  }
+}
+.puzzl6 {
+  animation: move-puzzl-6;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-7 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, 250%) rotate(90deg);
+  }
+}
+.puzzl7 {
+  animation: move-puzzl-7;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-8 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(10%, 1250%) rotate(330deg);
+  }
+}
+.puzzl8 {
+  animation: move-puzzl-8;
+  animation-duration: 5s;
+}
+
+@keyframes move-puzzl-9 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(1000%, 400%) rotate(30deg);
+  }
+}
+.puzzl9 {
+  animation: move-puzzl-9;
+  animation-duration: 5s;
+}
+
+.puz-reverse {
+  animation-direction: reverse;
+}
+
+.typewriter {
+  max-width: calc(var(--index) * 35);
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.opasity {
+  opacity: 0;
+}
+
+@keyframes move-drop {
+  from {
+    transition: all 0.8s ease 0s;
+    transform: translate(800%, -1300%);
+  }
+  to {
+    transform: translate(800%, 2100%);
+  }
+}
+.drop {
+  position: absolute;
+  max-width: calc(var(--index) * 2);
+  transform: translate(800%, -1300%);
+  opacity: 0;
+  z-index: 10;
+}
+
+.drop-start {
+  animation: move-drop;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+}
+
+.drop-finish {
+  opacity: 0;
+}
+
+.box-text {
+  font-family: "GNUTypewriter";
+  font-weight: 600;
+  color: #300d0d;
+  line-height: 1.2;
+  font-size: calc(var(--index) * 0.6);
+  position: absolute;
+  top: calc(var(--index) * 10.5);
+  left: calc(var(--index) * 20);
+  transform: rotate(9deg) translate(-50%, -50%);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  max-width: 400px;
+  transform: rotate(10deg);
+  line-height: 150%;
+  white-space: pre-line;
+  width: 100%;
+}
+
+.control-sound {
+  position: absolute;
+  max-width: calc(var(--index) * 7);
+  right: 0;
+  top: -22%;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_header {
+  overflow: hidden;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #543d3d;
+  padding: 15px;
+  display: flex;
+}
+
+.header__content-black {
+  background-color: black;
+}
+
+.header__content-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ink-bottle {
+  max-width: calc(var(--index) * 3);
+  transition: 3s;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  pointer-events: auto;
+}
+
+.ink_flow {
+  max-width: calc(var(--index) * 53);
+  transition: 3s;
+  opacity: 0;
+}
+
+.header-link {
+  width: 100%;
+  transition: 2s;
+  border: none;
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.header_black {
+  background-color: #000;
+  transition: 4s;
+}
+
+.btn-img {
+  max-width: calc(var(--index) * 5);
+}
+
+.btn-txt {
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 0.6);
+  position: absolute;
+  top: calc(var(--index) * 0.9);
+  left: calc(var(--index) * 2.5);
+  transform: translate(-50%, -50%);
+}
+
+.links {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.manuscripts {
+  max-width: calc(var(--index) * 30);
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.cover {
+  min-height: 400px;
+  position: relative;
+}
+
+.card {
+  width: 80%;
+  height: 80%;
+  box-shadow: 3px 3px 5px #333;
+  position: absolute;
+  transition: all ease 5s;
+  left: 10%;
+  top: 15%;
+  max-width: calc(var(--index) * 28);
+}
+
+.go {
+  left: -999999px;
+}
+
+.cardInside {
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  top: 50px;
+  left: 55%;
+  font-family: "Maxmillion";
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  font-size: calc(var(--index) * 0.7);
+}
+
+.container_footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #543d3d;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.logo {
+  font-family: "Maxmillion";
+  color: #300d0d;
+  font-size: calc(var(--index) * 1.2);
+}
+
+.feather {
+  max-width: calc(var(--index) * 2);
+}
+
+.footer__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thanks {
+  font-family: "GNUTypewriter", "Old Soviet";
+  color: #300d0d;
+  font-size: calc(var(--index) * 0.8);
+}
+
+.ekg {
+  max-width: calc(var(--index) * 8);
+}
+
+.footer__right {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(var(--index) * 2);
+  padding-right: 15px;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(var(--index) * 0.8);
+}
+
+.icon {
+  max-width: calc(var(--index) * 1.5);
+  cursor: url(../../src/images/wrist.webp), pointer;
+  border: none;
+  width: 100%;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  border: 3px solid transparent;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.info {
+  font-family: "GNUTypewriter", "Old Soviet";
+  color: #300d0d;
+  font-size: calc(var(--index) * 0.6);
+}
+
+.icon_telephone {
+  max-width: calc(var(--index) * 2);
+}
+
+.icon_contacts {
+  max-width: calc(var(--index) * 1.5);
+  border: none;
+  width: 100%;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.popup__content {
+  color: black;
+  max-width: calc(var(--index) * 15);
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.popup__img {
+  position: absolute;
+  max-width: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.popup__close_whatsApp {
+  position: absolute;
+  top: -150%;
+  left: 90%;
+  font-family: "Boyarsky";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.input_whatsApp {
+  width: calc(var(--index) * 13);
+  padding: 5px;
+  font-family: "Boyarsky";
+  background-color: #f0d7a5;
+  box-shadow: 8px 5px 10px 0 #300d0d;
+}
+
+.input_whatsApp::-moz-placeholder {
+  font-family: "Olietta script-Poesia";
+  font-size: calc(var(--index) * 0.65);
+}
+
+.input_whatsApp::placeholder {
+  font-family: "Olietta script-Poesia";
+  font-size: calc(var(--index) * 0.65);
+}
+
+.popup__btn_whatsApp {
+  font-family: "Boyarsky";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.popup__close_telegram {
+  position: absolute;
+  top: -156%;
+  left: 86%;
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.form_telegram {
+  margin-top: 120px;
+}
+
+.input_telegram {
+  width: calc(var(--index) * 15);
+  padding: 5px;
+  margin-top: 40px;
+  font-family: "Rubik";
+  background-color: #f0dd7f;
+  z-index: 10;
+}
+
+.input_telegram::-moz-placeholder {
+  font-family: "Montserrat";
+  font-size: calc(var(--index) * 0.5);
+  color: #300d0d;
+}
+
+.input_telegram::placeholder {
+  font-family: "Montserrat";
+  font-size: calc(var(--index) * 0.5);
+  color: #300d0d;
+}
+
+.popup__btn_telegram {
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 1);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.popup__content_vkontakte {
+  background-color: #fff;
+}
+
+.popup__close_vkontakte {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.7);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.popup__img_vkontakte {
+  max-width: calc(var(--index) * 3);
+}
+
+.popup__text {
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.9);
+  color: #300d0d;
+}
+
+.popup__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  max-width: calc(var(--index) * 20);
+  margin: 0 auto;
+  transform: perspective(600px) translate(0px, 0px);
+}
+
+.img__move {
+  max-width: calc(var(--index) * 15);
+}
+
+.opacity {
+  visibility: visible;
+}
+
+.move {
+  transform: perspective(600px) translate(500%, -200%);
+  transition: 5s;
+}/*# sourceMappingURL=style.css.map */

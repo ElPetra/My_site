@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Maxmillion';
+    src: url('MaxmillionDEMO.eot');
+    src: url('MaxmillionDEMO.eot?#iefix') format('embedded-opentype'),
+        url('MaxmillionDEMO.woff2') format('woff2'),
+        url('MaxmillionDEMO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

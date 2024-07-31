@@ -1,0 +1,24 @@
+/* header */
+.header {
+position: relative;
+}
+.ink-bottle {
+  position: absolute;
+  left: calc(var(--index) * 3);
+  top: 3%;
+}
+.feedback {
+  background-position: left;
+}
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightsalmon;
+  padding: 15px;
+  display: flex;
+  background: linear-gradient(to left, lightsalmon 50%, #000 50%) right;
+  background-size: 200% 100%;
+  transition: 2s ease-in;
+}

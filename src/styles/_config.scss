@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --index: calc(1vw + 1vh);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  // font-family: "Raleway", sans-serif;
+  cursor: url(../../src/images/pero40.png), auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  border: none;
+}
+
+@font-face {
+  font-family: "Arnold BocklinC";
+  src: url("../fonts/ArnoldBocklinC.eot");
+  src: url("../fonts/ArnoldBocklinC.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ArnoldBocklinC.woff2") format("woff2"),
+    url("../fonts/ArnoldBocklinC.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vezitsa";
+  src: url("../fonts/VezitsaCyrillic.eot");
+  src: url("../fonts/VezitsaCyrillic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/VezitsaCyrillic.woff2") format("woff2"),
+    url("../fonts/VezitsaCyrillic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Old Soviet";
+  src: url("../fonts/OldSovietRegular.eot");
+  src: url("../fonts/OldSovietRegular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/OldSovietRegular.woff2") format("woff2"),
+    url("../fonts/OldSovietRegular.woff") format("woff"),
+    url("../fonts/OldSovietRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GNUTypewriter";
+  src: url("../fonts/GNUTypewriter.eot");
+  src: url("../fonts/GNUTypewriter.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/GNUTypewriter.woff2") format("woff2"),
+    url("../fonts/GNUTypewriter.woff") format("woff"),
+    url("../fonts/GNUTypewriter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ballison";
+  src: url("../fonts/Ballison.eot");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Ballison.woff2") format("woff2"),
+    url("../fonts/Ballison.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ballison";
+  src: url("../fonts/Ballison.eot");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Ballison.woff2") format("woff2"),
+    url("../fonts/Ballison.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "England";
+  src: url("../fonts/EnglandBold-Bold.eot");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/EnglandBold-Bold.woff2") format("woff2"),
+    url("../fonts/EnglandBold-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "England";
+  src: url("../fonts/EnglandBold-Bold.eot");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/EnglandBold-Bold.woff2") format("woff2"),
+    url("../fonts/EnglandBold-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Maxmillion";
+  src: url("../fonts/MaxmillionDEMO.eot");
+  src: url("../fonts/MaxmillionDEMO.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MaxmillionDEMO.woff2") format("woff2"),
+    url("../fonts/MaxmillionDEMO.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+    font-family: 'Olietta script-Poesia';
+    src: url('../fonts/Oliettascript-Poesia-BoldItalic.eot');
+    src: url('../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Oliettascript-Poesia-BoldItalic.woff2') format('woff2'),
+        url('../fonts/Oliettascript-Poesia-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Boyarsky';
+    src: url('../fonts/ScriptPlain.eot');
+    src: url('../fonts/ScriptPlain.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ScriptPlain.woff2') format('woff2'),
+        url('../fonts/ScriptPlain.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.eot');
+    src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+        url('../fonts/Montserrat-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-Bold.eot');
+    src: url('../fonts/Rubik-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Rubik-Bold.woff2') format('woff2'),
+        url('../fonts/Rubik-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

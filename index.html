@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petra</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header class="header">
+    <div class="container container_header">
+      <div class="header__content">
+        <div class="header__content-img">
+          <img src="./src/images/ink_bottle.webp" alt="" class="ink-bottle" />
+        </div>
+        <div class="header__content-links">
+          <button class="header-link" disabled>
+            <a class="links" href="./about_me.pdf" target="_blank">
+            <img class="btn-img" src="./src/images/btn.webp" />
+            <p class="btn-txt">Обо мне</p>
+            </a>
+          </button>
+          <button class="header-link" disabled>
+            <img class="btn-img" src="./src/images/btn.webp" />
+            <p class="btn-txt">Портфолио</p>
+          </button>
+          <button class="header-link" disabled>
+            <a class="links" href="./resume.pdf" target="_blank">
+            <img class="btn-img" src="./src/images/btn.webp" />
+            <p class="btn-txt">Резюме</p>
+            </a>
+          </button>
+          <button id="btn-contacts" class="header-link header-link_contacts" disabled>
+            <a class="links" href="#contacts">
+            <img class="btn-img" src="./src/images/btn.webp" />
+            <p class="btn-txt">Контакты</p>
+            </a>
+          </button>
+          <!-- <button class="header-link">
+          <img class="btn-img" src="./src/images/btn.webp">
+          <p class="btn-txt">Брось монетку</p>
+        </button> -->
+        </div>
+      </div>
+      <img src="./src/images/ink-flow.webp" alt="" class="ink_flow" />
+    </div>
+  </header>
+  <body>
+    <section class="main">
+      <div class="container_main container">
+        <div class="main__left">
+          <div class="puzzles">
+            <!-- <img src="./src/images/1puz.webp" class="puz puzzl1 opasity" />
+          <img src="./src/images/2puz.webp" class="puz puzzl2 opasity" />
+          <img src="./src/images/3puz.webp" class="puz puzzl3 opasity" />
+          <img src="./src/images/4puz.webp" class="puz puzzl4 opasity" />
+          <img src="./src/images/5puz.webp" class="puz puzzl5 opasity" />
+          <img src="./src/images/6puz.webp" class="puz puzzl6 opasity" />
+          <img src="./src/images/7puz.webp" class="puz puzzl7 opasity" />
+          <img src="./src/images/8puz.webp" class="puz puzzl8 opasity" />
+          <img src="./src/images/9puz.webp" class="puz puzzl9 opasity" /> -->
+            <img src="./src/images/photo.webp" class="myPhoto d-none photo" />
+            <img src="./src/images/smile.webp" class="myPhoto d-none smile" />
+          </div>
+        </div>
+        <div class="main__right">
+          <!-- <button class="btn__control-sound"> -->
+            <img class="control-sound" src="./src/images/sound.webp">
+          <!-- </button> -->
+          <img class="drop" src="./src/images/drop2.webp" />
+          <img
+            class="typewriter"
+            src="./src/images/typewriter_new.webp"
+            id="typewriter"
+          />
+          <div class="box-text d-none">
+            <p class="print-text">Приветствую Вас на моей страничке!</p>
+            <p class="print-text">Меня зовут Елена. Я начинающий</p>
+            <p class="print-text">frontend-разработчик. Я инженер и</p>
+            <p class="print-text">по складу ума, и по специальности.</p>
+            <p class="print-text">20 лет работаю в сфере геодезии и</p>
+            <p class="print-text">картографии. &#128301; Пройдя путь от</p>
+            <p class="print-text">техника-картографа до технического</p>
+            <p class="print-text">директора, я решила, что пора</p>
+            <p class="print-text">осваивать новые просторы и брать</p>
+            <p class="print-text">новые вершины &#128507; В настоящее время</p>
+            <p class="print-text">я закончила учиться в offline-</p>
+            <p class="print-text">школе. Нами изучены и освоены</p>
+            <p class="print-text">HTML, CSS и препроцессоры, GIT,</p>
+            <p class="print-text">
+              JavaScript, React. И это только начало... &#128521;
+            </p>
+          </div>
+        </div>
+      </div>
+      <audio id="myAudio">
+        <source
+          src="./src/sounds/zvuk-pechatnaya-mashinka.mp3"
+          preload="auto"
+        />
+      </audio>
+    </section>
+    <section class="cards">
+      <div class="container">
+        <div class="manuscripts">
+          <div class="cover"></div>
+        </div>
+<div class="popup" id="whatsApp">
+      <div class="popup__body">
+        <div class="popup__content">
+          <img class="popup__img" src="./src/images/pergament.webp">
+          <a href="" class="popup__close_whatsApp close-popup">X</a>
+          <form action="#" class="form form_whatsApp" method="POST">
+            <input class="input_whatsApp" type="text" placeholder="Напишите Ваше предложение о сотрудничестве ;)"/>
+            <button class="popup__btn_whatsApp" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="telegram">
+      <div class="popup__body">
+        <div class="popup__content">
+          <img class="popup__img" src="./src/images/telegr.webp">
+          <a href="" class="popup__close_telegram close-popup">X</a>
+          <form action="#" class="form form_telegram" method="POST">
+            <input class="input_telegram" type="text" placeholder="Напишите Ваше предложение о сотрудничестве ;)"/>
+            <button class="popup__btn_telegram" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup__message" id="telegram-move">
+        <div class="popup__move__content">
+          <img class="img__move" src="./src/images/telegram-go.png">
+        </div>
+    </div>
+    <div class="popup__message" id="whatsApp-move">
+        <div class="popup__move__content">
+          <img class="img__move" src="./src/images/letters.gif">
+        </div>
+    </div>
+    <div class="popup" id="vkontakte">
+      <div class="popup__body">
+        <div class="popup__content popup__content_vkontakte">
+          <a href="" class="popup__close_vkontakte close-popup">X</a>
+          <img class="popup__img_vkontakte" src="./src/images/fig.webp">
+          <p class="popup__text">Privat life! &#128521;</p>
+        </div>
+      </div>
+    </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="container container_footer">
+        <div class="footer__left">
+          <p class="logo">
+            Elpetra<img class="feather" src="./src/images/feather.webp" />
+          </p>
+        </div>
+        <div class="footer__middle">
+          <p class="thanks">Спасибо за просмотр!</p>
+          <img class="ekg" src="./src/images/ekg.gif" />
+        </div>
+        <div class="footer__right">
+          <div class="social">
+            <a>
+              <img class="icon icon_tg" src="./src/images/telegram_s.webp" />
+            </a>
+            <a>
+              <img class="icon icon_vk" src="./src/images/vk.webp" />
+            </a>
+            <a href="#whatsApp">
+              <img class="icon icon_wa" src="./src/images/WhatsApp_s.webp" />
+            </a>
+          </div>
+          <div class="contacts" id="contacts">
+            <div class="contacts__info">
+              <img
+                class="icon_contacts"
+                src="./src/images/pigeon.webp"
+              />
+              <p class="info">kursorr@gmail.com</p>
+            </div>
+            <div class="contacts__info">
+              <img class="icon_contacts icon_telephone" src="./src/images/telephone.webp" />
+              <a class="info info_tel" href="tel:+79219192032">+7-921-919-20-32</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../portfolio/node_modules/howler/dist/howler.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js"
+      integrity="sha512-7Zgn4mmO9yGGB1j9yP0mZvUPWBVg0fCcUMsYUV6FX7XIKQfb/dhGxsKh794YAzXH2F/+Z3eJL4mrTilrT2ZeFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

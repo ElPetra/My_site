@@ -1,0 +1,190 @@
+.container_main {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 15px 10px;
+}
+.main__left, .main__right {
+  position: relative;
+  // transform: scale(0.4);
+  // max-width: calc(var(--index) * 70);
+  width: 100%;
+}
+.puzzles {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+.puz {
+    max-width: calc(var(--index) * 150);
+  border-radius: 20%;
+  left: 0;
+  top: 0;
+  transform: scale(0.13) translate(-331%, -330%);
+  position: absolute;
+}
+
+@keyframes move-puzzl-1 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-50%, -50%) rotate(-30deg);
+  }
+}
+.puzzl1 {
+  animation: move-puzzl-1;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-2 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(50%, -100%) rotate(25deg);
+  }
+}
+.puzzl2 {
+  animation: move-puzzl-2;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-3 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(200%, -100%) rotate(55deg);
+  }
+}
+.puzzl3 {
+  animation: move-puzzl-3;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-4 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, -80%) rotate(-70deg);
+  }
+}
+.puzzl4 {
+  animation: move-puzzl-4;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-5 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, -150%) rotate(300deg);
+  }
+}
+.puzzl5 {
+  animation: move-puzzl-5;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-6 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(900%, -150%) rotate(-90deg);
+  }
+}
+.puzzl6 {
+  animation: move-puzzl-6;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-7 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(-200%, 250%) rotate(90deg);
+  }
+}
+.puzzl7 {
+  animation: move-puzzl-7;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-8 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(10%, 1250%) rotate(330deg);
+  }
+}
+.puzzl8 {
+  animation: move-puzzl-8;
+  animation-duration: 5s;
+}
+@keyframes move-puzzl-9 {
+  from {
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: perspective(100px) translate(1000%, 400%) rotate(30deg);
+  }
+}
+.puzzl9 {
+  animation: move-puzzl-9;
+  animation-duration: 5s;
+}
+.puz-reverse {
+  animation-direction: reverse;
+}
+.typewriter {
+  // margin-top: 50px;
+  max-width: calc(var(--index) * 35);
+  object-fit: cover;
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+.opasity{
+  opacity: 0;
+}
+
+@keyframes move-drop {
+  from {
+    // opacity: 1;
+    transition: all 0.8s ease 0s;
+    transform: translate(800%, -1300%);
+  } to {
+    transform: translate(800%, 2100%);
+  }
+}
+.drop {
+  position: absolute;
+  max-width: calc(var(--index) * 2);
+  transform: translate(800%, -1300%);
+  opacity: 0;
+  z-index: 10;
+}
+.drop-start {
+  animation: move-drop;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+}
+.drop-finish {
+opacity: 0;
+}
+.box-text {
+  font-family: "GNUTypewriter";
+  font-weight: 600;
+  color: #300d0d;
+  line-height: 1.2;
+  font-size: calc(var(--index) * 0.6);
+  position: absolute;
+  top: calc(var(--index) * 10.5);
+  left: calc(var(--index) * 20);
+  transform: rotate(9deg) translate(-50%, -50%);
+}
+.fade-in {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  max-width: 400px;
+  transform: rotate(10deg);
+  line-height:150%;
+  white-space: pre-line;
+  width: 100%;
+}
+.control-sound {
+  position: absolute;
+  max-width: calc(var(--index) * 7);
+  right: 0;
+  top: -22%;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}

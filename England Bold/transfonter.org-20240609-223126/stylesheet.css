@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'England';
+    src: url('EnglandBold-Bold.eot');
+    src: url('EnglandBold-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EnglandBold-Bold.woff2') format('woff2'),
+        url('EnglandBold-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'England';
+    src: url('EnglandBold-Bold.eot');
+    src: url('EnglandBold-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EnglandBold-Bold.woff2') format('woff2'),
+        url('EnglandBold-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

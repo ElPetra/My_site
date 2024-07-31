@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Arnold BocklinC';
+    src: url('ArnoldBocklinC.eot');
+    src: url('ArnoldBocklinC.eot?#iefix') format('embedded-opentype'),
+        url('ArnoldBocklinC.woff2') format('woff2'),
+        url('ArnoldBocklinC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vezitsa';
+    src: url('VezitsaCyrillic.eot');
+    src: url('VezitsaCyrillic.eot?#iefix') format('embedded-opentype'),
+        url('VezitsaCyrillic.woff2') format('woff2'),
+        url('VezitsaCyrillic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

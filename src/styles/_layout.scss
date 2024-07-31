@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  max-width: calc(var(--index) * 53);
+  margin: 0 auto;
+  box-sizing: content-box;
+  background-color: #f0e4e4;
+}
+.d-none {
+  display: none !important; 
+}
+.body-bgr {
+  background-color: #E1EDE6;
+}
