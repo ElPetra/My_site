@@ -21,24 +21,28 @@
         <div class="header__content-links">
           <button class="header-link" disabled>
             <a class="links" href="./about_me.pdf" target="_blank">
-            <img class="btn-img" src="./src/images/btn.webp" />
-            <p class="btn-txt">Обо мне</p>
+              <img class="btn-img" src="./src/images/btn.webp" />
+              <p class="btn-txt">Обо мне</p>
             </a>
           </button>
           <button class="header-link" disabled>
             <img class="btn-img" src="./src/images/btn.webp" />
-            <p class="btn-txt">Портфолио</p>
+            <p class="btn-txt portfolio">Портфолио</p>
           </button>
           <button class="header-link" disabled>
             <a class="links" href="./resume.pdf" target="_blank">
-            <img class="btn-img" src="./src/images/btn.webp" />
-            <p class="btn-txt">Резюме</p>
+              <img class="btn-img" src="./src/images/btn.webp" />
+              <p class="btn-txt">Резюме</p>
             </a>
           </button>
-          <button id="btn-contacts" class="header-link header-link_contacts" disabled>
+          <button
+            id="btn-contacts"
+            class="header-link header-link_contacts"
+            disabled
+          >
             <a class="links" href="#contacts">
-            <img class="btn-img" src="./src/images/btn.webp" />
-            <p class="btn-txt">Контакты</p>
+              <img class="btn-img" src="./src/images/btn.webp" />
+              <p class="btn-txt">Контакты</p>
             </a>
           </button>
           <!-- <button class="header-link">
@@ -48,6 +52,101 @@
         </div>
       </div>
       <img src="./src/images/ink-flow.webp" alt="" class="ink_flow" />
+    </div>
+    <div class="popup" id="portfolioPopup">
+      <div class="popup__body">
+        <div class="popup__content_portfolio">
+          <img class="popup__img_portfolio" src="./src/images/pergament.webp" />
+          <a href="" class="popup__close_portfolio close-popup">X</a>
+          <div class="popup__text">
+            <a class="text__link" href="https://ubit.store/" target="_blank">
+              - "https://ubit.store/"
+            </a>
+            <p class="text__stack">
+              Принимала участие в верстке и написании логики в команде<br />
+              Stack: HTML, CSS, JavaScript
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/rick-and-morty/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/rick-and-morty/"
+            </a>
+            <p class="text__stack">
+              Работа с фильтрацией, сортировкой, поиском, пагинацией,
+              регистрацией<br />
+              Stack: React, Redux Toolkit, Context API, lazy + Suspense, LS
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/Harry-Potter/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/Harry-Potter/"
+            </a>
+            <p class="text__stack">
+              Работа с фильтрацией, поиском, API<br />
+              Stack: React, HTML, CSS modules
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/Emoji-react/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/Emoji-react/"
+            </a>
+            <p class="text__stack">
+              Работа с поиском, пагинацией, API<br />
+              Stack: React, HTML, CSS modules
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/InkHouse_pictures/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/InkHouse_pictures/"
+            </a>
+            <p class="text__stack">
+              Работа с фильтрацией, корзиной, LocalStorage, API<br />
+              Stack: JavaScript, HTML, SCSS, LS
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/Weather/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/Weather/"
+            </a>
+            <p class="text__stack">
+              Работа с API<br />
+              Stack: JavaScript, HTML, SCSS
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/coin/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/coin/"
+            </a>
+            <p class="text__stack">
+              Работа с библиотекой для аудио howler.js<br />
+              Stack: JavaScript, HTML, SCSS
+            </p>
+            <a
+              class="text__link"
+              href="https://elpetra.github.io/rock-paper-scissors/"
+              target="_blank"
+            >
+              - "https://elpetra.github.io/rock-paper-scissors/"
+            </a>
+            <p class="text__stack">
+              Просто развлекитесь &#128521;<br />
+              Stack: JavaScript, HTML, SCSS
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <body>
@@ -70,7 +169,7 @@
         </div>
         <div class="main__right">
           <!-- <button class="btn__control-sound"> -->
-            <img class="control-sound" src="./src/images/sound.webp">
+          <img class="control-sound" src="./src/images/sound.webp" />
           <!-- </button> -->
           <img class="drop" src="./src/images/drop2.webp" />
           <img
@@ -90,8 +189,8 @@
             <p class="print-text">осваивать новые просторы и брать</p>
             <p class="print-text">новые вершины &#128507; В настоящее время</p>
             <p class="print-text">я закончила учиться в offline-</p>
-            <p class="print-text">школе. Нами изучены и освоены</p>
-            <p class="print-text">HTML, CSS и препроцессоры, GIT,</p>
+            <p class="print-text">школе. Мною изучены и освоены</p>
+            <p class="print-text">HTML, CSS, Sass, GIT,</p>
             <p class="print-text">
               JavaScript, React. И это только начало... &#128521;
             </p>
@@ -110,53 +209,65 @@
         <div class="manuscripts">
           <div class="cover"></div>
         </div>
-<div class="popup" id="whatsApp">
-      <div class="popup__body">
-        <div class="popup__content">
-          <img class="popup__img" src="./src/images/pergament.webp">
-          <a href="" class="popup__close_whatsApp close-popup">X</a>
-          <form action="#" class="form form_whatsApp" method="POST">
-            <input class="input_whatsApp" type="text" placeholder="Напишите Ваше предложение о сотрудничестве ;)"/>
-            <button class="popup__btn_whatsApp" type="submit">Отправить</button>
-          </form>
+        <div class="popup" id="whatsApp">
+          <div class="popup__body">
+            <div class="popup__content">
+              <img class="popup__img" src="./src/images/pergament.webp" />
+              <a href="" class="popup__close_whatsApp close-popup">X</a>
+              <form action="#" class="form form_whatsApp" method="POST">
+                <input
+                  class="input_whatsApp"
+                  type="text"
+                  placeholder="Напишите Ваше предложение о сотрудничестве ;)"
+                />
+                <button class="popup__btn_whatsApp" type="submit">
+                  Отправить
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="popup" id="telegram">
-      <div class="popup__body">
-        <div class="popup__content">
-          <img class="popup__img" src="./src/images/telegr.webp">
-          <a href="" class="popup__close_telegram close-popup">X</a>
-          <form action="#" class="form form_telegram" method="POST">
-            <input class="input_telegram" type="text" placeholder="Напишите Ваше предложение о сотрудничестве ;)"/>
-            <button class="popup__btn_telegram" type="submit">Отправить</button>
-          </form>
+        <div class="popup" id="telegram">
+          <div class="popup__body">
+            <div class="popup__content">
+              <img class="popup__img" src="./src/images/telegr.webp" />
+              <a href="" class="popup__close_telegram close-popup">X</a>
+              <form action="#" class="form form_telegram" method="POST">
+                <input
+                  class="input_telegram"
+                  type="text"
+                  placeholder="Напишите Ваше предложение о сотрудничестве ;)"
+                />
+                <button class="popup__btn_telegram" type="submit">
+                  Отправить
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="popup__message" id="telegram-move">
-        <div class="popup__move__content">
-          <img class="img__move" src="./src/images/telegram-go.png">
+        <div class="popup__message" id="telegram-move">
+          <div class="popup__move__content">
+            <img class="img__move" src="./src/images/telegram-go.png" />
+          </div>
         </div>
-    </div>
-    <div class="popup__message" id="whatsApp-move">
-        <div class="popup__move__content">
-          <img class="img__move" src="./src/images/letters.gif">
+        <div class="popup__message" id="whatsApp-move">
+          <div class="popup__move__content">
+            <img class="img__move" src="./src/images/letters.gif" />
+          </div>
         </div>
-    </div>
-    <div class="popup" id="vkontakte">
-      <div class="popup__body">
-        <div class="popup__content popup__content_vkontakte">
-          <a href="" class="popup__close_vkontakte close-popup">X</a>
-          <img class="popup__img_vkontakte" src="./src/images/fig.webp">
-          <p class="popup__text">Privat life! &#128521;</p>
+        <div class="popup" id="vkontakte">
+          <div class="popup__body">
+            <div class="popup__content popup__content_vkontakte">
+              <a href="" class="popup__close_vkontakte close-popup">X</a>
+              <img class="popup__img_vkontakte" src="./src/images/fig.webp" />
+              <p class="popup__text">Privat life! &#128521;</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
       </div>
     </section>
-    
-    <footer>
+
+    <footer class="footer">
       <div class="container container_footer">
         <div class="footer__left">
           <p class="logo">
@@ -181,15 +292,17 @@
           </div>
           <div class="contacts" id="contacts">
             <div class="contacts__info">
-              <img
-                class="icon_contacts"
-                src="./src/images/pigeon.webp"
-              />
+              <img class="icon_contacts" src="./src/images/pigeon.webp" />
               <p class="info">kursorr@gmail.com</p>
             </div>
             <div class="contacts__info">
-              <img class="icon_contacts icon_telephone" src="./src/images/telephone.webp" />
-              <a class="info info_tel" href="tel:+79219192032">+7-921-919-20-32</a>
+              <img
+                class="icon_contacts icon_telephone"
+                src="./src/images/telephone.webp"
+              />
+              <a class="info info_tel" href="tel:+79219192032"
+                >+7-921-919-20-32</a
+              >
             </div>
           </div>
         </div>
@@ -202,6 +315,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
   </body>
 </html>

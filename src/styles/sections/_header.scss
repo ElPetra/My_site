@@ -1,13 +1,13 @@
 .header {
   display: flex;
   flex-direction: column;
+  background-color: #f0e4e4;
   // position: relative;
 }
 .container_header {
   overflow: hidden;
 }
 .header__content {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

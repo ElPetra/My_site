@@ -17,6 +17,7 @@ let whatsApp = document.querySelector(".icon_wa");
 const formWhatsApp = document.querySelector(".form_whatsApp");
 const formTelegram = document.querySelector(".form_telegram");
 let fly = document.querySelector(".popup__message");
+let portfolio = document.querySelector(".portfolio");
 
 const telNumber = "79219192032";
 // let myAudio = document.getElementById("myAudio");
@@ -25,10 +26,16 @@ let dropTimer;
 let unlock = true;
 const timeout = 800;
 
+// Глобальные флаги для управления звуком
+let isSoundEnabled = true;
+let isTypewriterActive = false;
+let isBottleFallen = false;
+
 window.onload = function () {
   //бутылек падает
   setTimeout(() => {
     inkBottle.style.transform = "rotate(90deg)";
+    isBottleFallen = true;
   }, 1000);
   //header окрашивается
   setTimeout(() => {
@@ -46,8 +53,13 @@ window.onload = function () {
       }
     }
   }, 6000);
-  //запускаем каплю:
-  dropWater();
+
+  // запускаем каплю:
+  if (isSoundEnabled) {
+    dropWater();
+  } else {
+    dropWaterMute();
+  }
 
   // let contacts = document.querySelector(".header-link_contacts");
   // contacts.scrollIntoView({
@@ -81,20 +93,26 @@ window.onload = function () {
 
 //функция для интервального падения капли
 function dropWater() {
+  if (!isBottleFallen) return;
+  clearInterval(dropTimer);
+
   setTimeout(function () {
     dropTimer = setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.add("drop-start");
       drop.style = "opacity:1";
-      soundDrop.play();
+      if (isSoundEnabled) soundDrop.play();
     }, 11000);
   }, 3000);
   setTimeout(function () {
     setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.add("drop-finish");
     }, 11000);
   }, 7000);
   setTimeout(function () {
     setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.remove("drop-start");
       drop.style = "opacity:0";
     }, 11000);
@@ -103,19 +121,25 @@ function dropWater() {
 
 //функция для интервального падения капли без звука
 function dropWaterMute() {
+  if (!isBottleFallen) return;
+  clearInterval(dropTimer);
+
   setTimeout(function () {
     dropTimer = setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.add("drop-start");
       drop.style = "opacity:1";
     }, 11000);
   }, 3000);
   setTimeout(function () {
     setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.add("drop-finish");
     }, 11000);
   }, 7000);
   setTimeout(function () {
     setInterval(function () {
+      if (!isBottleFallen) return;
       drop.classList.remove("drop-start");
       drop.style = "opacity:0";
     }, 11000);
@@ -128,12 +152,18 @@ inkBottle.addEventListener("click", function () {
     inkBottle.style.transform = "rotate(0deg)";
     headerContent.classList.remove("header_black");
     inkFlow.style = "opacity:0";
+    isBottleFallen = false;
     clearInterval(dropTimer);
   } else {
     inkBottle.style.transform = "rotate(90deg)";
     headerContent.classList.add("header_black");
     inkFlow.style = "opacity:1";
-    dropWater();
+    isBottleFallen = true;
+    if (isSoundEnabled) {
+      dropWater();
+    } else {
+      dropWaterMute();
+    }
   }
 });
 
@@ -206,11 +236,24 @@ let soundDrop = new Howl({
 // let myAudio = new Audio();
 // myAudio.src = "./src/sounds/zvuk-pechatnaya-mashinka.mp3";
 
+//открытие модального окна при клике на кнопку портфолио
+portfolio.addEventListener("click", function () {
+  const portfolioPopup = document.querySelector("#portfolioPopup");
+  popupOpen(portfolioPopup);
+});
+
+
 //печатная машинка
 function typeText() {
-  soundTyper.play();
-  (isPlaying = true), console.log(isPlaying);
-  // myAudio.play();
+  if (isTypewriterActive) return;
+
+  isTypewriterActive = true;
+  boxText.classList.remove("d-none");
+
+  if (isSoundEnabled) {
+    soundTyper.play();
+  }
+
   const paragraphs = document.querySelectorAll(".print-text");
   for (let i = 0; i < paragraphs.length; i++) {
     const paragraph = paragraphs[i];
@@ -224,53 +267,52 @@ function typeText() {
       paragraph.appendChild(span);
     }
   }
+
   const spanArray = Array.from(document.getElementsByTagName("span"));
   for (let i = 0; i < spanArray.length; i++) {
     setTimeout(() => {
       spanArray[i].style.opacity = "1";
     }, i * 100);
     setTimeout(() => {
-      soundTyper.stop();
+      if (isSoundEnabled) {
+        soundTyper.stop();
+      }
     }, (spanArray.length - 1) * 100);
   }
 }
 
-//звук печатной машинки
+// обработчик печатной машинки
 typewriter.addEventListener("click", function () {
-  boxText.classList.remove("d-none");
   typeText();
-  // if (myAudio.paused == true) {
-  //   myAudio.play();
-  // } else {
-  //   myAudio.pause();
-  // }
-  if (isPlaying) {
-    // sound.stop();
-    soundTyper.volume(0);
-    console.log("музыка должна остановиться");
+});
+
+// управление звуком
+let controlSound = document.querySelector(".control-sound");
+controlSound.addEventListener("click", function () {
+  isSoundEnabled = !isSoundEnabled;
+
+  if (isSoundEnabled) {
+    // Включаем звук
+    if (isBottleFallen) {
+      clearInterval(dropTimer);
+      dropWater();
+    }
   } else {
-    // sound.play();
-    soundTyper.volume(1);
-    console.log("музыка должна возобновиться");
+    // Выключаем звук
+    soundDrop.stop();
+    if (isBottleFallen) {
+      clearInterval(dropTimer);
+      dropWaterMute();
+    }
   }
-  changeIsPlaying();
+  // Визуальная индикация состояния звука
+  controlSound.classList.toggle("muted", !isSoundEnabled);
 });
 
 function changeIsPlaying() {
   isPlaying ? (isPlaying = false) : (isPlaying = true);
   console.log(isPlaying);
 }
-//включение/выключение звука печатной машинки
-let controlSound = document.querySelector(".control-sound");
-let flag = false;
-controlSound.addEventListener("click", function () {
-  flag ? (flag = false) : (flag = true);
-  if (flag) {
-    soundTyper.pause();
-  } else {
-    soundTyper.play();
-  }
-});
 
 //функционал с карточками:
 function randomRotate(min, max) {

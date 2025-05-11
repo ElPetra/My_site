@@ -1,0 +1,35 @@
+Use this token to access the HTTP API:
+6508612564:AAEnOAM0mi0XADkb2_daOP6NMs8SU2YhUqY
+
+
+Your user ID: 647019829
+Current chat ID: 647019829
+
+https://api.telegram.org/bot6508612564:AAEnOAM0mi0XADkb2_daOP6NMs8SU2YhUqY/getUpdates
+
+{
+  "ok": true,
+  "result": [
+    {
+      "update_id": 22001129,
+      "message": {
+        "message_id": 3,
+        "from": {
+          "id": 647019829,
+          "is_bot": false,
+          "first_name": "Елена",
+          "username": "petra83",
+          "language_code": "ru"
+        },
+        "chat": {
+          "id": 647019829,
+          "first_name": "Елена",
+          "username": "petra83",
+          "type": "private"
+        },
+        "date": 1718188082,
+        "text": "бот привет"
+      }
+    }
+  ]
+}
