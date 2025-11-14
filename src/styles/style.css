@@ -942,8 +942,8 @@ html {
 
 .popup__close_telegram {
   position: absolute;
-  top: -170%;
-  left: 90%;
+  top: -210%;
+  left: 88%;
   font-family: "Rubik";
   font-size: calc(var(--index) * 0.8);
   color: #300d0d;
