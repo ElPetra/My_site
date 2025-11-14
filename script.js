@@ -11,34 +11,145 @@ let boxText = document.querySelector(".box-text");
 let puzzles = document.querySelector(".puzzles");
 let puzzl = document.querySelectorAll(".puz");
 let cover = document.querySelector(".cover");
+// Переменные для соц. сетей
 let telegram = document.querySelector(".icon_tg");
 let vkontakte = document.querySelector(".icon_vk");
 let whatsApp = document.querySelector(".icon_wa");
 const formWhatsApp = document.querySelector(".form_whatsApp");
 const formTelegram = document.querySelector(".form_telegram");
 let fly = document.querySelector(".popup__message");
+let soundIs = document.querySelector(".sound__is");
+// Переменные для бургер-меню
+let burgerMenu = document.getElementById("burgerMenu");
+let mobileMenu = document.getElementById("mobileMenu");
+let mobileMenuClose = document.getElementById("mobileMenuClose");
 
 const telNumber = "79219192032";
-// let myAudio = document.getElementById("myAudio");
 let isPlaying = false;
 let dropTimer;
 let unlock = true;
 const timeout = 800;
+let isSoundEnabled = true;
+let isTypingInProgress = false;
+let soundAnimationInterval;
+
+// Карусель переменные
+let sertificates = [
+  "all-certificates_01.webp",
+  "all-certificates_02.webp",
+  "all-certificates_03.webp",
+  "all-certificates_04.webp",
+  "all-certificates_05.webp",
+  "all-certificates_06.webp",
+  "all-certificates_07.webp",
+  "all-certificates_08.webp",
+  "all-certificates_09.webp",
+  "all-certificates_10.webp",
+  "all-certificates_11.webp",
+];
+
+let currentCarouselIndex = 0;
+let isCarouselDragging = false;
+let startCarouselX = 0;
+let currentCarouselX = 0;
+let autoSlideInterval = null;
+let isAutoSlidePaused = false;
+const AUTO_SLIDE_DELAY = 4000;
+let isMobile = window.innerWidth <= 575;
+
+// Код чтобы попапы не открывались при первичном рендере
+document.addEventListener("DOMContentLoaded", function () {
+  // Удаляем хэш из URL чтобы предотвратить автоматическое открытие попапа
+  if (window.location.hash) {
+    window.history.replaceState(null, null, " ");
+  }
+
+  // Принудительно скрываем все попапы при загрузке
+  const allPopups = document.querySelectorAll(".popup");
+  allPopups.forEach((popup) => {
+    popup.classList.remove("open");
+  });
+});
+
+// Добавляем переменные для отслеживания всех таймеров капель
+let dropTimers = [];
+
+let soundTyper = new Howl({
+  src: ["./src/sounds/zvuk-pechatnaya-mashinka.mp3"],
+  html5: true,
+  autoplay: false,
+  volume: 0.3,
+  howl: null,
+});
+
+let soundDrop = new Howl({
+  src: ["./src/sounds/zvuk-kapli.mp3"],
+  html5: true,
+  autoplay: false,
+  howl: null,
+  volume: 0.03,
+});
+
+// Функция для очистки всех таймеров капель
+function clearAllDropTimers() {
+  dropTimers.forEach((timer) => {
+    clearInterval(timer);
+    clearTimeout(timer);
+  });
+  dropTimers = [];
+
+  // Также очищаем основной dropTimer
+  if (dropTimer) {
+    clearInterval(dropTimer);
+    dropTimer = null;
+  }
+}
+
+// Функция для запуска анимации звука
+function startSoundAnimation() {
+  if (!isSoundEnabled) return;
+
+  soundIs.classList.add("sound-active");
+  if (soundAnimationInterval) {
+    clearInterval(soundAnimationInterval);
+  }
+  soundAnimationInterval = setInterval(() => {
+    if (soundIs.classList.contains("sound-active")) {
+      soundIs.classList.remove("sound-active");
+    } else {
+      soundIs.classList.add("sound-active");
+    }
+  }, 300);
+}
+
+// Функция для остановки анимации звука
+function stopSoundAnimation() {
+  soundIs.classList.remove("sound-active");
+  if (soundAnimationInterval) {
+    clearInterval(soundAnimationInterval);
+    soundAnimationInterval = null;
+  }
+}
 
 window.onload = function () {
-  //бутылек падает
+  // Блокируем горизонтальный скролл на время начальной анимации
+  document.body.style.overflowX = "hidden";
+
+  // Инициализируем карусель
+  initCarousel();
+
   setTimeout(() => {
     inkBottle.style.transform = "rotate(90deg)";
   }, 1000);
-  //header окрашивается
+
   setTimeout(() => {
     headerContent.classList.add("header_black");
   }, 1500);
-  //чернила разливаются
+
   setTimeout(() => {
     inkFlow.style = "opacity:1";
   }, 2000);
-  //кнопки разблокируются
+
   setTimeout(() => {
     if (inkBottle.style.transform == "rotate(90deg)") {
       for (let el of buttons) {
@@ -46,16 +157,9 @@ window.onload = function () {
       }
     }
   }, 6000);
-  //запускаем каплю:
+
   dropWater();
 
-  // let contacts = document.querySelector(".header-link_contacts");
-  // contacts.scrollIntoView({
-  //   behavior: "smooth",
-  //   block: "end"
-  // });
-
-  //запускаем летящие пазлы
   setTimeout(() => {
     puzzles.innerHTML = `<div class="puzzles">
           <img src="./src/images/1puz.webp" class="puz puzzl1" />
@@ -70,65 +174,104 @@ window.onload = function () {
           <img src="./src/images/photo.webp" class="myPhoto d-none photo" />
           <img src="./src/images/smile.webp" class="myPhoto d-none smile"/>
           </div>`;
-  }, 4000);
-  //меняем на общую фотографию без границ пазлов
+  }, 1300);
+
   setTimeout(() => {
     puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
         </div>`;
-  }, 9000);
+    // Восстанавливаем скролл после завершения начальной анимации пазлов
+    document.body.style.overflowX = "";
+  }, 6300);
 };
 
-//функция для интервального падения капли
 function dropWater() {
+  // Сбрасываем состояние капли
+  drop.classList.remove("drop-start", "drop-finish");
+  drop.style.opacity = "0";
+
+  // Очищаем все предыдущие таймеры
+  clearAllDropTimers();
+
   setTimeout(function () {
     dropTimer = setInterval(function () {
-      drop.classList.add("drop-start");
-      drop.style = "opacity:1";
-      soundDrop.play();
+      drop.classList.remove("drop-start", "drop-finish");
+      drop.style.opacity = "0";
+
+      setTimeout(() => {
+        drop.classList.add("drop-start");
+        drop.style.opacity = "1";
+        if (isSoundEnabled) {
+          soundDrop.play();
+        }
+      }, 100);
     }, 11000);
+    dropTimers.push(dropTimer);
   }, 3000);
+
   setTimeout(function () {
-    setInterval(function () {
+    const finishTimer = setInterval(function () {
       drop.classList.add("drop-finish");
     }, 11000);
+    dropTimers.push(finishTimer);
   }, 7000);
+
   setTimeout(function () {
-    setInterval(function () {
+    const resetTimer = setInterval(function () {
       drop.classList.remove("drop-start");
-      drop.style = "opacity:0";
+      drop.style.opacity = "0";
     }, 11000);
+    dropTimers.push(resetTimer);
   }, 8000);
 }
 
-//функция для интервального падения капли без звука
 function dropWaterMute() {
+  // Сбрасываем состояние капли
+  drop.classList.remove("drop-start", "drop-finish");
+  drop.style.opacity = "0";
+
+  // Очищаем все предыдущие таймеры
+  clearAllDropTimers();
+
   setTimeout(function () {
     dropTimer = setInterval(function () {
-      drop.classList.add("drop-start");
-      drop.style = "opacity:1";
+      drop.classList.remove("drop-start", "drop-finish");
+      drop.style.opacity = "0";
+
+      setTimeout(() => {
+        drop.classList.add("drop-start");
+        drop.style.opacity = "1";
+      }, 100);
     }, 11000);
+    dropTimers.push(dropTimer);
   }, 3000);
+
   setTimeout(function () {
-    setInterval(function () {
+    const finishTimer = setInterval(function () {
       drop.classList.add("drop-finish");
     }, 11000);
+    dropTimers.push(finishTimer);
   }, 7000);
+
   setTimeout(function () {
-    setInterval(function () {
+    const resetTimer = setInterval(function () {
       drop.classList.remove("drop-start");
-      drop.style = "opacity:0";
+      drop.style.opacity = "0";
     }, 11000);
+    dropTimers.push(resetTimer);
   }, 8000);
 }
 
-//бутылочка падает и встает обратно при нажатии
 inkBottle.addEventListener("click", function () {
   if (inkBottle.style.transform == "rotate(90deg)") {
     inkBottle.style.transform = "rotate(0deg)";
     headerContent.classList.remove("header_black");
     inkFlow.style = "opacity:0";
-    clearInterval(dropTimer);
+    clearAllDropTimers();
+
+    // Сбрасываем состояние капли при закрытии чернильницы
+    drop.classList.remove("drop-start", "drop-finish");
+    drop.style.opacity = "0";
   } else {
     inkBottle.style.transform = "rotate(90deg)";
     headerContent.classList.add("header_black");
@@ -137,7 +280,6 @@ inkBottle.addEventListener("click", function () {
   }
 });
 
-//меняем общую фотографию на фото с языком
 puzzles.addEventListener("mouseover", function (event) {
   if (event.target.classList.contains("photo")) {
     puzzles.innerHTML = `<div class="puzzles"> 
@@ -146,7 +288,7 @@ puzzles.addEventListener("mouseover", function (event) {
     photo.classList.remove("d-none");
   }
 });
-//меняем обратно общую фотографию на обычную
+
 puzzles.addEventListener("mouseout", function (event) {
   if (event.target.classList.contains("smile")) {
     puzzles.innerHTML = `<div class="puzzles"> 
@@ -155,8 +297,10 @@ puzzles.addEventListener("mouseout", function (event) {
     smile.classList.add("d-none");
   }
 });
-//при клике на фотографию - пазлы разлетаются и слетаются обратно через какое-то время
+
 puzzles.addEventListener("click", function () {
+  // Блокируем скролл на время анимации
+  document.body.style.overflow = "hidden";
   puzzles.innerHTML = `<div class="puzzles">
   <img src="./src/images/1puz.webp" class="puz puzzl1 puz-reverse" />
           <img src="./src/images/2puz.webp" class="puz puzzl2 puz-reverse" />
@@ -185,32 +329,24 @@ puzzles.addEventListener("click", function () {
     puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
         </div>`;
+    // Восстанавливаем скролл после завершения анимации
+    document.body.style.overflow = "";
   }, 10000);
 });
 
-let soundTyper = new Howl({
-  src: ["./src/sounds/zvuk-pechatnaya-mashinka.mp3"],
-  html5: true,
-  autoplay: false,
-  howl: null,
-});
-
-let soundDrop = new Howl({
-  src: ["./src/sounds/zvuk-kapli.mp3"],
-  html5: true,
-  autoplay: false,
-  howl: null,
-  volume: 0.1,
-});
-
-// let myAudio = new Audio();
-// myAudio.src = "./src/sounds/zvuk-pechatnaya-mashinka.mp3";
-
-//печатная машинка
 function typeText() {
-  soundTyper.play();
-  (isPlaying = true), console.log(isPlaying);
-  // myAudio.play();
+  if (isTypingInProgress) {
+    return;
+  }
+
+  isTypingInProgress = true;
+
+  if (isSoundEnabled) {
+    soundTyper.play();
+    startSoundAnimation();
+  }
+  isPlaying = true;
+
   const paragraphs = document.querySelectorAll(".print-text");
   for (let i = 0; i < paragraphs.length; i++) {
     const paragraph = paragraphs[i];
@@ -229,50 +365,57 @@ function typeText() {
     setTimeout(() => {
       spanArray[i].style.opacity = "1";
     }, i * 100);
-    setTimeout(() => {
-      soundTyper.stop();
-    }, (spanArray.length - 1) * 100);
   }
+
+  setTimeout(() => {
+    soundTyper.stop();
+    isTypingInProgress = false;
+    stopSoundAnimation();
+  }, (spanArray.length - 1) * 100);
 }
 
-//звук печатной машинки
 typewriter.addEventListener("click", function () {
+  if (isTypingInProgress) {
+    return;
+  }
+
   boxText.classList.remove("d-none");
   typeText();
-  // if (myAudio.paused == true) {
-  //   myAudio.play();
-  // } else {
-  //   myAudio.pause();
-  // }
-  if (isPlaying) {
-    // sound.stop();
-    soundTyper.volume(0);
-    console.log("музыка должна остановиться");
-  } else {
-    // sound.play();
-    soundTyper.volume(1);
-    console.log("музыка должна возобновиться");
-  }
-  changeIsPlaying();
 });
 
-function changeIsPlaying() {
-  isPlaying ? (isPlaying = false) : (isPlaying = true);
-  console.log(isPlaying);
-}
-//включение/выключение звука печатной машинки
 let controlSound = document.querySelector(".control-sound");
-let flag = false;
 controlSound.addEventListener("click", function () {
-  flag ? (flag = false) : (flag = true);
-  if (flag) {
-    soundTyper.pause();
+  isSoundEnabled = !isSoundEnabled;
+
+  if (isSoundEnabled) {
+    soundTyper.mute(false);
+    soundDrop.mute(false);
+    clearAllDropTimers();
+    dropWater();
+    soundIs.style.display = "block";
+
+    // Если звук включен и идет печать - запускаем анимацию
+    if (isTypingInProgress) {
+      startSoundAnimation();
+    }
   } else {
-    soundTyper.play();
+    soundTyper.mute(true);
+    soundDrop.mute(true);
+    clearAllDropTimers();
+    dropWaterMute();
+    soundIs.style.display = "none";
+    stopSoundAnimation();
+  }
+
+  if (isSoundEnabled) {
+    controlSound.classList.remove("muted");
+    controlSound.classList.add("unmuted");
+  } else {
+    controlSound.classList.remove("unmuted");
+    controlSound.classList.add("muted");
   }
 });
 
-//функционал с карточками:
 function randomRotate(min, max) {
   let rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
@@ -343,21 +486,12 @@ function init() {
     }
     cardInside.appendChild(link);
     shuffleLinks(links);
-
-    // for (let i = 0; i < links.length; i++) {
-    //   console.log(links[i]);
-    //   link.innerHTML = links[i];
-    //   link.setAttribute("href", links[i]);
-    //   link.target = "_blank";
-    // }
-    // cardInside.appendChild(link);
   }
 }
 init();
 
 cover.addEventListener("click", (event) => {
   if (event.target.classList.contains("card")) {
-    console.log(event.target);
     event.target.classList.add("go");
     count--;
   }
@@ -371,15 +505,11 @@ cover.addEventListener("click", (event) => {
   }
 });
 
-//FOOTER
-//слушатель-событие на кнопку whatsApp
 whatsApp.addEventListener("click", function () {
-  // const popupName = whatsApp.getAttribute("href").replace("#", "");
   const whatsAppPopup = document.getElementById("whatsApp");
   popupOpen(whatsAppPopup);
-  // e.preventDefault();
 });
-//слушатель-событие на крестик в модальном окне
+
 const popupCloseIcon = document.querySelectorAll(".close-popup");
 if (popupCloseIcon.length > 0) {
   for (let i = 0; i < popupCloseIcon.length; i++) {
@@ -390,7 +520,22 @@ if (popupCloseIcon.length > 0) {
     });
   }
 }
-//функция открытия модального окна
+
+// Функция для установки фокуса в попапах
+function focusOnInput(popup) {
+  setTimeout(() => {
+    const telegramInput = popup.querySelector(".input_telegram");
+    const whatsAppInput = popup.querySelector(".input_whatsApp");
+
+    if (telegramInput) {
+      telegramInput.focus();
+    }
+    if (whatsAppInput) {
+      whatsAppInput.focus();
+    }
+  }, 100);
+}
+
 function popupOpen(popup) {
   if (popup && unlock) {
     const popupActive = document.querySelector(".popup.open");
@@ -398,6 +543,8 @@ function popupOpen(popup) {
       popupClose(popupActive, false);
     }
     popup.classList.add("open");
+    // Устанавливаем фокус на инпут
+    focusOnInput(popup);
     popup.addEventListener("click", function (e) {
       if (!e.target.closest(".popup__content")) {
         popupClose(e.target.closest(".popup"));
@@ -405,12 +552,11 @@ function popupOpen(popup) {
     });
   }
 }
-//функция закрытия модального окна
+
 function popupClose(popupActive) {
   popupActive.classList.remove("open");
 }
 
-//функция отправки сообщения на whatsApp
 function sendToWhatsapp(text, phone) {
   text = encodeURIComponent(text);
   let url = `https://web.whatsapp.com/send?phone=${phone}&text=${text}&source=&data=`;
@@ -424,20 +570,18 @@ formWhatsApp.addEventListener("submit", (e) => {
   e.target.closest(".popup").classList.remove("open");
 });
 
-//слушатель-событие на кнопку telegram
 telegram.addEventListener("click", function () {
   const telegramPopup = document.getElementById("telegram");
   popupOpen(telegramPopup);
 });
 
-//функция отправки сообщения в telegram
 let tg = {
   token: "6508612564:AAEnOAM0mi0XADkb2_daOP6NMs8SU2YhUqY",
   chat_id: "647019829",
 };
 
 function sendMessage(text) {
-  const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`; // The url to request
+  const url = `https://api.telegram.org/bot${tg.token}/sendMessage?chat_id=${tg.chat_id}&text=${text}`;
   const xht = new XMLHttpRequest();
   xht.open("GET", url);
   xht.send();
@@ -455,8 +599,403 @@ formTelegram.addEventListener("submit", (e) => {
   }, 5000);
 });
 
-//слушатель-событие на кнопку vkontakte
 vkontakte.addEventListener("click", function () {
   const vkontaktePopup = document.getElementById("vkontakte");
   popupOpen(vkontaktePopup);
 });
+
+// Функции для бургер-меню
+function openMobileMenu() {
+  mobileMenu.classList.add("open");
+  document.body.style.overflow = "hidden"; // Блокируем скролл
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove("open");
+  document.body.style.overflow = ""; // Восстанавливаем скролл
+}
+
+// Слушатели событий для бургер-меню
+if (burgerMenu) {
+  burgerMenu.addEventListener("click", openMobileMenu);
+}
+
+if (mobileMenuClose) {
+  mobileMenuClose.addEventListener("click", closeMobileMenu);
+}
+
+// Закрытие мобильного меню при клике вне контента
+mobileMenu.addEventListener("click", function (e) {
+  if (e.target === mobileMenu) {
+    closeMobileMenu();
+  }
+});
+
+// Закрытие мобильного меню при нажатии Escape
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+    closeMobileMenu();
+  }
+});
+
+// Обработчик для мобильного меню - контакты
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileContactLinks = document.querySelectorAll(
+    '.mobile-menu a[href="#contacts"]'
+  );
+
+  mobileContactLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Плавно закрываем мобильное меню
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenu) {
+        // Добавляем класс для анимации закрытия
+        mobileMenu.classList.add("closing");
+        mobileMenu.classList.remove("open");
+
+        // Ждем завершения анимации перед скроллом
+        setTimeout(() => {
+          document.body.style.overflow = "";
+
+          // Плавный скролл к контактам
+          const contactsSection = document.getElementById("contacts");
+          if (contactsSection) {
+            contactsSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }, 300); // Должно совпадать с временем CSS transition
+      } else {
+        // Если меню не найдено, просто скроллим
+        const contactsSection = document.getElementById("contacts");
+        if (contactsSection) {
+          contactsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    });
+  });
+});
+
+// КАРУСЕЛЬ С МОБИЛЬНОЙ АДАПТАЦИЕЙ
+
+// Инициализация карусели
+function initCarousel() {
+  const carouselTrack = document.getElementById("carouselTrack");
+  if (!carouselTrack) {
+    console.error("Carousel track not found!");
+    return;
+  }
+
+  // Определяем тип устройства
+  isMobile = window.innerWidth <= 575;
+
+  // Очищаем трек
+  carouselTrack.innerHTML = "";
+
+  // Создаем слайды в зависимости от типа устройства
+  if (isMobile) {
+    createAllSlidesMobile();
+  } else {
+    createVisibleSlides();
+  }
+
+  // Добавляем индикаторы
+  createIndicators();
+
+  // Добавляем кнопки навигации
+  createNavigationButtons();
+
+  // Добавляем обработчики событий
+  addCarouselEventListeners();
+
+  // Запускаем автопрокрутку
+  startAutoSlide();
+}
+
+// Создаем все слайды для мобильных
+function createAllSlidesMobile() {
+  const carouselTrack = document.getElementById("carouselTrack");
+  carouselTrack.innerHTML = "";
+
+  sertificates.forEach((cert, index) => {
+    const slide = document.createElement("div");
+    slide.className = `carousel-slide ${
+      index === currentCarouselIndex ? "active" : ""
+    }`;
+    slide.setAttribute("data-index", index);
+    slide.innerHTML = `<img src="./src/sertificates/${cert}" alt="Сертификат ${
+      index + 1
+    }" class="carousel-image">`;
+    carouselTrack.appendChild(slide);
+  });
+}
+
+// Создаем только видимые слайды для десктопа
+function createVisibleSlides() {
+  const carouselTrack = document.getElementById("carouselTrack");
+  const totalSlides = sertificates.length;
+
+  // Индексы для отображаемых слайдов
+  const prevIndex = (currentCarouselIndex - 1 + totalSlides) % totalSlides;
+  const nextIndex = (currentCarouselIndex + 1) % totalSlides;
+
+  // Очищаем трек
+  carouselTrack.innerHTML = "";
+
+  // Создаем и добавляем слайды в правильном порядке
+  createSlide(prevIndex, "side");
+  createSlide(currentCarouselIndex, "active");
+  createSlide(nextIndex, "side");
+}
+
+// Создание одного слайда
+function createSlide(index, className) {
+  const carouselTrack = document.getElementById("carouselTrack");
+  const slide = document.createElement("div");
+  slide.className = `carousel-slide ${className}`;
+  slide.innerHTML = `<img src="./src/sertificates/${
+    sertificates[index]
+  }" alt="Сертификат ${index + 1}" class="carousel-image">`;
+  carouselTrack.appendChild(slide);
+}
+
+// Создаем индикаторы
+function createIndicators() {
+  const container = document.querySelector(".carousel-container");
+  let indicatorsContainer = container.querySelector(".carousel-indicators");
+
+  if (!indicatorsContainer) {
+    indicatorsContainer = document.createElement("div");
+    indicatorsContainer.className = "carousel-indicators";
+    container.appendChild(indicatorsContainer);
+  }
+
+  indicatorsContainer.innerHTML = "";
+
+  sertificates.forEach((_, index) => {
+    const indicator = document.createElement("div");
+    indicator.className = `carousel-indicator ${
+      index === currentCarouselIndex ? "active" : ""
+    }`;
+    indicator.setAttribute("data-index", index);
+    indicator.addEventListener("click", () => goToSlide(index));
+    indicatorsContainer.appendChild(indicator);
+  });
+}
+
+// Создаем кнопки навигации
+function createNavigationButtons() {
+  const carouselContainer = document.querySelector(".carousel-container");
+
+  // Удаляем старые кнопки если есть
+  const oldPrevBtn = carouselContainer.querySelector(".carousel-btn.prev");
+  const oldNextBtn = carouselContainer.querySelector(".carousel-btn.next");
+  if (oldPrevBtn) oldPrevBtn.remove();
+  if (oldNextBtn) oldNextBtn.remove();
+
+  // Создаем кнопки только для мобильных
+  if (isMobile) {
+    const prevBtn = document.createElement("button");
+    prevBtn.className = "carousel-btn prev";
+    prevBtn.innerHTML =
+      '<img src="/src/images/left.webp" alt="Previous" class="arrow-icon">';
+    prevBtn.addEventListener("click", () => carouselPrev());
+
+    const nextBtn = document.createElement("button");
+    nextBtn.className = "carousel-btn next";
+    nextBtn.innerHTML =
+      '<img src="/src/images/right.webp" alt="Next" class="arrow-icon">';
+    nextBtn.addEventListener("click", () => carouselNext());
+
+    carouselContainer.appendChild(prevBtn);
+    carouselContainer.appendChild(nextBtn);
+  }
+}
+
+// Автопрокрутка
+function startAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+  }
+
+  autoSlideInterval = setInterval(() => {
+    if (!isAutoSlidePaused && !isCarouselDragging) {
+      carouselNext();
+    }
+  }, AUTO_SLIDE_DELAY);
+}
+
+function pauseAutoSlide() {
+  isAutoSlidePaused = true;
+}
+
+function resumeAutoSlide() {
+  isAutoSlidePaused = false;
+}
+
+// Обработчики событий для перетаскивания
+function addCarouselEventListeners() {
+  const carouselTrack = document.getElementById("carouselTrack");
+  const carouselContainer = document.querySelector(".carousel-container");
+
+  // Мышь
+  carouselTrack.addEventListener("mousedown", carouselStartDrag);
+  document.addEventListener("mousemove", carouselDrag);
+  document.addEventListener("mouseup", carouselEndDrag);
+
+  // Тач-события
+  carouselTrack.addEventListener("touchstart", carouselStartDrag);
+  document.addEventListener("touchmove", carouselDrag);
+  document.addEventListener("touchend", carouselEndDrag);
+
+  // События для паузы автопрокрутки при наведении
+  carouselContainer.addEventListener("mouseenter", pauseAutoSlide);
+  carouselContainer.addEventListener("mouseleave", resumeAutoSlide);
+
+  // Обработчик ресайза
+  window.addEventListener("resize", handleResize);
+}
+
+// Обработчик изменения размера окна
+function handleResize() {
+  const wasMobile = isMobile;
+  isMobile = window.innerWidth <= 575;
+
+  // Если режим изменился, переинициализируем карусель
+  if (wasMobile !== isMobile) {
+    initCarousel();
+  }
+}
+
+function carouselStartDrag(e) {
+  isCarouselDragging = true;
+  startCarouselX = getCarouselClientX(e);
+  currentCarouselX = startCarouselX;
+
+  const carouselTrack = document.getElementById("carouselTrack");
+  carouselTrack.classList.add("dragging");
+
+  // Пауза автопрокрутки при начале драга
+  pauseAutoSlide();
+
+  e.preventDefault();
+}
+
+function carouselDrag(e) {
+  if (!isCarouselDragging) return;
+
+  e.preventDefault();
+  currentCarouselX = getCarouselClientX(e);
+}
+
+function carouselEndDrag(e) {
+  if (!isCarouselDragging) return;
+
+  isCarouselDragging = false;
+  const carouselTrack = document.getElementById("carouselTrack");
+  carouselTrack.classList.remove("dragging");
+
+  // Определяем направление свайпа
+  const diff = startCarouselX - currentCarouselX;
+  const threshold = isMobile ? 30 : 50; // Меньший порог для мобильных
+
+  if (Math.abs(diff) > threshold) {
+    if (diff > 0) {
+      carouselNext();
+    } else {
+      carouselPrev();
+    }
+  }
+
+  // Возобновляем автопрокрутку через задержку после драга
+  setTimeout(() => {
+    if (!isCarouselDragging) {
+      resumeAutoSlide();
+    }
+  }, 1000);
+}
+
+function getCarouselClientX(e) {
+  return e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+}
+
+function carouselNext() {
+  currentCarouselIndex = (currentCarouselIndex + 1) % sertificates.length;
+  updateCarousel();
+}
+
+function carouselPrev() {
+  currentCarouselIndex =
+    (currentCarouselIndex - 1 + sertificates.length) % sertificates.length;
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentCarouselIndex = index;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const carouselTrack = document.getElementById("carouselTrack");
+
+  if (isMobile) {
+    // Для мобильных обновляем классы у всех слайдов
+    updateMobileSlides();
+  } else {
+    // Для десктопа пересоздаем видимые слайды
+    createVisibleSlides();
+  }
+
+  updateIndicators();
+}
+
+// Обновление слайдов для мобильных
+function updateMobileSlides() {
+  const slides = document.querySelectorAll(".carousel-slide");
+  slides.forEach((slide, index) => {
+    if (index === currentCarouselIndex) {
+      slide.classList.add("active");
+      slide.style.display = "flex";
+    } else {
+      slide.classList.remove("active");
+      slide.style.display = "none";
+    }
+  });
+}
+
+// Обновление индикаторов
+function updateIndicators() {
+  const indicators = document.querySelectorAll(".carousel-indicator");
+  indicators.forEach((indicator, index) => {
+    if (index === currentCarouselIndex) {
+      indicator.classList.add("active");
+    } else {
+      indicator.classList.remove("active");
+    }
+  });
+}
+
+// Очистка при размонтировании
+function destroyCarousel() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+
+  // Удаляем обработчик ресайза
+  window.removeEventListener("resize", handleResize);
+}
+
+// Инициализация при загрузке
+document.addEventListener("DOMContentLoaded", function () {
+  initCarousel();
+});
+
+// Очистка при уходе со страницы
+window.addEventListener("beforeunload", destroyCarousel);

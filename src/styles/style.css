@@ -33,7 +33,9 @@ button {
 @font-face {
   font-family: "Arnold BocklinC";
   src: url("../fonts/ArnoldBocklinC.eot");
-  src: url("../fonts/ArnoldBocklinC.eot?#iefix") format("embedded-opentype"), url("../fonts/ArnoldBocklinC.woff2") format("woff2"), url("../fonts/ArnoldBocklinC.woff") format("woff");
+  src: url("../fonts/ArnoldBocklinC.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ArnoldBocklinC.woff2") format("woff2"),
+    url("../fonts/ArnoldBocklinC.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -41,7 +43,9 @@ button {
 @font-face {
   font-family: "Vezitsa";
   src: url("../fonts/VezitsaCyrillic.eot");
-  src: url("../fonts/VezitsaCyrillic.eot?#iefix") format("embedded-opentype"), url("../fonts/VezitsaCyrillic.woff2") format("woff2"), url("../fonts/VezitsaCyrillic.woff") format("woff");
+  src: url("../fonts/VezitsaCyrillic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/VezitsaCyrillic.woff2") format("woff2"),
+    url("../fonts/VezitsaCyrillic.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -49,7 +53,10 @@ button {
 @font-face {
   font-family: "Old Soviet";
   src: url("../fonts/OldSovietRegular.eot");
-  src: url("../fonts/OldSovietRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OldSovietRegular.woff2") format("woff2"), url("../fonts/OldSovietRegular.woff") format("woff"), url("../fonts/OldSovietRegular.ttf") format("truetype");
+  src: url("../fonts/OldSovietRegular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/OldSovietRegular.woff2") format("woff2"),
+    url("../fonts/OldSovietRegular.woff") format("woff"),
+    url("../fonts/OldSovietRegular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -57,7 +64,10 @@ button {
 @font-face {
   font-family: "GNUTypewriter";
   src: url("../fonts/GNUTypewriter.eot");
-  src: url("../fonts/GNUTypewriter.eot?#iefix") format("embedded-opentype"), url("../fonts/GNUTypewriter.woff2") format("woff2"), url("../fonts/GNUTypewriter.woff") format("woff"), url("../fonts/GNUTypewriter.ttf") format("truetype");
+  src: url("../fonts/GNUTypewriter.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/GNUTypewriter.woff2") format("woff2"),
+    url("../fonts/GNUTypewriter.woff") format("woff"),
+    url("../fonts/GNUTypewriter.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -65,7 +75,9 @@ button {
 @font-face {
   font-family: "Ballison";
   src: url("../fonts/Ballison.eot");
-  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"), url("../fonts/Ballison.woff2") format("woff2"), url("../fonts/Ballison.woff") format("woff");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Ballison.woff2") format("woff2"),
+    url("../fonts/Ballison.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -73,7 +85,9 @@ button {
 @font-face {
   font-family: "Ballison";
   src: url("../fonts/Ballison.eot");
-  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"), url("../fonts/Ballison.woff2") format("woff2"), url("../fonts/Ballison.woff") format("woff");
+  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Ballison.woff2") format("woff2"),
+    url("../fonts/Ballison.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -81,7 +95,9 @@ button {
 @font-face {
   font-family: "England";
   src: url("../fonts/EnglandBold-Bold.eot");
-  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EnglandBold-Bold.woff2") format("woff2"), url("../fonts/EnglandBold-Bold.woff") format("woff");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/EnglandBold-Bold.woff2") format("woff2"),
+    url("../fonts/EnglandBold-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -89,7 +105,9 @@ button {
 @font-face {
   font-family: "England";
   src: url("../fonts/EnglandBold-Bold.eot");
-  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EnglandBold-Bold.woff2") format("woff2"), url("../fonts/EnglandBold-Bold.woff") format("woff");
+  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/EnglandBold-Bold.woff2") format("woff2"),
+    url("../fonts/EnglandBold-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -97,7 +115,9 @@ button {
 @font-face {
   font-family: "Maxmillion";
   src: url("../fonts/MaxmillionDEMO.eot");
-  src: url("../fonts/MaxmillionDEMO.eot?#iefix") format("embedded-opentype"), url("../fonts/MaxmillionDEMO.woff2") format("woff2"), url("../fonts/MaxmillionDEMO.woff") format("woff");
+  src: url("../fonts/MaxmillionDEMO.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MaxmillionDEMO.woff2") format("woff2"),
+    url("../fonts/MaxmillionDEMO.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -105,7 +125,10 @@ button {
 @font-face {
   font-family: "Olietta script-Poesia";
   src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot");
-  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Oliettascript-Poesia-BoldItalic.woff2") format("woff2"), url("../fonts/Oliettascript-Poesia-BoldItalic.woff") format("woff");
+  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Oliettascript-Poesia-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Oliettascript-Poesia-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -113,7 +136,9 @@ button {
 @font-face {
   font-family: "Boyarsky";
   src: url("../fonts/ScriptPlain.eot");
-  src: url("../fonts/ScriptPlain.eot?#iefix") format("embedded-opentype"), url("../fonts/ScriptPlain.woff2") format("woff2"), url("../fonts/ScriptPlain.woff") format("woff");
+  src: url("../fonts/ScriptPlain.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ScriptPlain.woff2") format("woff2"),
+    url("../fonts/ScriptPlain.woff") format("woff");
   font-weight: bold;
   font-style: italic;
   font-display: swap;
@@ -121,7 +146,9 @@ button {
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Medium.eot");
-  src: url("../fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  src: url("../fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -129,7 +156,9 @@ button {
 @font-face {
   font-family: "Rubik";
   src: url("../fonts/Rubik-Bold.eot");
-  src: url("../fonts/Rubik-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Rubik-Bold.woff2") format("woff2"), url("../fonts/Rubik-Bold.woff") format("woff");
+  src: url("../fonts/Rubik-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Rubik-Bold.woff2") format("woff2"),
+    url("../fonts/Rubik-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -142,8 +171,8 @@ html {
   max-width: calc(var(--index) * 53);
   margin: 0 auto;
   box-sizing: content-box;
-  background-color: #f0e4e4;
   width: 100%;
+  height: 100%;
 }
 
 .d-none {
@@ -151,35 +180,71 @@ html {
 }
 
 .body-bgr {
-  background-color: #E1EDE6;
+  background-color: #e2dcd2;
 }
 
 .main {
-  background-color: #f0e4e4;
+  background-color: #e2dcd2;
+  position: relative;
 }
 
 .container_main {
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
+  overflow: visible;
 }
 
-.main__left, .main__right {
+.main__left {
+  width: calc(var(--index) * 20);
+  height: calc(var(--index) * 25);
+  width: 50%;
+}
+.main__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sound__wrapper {
+  height: calc(var(--index) * 5);
+  max-width: calc(var(--index) * 10);
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  top: -120px;
+  right: -75%;
+  height: 100px;
+}
+.sound__is {
+  scale: 0.4;
+  position: absolute;
+  right: calc(var(--index) * 4);
+  top: calc(var(--index) * 1);
+  transition: transform 0.3s ease;
+}
+.sound__is.sound-active {
+  transform: scale(0.9);
+}
+.typewriter__wrapper {
   position: relative;
   width: 100%;
 }
-
 .puzzles {
   cursor: url(../../src/images/wrist.webp), pointer;
+  position: relative;
+  height: calc(var(--index) * 16);
+  width: calc(var(--index) * 12);
 }
 
 .puz {
   max-width: calc(var(--index) * 150);
   border-radius: 20%;
-  left: 0;
-  top: 0;
+  left: -4%;
+  top: -6%;
   transform: scale(0.13) translate(-331%, -330%);
   position: absolute;
 }
@@ -297,10 +362,10 @@ html {
 }
 
 .typewriter {
+  width: 100%;
   max-width: calc(var(--index) * 35);
   -o-object-fit: cover;
-     object-fit: cover;
-  position: relative;
+  object-fit: cover;
   cursor: url(../../src/images/wrist.webp), pointer;
 }
 
@@ -311,16 +376,16 @@ html {
 @keyframes move-drop {
   from {
     transition: all 0.8s ease 0s;
-    transform: translate(800%, -1300%);
+    transform: translate(-500%, -1300%);
   }
   to {
-    transform: translate(800%, 2100%);
+    transform: translate(-500%, 3000%);
   }
 }
 .drop {
   position: absolute;
   max-width: calc(var(--index) * 2);
-  transform: translate(800%, -1300%);
+  transform: translate(-500%, -1300%);
   opacity: 0;
   z-index: 10;
 }
@@ -336,15 +401,17 @@ html {
 }
 
 .box-text {
+  width: 100%;
+  max-width: calc(var(--index) * 15);
   font-family: "GNUTypewriter";
   font-weight: 600;
   color: #300d0d;
   line-height: 1.2;
-  font-size: calc(var(--index) * 0.6);
+  font-size: calc(var(--index) * 0.5);
   position: absolute;
   top: calc(var(--index) * 10.5);
-  left: calc(var(--index) * 20);
-  transform: rotate(9deg) translate(-50%, -50%);
+  left: calc(var(--index) * 19.5);
+  transform: rotate(10deg) translate(-50%, -50%);
 }
 
 .fade-in {
@@ -361,42 +428,27 @@ html {
   position: absolute;
   max-width: calc(var(--index) * 7);
   right: 0;
-  top: -22%;
+  top: 0;
   cursor: url(../../src/images/wrist.webp), pointer;
 }
 
-@media (max-width: 700px) {
-  .container_main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .main__right, .main__left {
-    top: 0;
-    left: 0;
-    max-width: calc(var(--index) * 15);
-  }
-  .main__right {
-    top: 400px;
-  }
-}
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #f0e4e4;
+  background-color: #e2dcd2;
 }
 
 .container_header {
   overflow: hidden;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .header__content {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   background-color: #543d3d;
   padding: 15px;
-  display: flex;
 }
 
 .header__content-black {
@@ -418,7 +470,7 @@ html {
 }
 
 .ink_flow {
-  max-width: calc(var(--index) * 53);
+  width: 100%;
   transition: 3s;
   opacity: 0;
 }
@@ -452,10 +504,56 @@ html {
 
 .links {
   cursor: url(../../src/images/wrist.webp), pointer;
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* эффект дрожания для кнопок в хэдере */
+.links:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Ключевые кадры для анимации дрожания */
+@keyframes shake {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  10% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  20% {
+    transform: translateX(1px) translateY(1px);
+  }
+  30% {
+    transform: translateX(-1px) translateY(0);
+  }
+  40% {
+    transform: translateX(1px) translateY(-1px);
+  }
+  50% {
+    transform: translateX(-1px) translateY(1px);
+  }
+  60% {
+    transform: translateX(1px) translateY(0);
+  }
+  70% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  80% {
+    transform: translateX(1px) translateY(1px);
+  }
+  90% {
+    transform: translateX(-1px) translateY(0);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
 }
 
 .cards {
-  background-color: #f0e4e4;
+  padding-top: 100px;
+  background-color: #e2dcd2;
+  height: auto;
 }
 
 .manuscripts {
@@ -465,18 +563,16 @@ html {
 }
 
 .cover {
-  min-height: 400px;
+  min-height: 600px;
   position: relative;
 }
 
 .card {
-  width: 80%;
+  width: 100%;
   height: 80%;
   box-shadow: 3px 3px 5px #333;
   position: absolute;
   transition: all ease 5s;
-  left: 10%;
-  top: 15%;
   max-width: calc(var(--index) * 28);
 }
 
@@ -498,6 +594,132 @@ html {
   font-size: calc(var(--index) * 0.7);
 }
 
+/* Стили для карусели */
+.carusel {
+  background-image: url(../images/Carousel.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(var(--index) * 28);
+  min-height: 300px;
+  background-color: #e2dcd2; /* Fallback цвет если картинка не загрузится */
+  position: relative;
+  padding: 60px 0;
+}
+
+.carusel__wrapper {
+  width: 100%;
+  padding-top: 110px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  cursor: grab;
+  min-height: 400px;
+  gap: 30px;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px 10px rgb(234, 238, 173);
+  /*box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+}
+
+/* Центральный слайд - большой */
+.carousel-slide.active {
+  width: 550px;
+  height: auto;
+  transform: scale(1);
+  z-index: 3;
+    cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Боковые слайды - меньшие */
+.carousel-slide.side {
+  width: 450px;
+  height: auto;
+  transform: scale(0.9);
+  opacity: 0.9;
+  z-index: 2;
+    cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Свечение вокруг слайдов */
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(
+    45deg,
+    #ffd700,
+    #ffed4e,
+    #fff9c4,
+    #ffed4e,
+    #ffd700
+  );
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(15px);
+}
+
+.carousel-slide.active::before {
+  opacity: 0.6;
+}
+
+.carousel-slide.side::before {
+  opacity: 0.3;
+}
+
+/* Изображения внутри слайдов */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid white;
+}
+
+/* Анимация при перетаскивании */
+.carousel-track.dragging {
+  transition: none;
+}
+
+/* Футер */
 .footer {
   background-color: #543d3d;
 }
@@ -520,6 +742,7 @@ html {
   font-family: "Maxmillion";
   color: #300d0d;
   font-size: calc(var(--index) * 1.2);
+  cursor: url(../../src/images/wrist.webp), pointer;
 }
 
 .feather {
@@ -558,6 +781,7 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   gap: calc(var(--index) * 0.8);
+  margin-top: 15px;
 }
 
 .icon {
@@ -594,6 +818,9 @@ html {
   max-width: calc(var(--index) * 2);
 }
 
+.info_tel {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
 .icon_contacts {
   max-width: calc(var(--index) * 1.5);
   border: none;
@@ -612,6 +839,7 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.8s ease 0s;
+  z-index: 10;
 }
 
 .popup__body {
@@ -634,7 +862,7 @@ html {
 
 .popup__content {
   color: black;
-  max-width: calc(var(--index) * 15);
+  max-width: calc(var(--index) * 20);
   width: 100%;
   padding: 30px;
   position: relative;
@@ -656,10 +884,11 @@ html {
 }
 
 .popup__img {
+  width: 100%;
   position: absolute;
   max-width: 500px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -675,13 +904,15 @@ html {
 }
 
 .popup__close_whatsApp {
+  width: 100%;
   position: absolute;
   top: -150%;
-  left: 90%;
+  left: 77%;
   font-family: "Boyarsky";
   font-size: calc(var(--index) * 0.8);
   color: #300d0d;
   cursor: url(../../src/images/wrist.webp), pointer;
+  max-width: calc(var(--index) * 20);
 }
 
 .input_whatsApp {
@@ -711,8 +942,8 @@ html {
 
 .popup__close_telegram {
   position: absolute;
-  top: -156%;
-  left: 86%;
+  top: -170%;
+  left: 90%;
   font-family: "Rubik";
   font-size: calc(var(--index) * 0.8);
   color: #300d0d;
@@ -724,7 +955,7 @@ html {
 }
 
 .input_telegram {
-  width: calc(var(--index) * 15);
+  width: calc(var(--index) * 14);
   padding: 5px;
   margin-top: 40px;
   font-family: "Rubik";
@@ -747,12 +978,21 @@ html {
 .popup__btn_telegram {
   font-family: "Rubik";
   font-size: calc(var(--index) * 1);
-  color: #300d0d;
+  color: #5f1d1d;
   cursor: url(../../src/images/wrist.webp), pointer;
 }
 
 .popup__content_vkontakte {
+  width: 100%;
   background-color: #fff;
+  height: calc(var(--index) * 15);
+  max-width: calc(var(--index) * 20);
+}
+
+.popup__wraper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .popup__close_vkontakte {
@@ -771,7 +1011,7 @@ html {
 
 .popup__text {
   font-family: "Rubik";
-  font-size: calc(var(--index) * 0.9);
+  font-size: calc(var(--index) * 1);
   color: #300d0d;
 }
 
@@ -782,7 +1022,7 @@ html {
   visibility: hidden;
   max-width: calc(var(--index) * 20);
   margin: 0 auto;
-  transform: perspective(600px) translate(0px, 0px);
+  transform: perspective(600px) translate(0px, -100px);
 }
 
 .img__move {
@@ -829,7 +1069,7 @@ html {
   max-width: calc(var(--index) * 40);
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -856,4 +1096,952 @@ html {
   color: #300d0d;
   font-size: calc(var(--index) * 0.6);
   z-index: 5;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* Бургер-меню и всплывающий список */
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.burger-icon {
+  max-width: calc(var(--index) * 6);
+  width: 100%;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(84, 61, 61, 0.95);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__content {
+  background-color: #543d3d;
+  padding: 40px 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.open .mobile-menu__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 1.4);
+  color: #300d0d;
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.mobile-link {
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  border: none;
+  background: none;
+}
+
+.mobile-link .btn-img {
+  max-width: calc(var(--index) * 12);
+}
+
+.mobile-link .btn-txt {
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 1.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #300d0d;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 575px) {
+  .header__content-links {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .container_header {
+    justify-content: space-between;
+  }
+
+  .header__content-img {
+    flex: 1;
+  }
+}
+
+/* МЕДИАЗАПРОСЫ */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .main {
+    height: 1400px;
+  }
+  .container {
+    max-width: 2000px;
+    padding: 0 40px;
+  }
+
+  .container_main {
+    gap: 40px;
+    justify-content: space-around;
+    align-items: top;
+    height: 70vh;
+  }
+
+  .header__content {
+    padding: 25px;
+  }
+
+  .main__right {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .main__left {
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 28);
+  }
+
+  .puz {
+    max-width: calc(var(--index) * 250);
+    border-radius: 20%;
+    left: 0;
+    top: 0;
+    transform: scale(0.17) translate(-217%, -229%);
+    position: absolute;
+  }
+
+  .typewriter__wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .typewriter {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    scale: 1.2;
+  }
+
+  .box-text {
+    width: 500px;
+    font-size: 18.5px;
+    top: 273px;
+    left: 587px;
+  }
+
+  .sound__is {
+    scale: 0.7;
+    right: calc(var(--index) * 6);
+    top: calc(var(--index) * 2);
+  }
+
+  .control-sound {
+    max-width: 250px;
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-100%, -1300%);
+    }
+    to {
+      transform: translate(-100%, 3500%);
+    }
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-100%, -1300%);
+    opacity: 0;
+    z-index: 10;
+  }
+  .main__right {
+    justify-content: flex-start;
+  }
+  .sound__wrapper {
+    top: -250px;
+  }
+  .typewriter__wrapper {
+    top: 10%;
+  }
+  .typewriter {
+    top: 0;
+  }
+
+  .cover {
+    min-height: 800px;
+  }
+  .card {
+    width: 100%;
+    height: 80%;
+  }
+  .carusel {
+    padding: 110px 0;
+  }
+  .carousel-track {
+    gap: 100px;
+  }
+  .carousel-slide.side {
+    transform: scale(1.2);
+  }
+  .carousel-slide.active {
+    width: 650px;
+    transform: scale(1);
+  }
+  .social {
+    margin-top: 15px;
+  }
+
+  .popup__content {
+    max-width: calc(var(--index) * 20);
+    max-width: 640px;
+  }
+  .popup__img {
+    width: 100%;
+    max-width: 600px;
+  }
+  .input_telegram {
+    width: calc(var(--index) * 18);
+    font-size: calc(var(--index) * 0.5);
+    max-width: 580px;
+  }
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.55);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.55);
+    color: #300d0d;
+  }
+  .popup__close_telegram {
+    top: -257%;
+    left: 90%;
+  }
+  .popup__content_vkontakte {
+    height: calc(var(--index) * 15);
+  }
+}
+
+/* Адаптив для экранов 1200 - 1919 */
+
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .header__content {
+    padding: 25px;
+  }
+  .main {
+    height: calc(var(--index) * 40);
+  }
+  .main__right,
+  .main__left {
+    width: 50%;
+  }
+  .typewriter__wrapper {
+    top: 10%;
+    width: auto;
+  }
+  .typewriter {
+    scale: 1.4;
+  }
+  .box-text {
+    font-size: calc(var(--index) * 0.52);
+    top: calc(var(--index) * 5.5);
+    left: calc(var(--index) * 15);
+  }
+  .puz {
+    transform: scale(0.13) translate(-326%, -330%);
+  }
+  .sound__wrapper {
+    right: -75%;
+  }
+  .sound__is {
+    right: 8vw;
+    top: 20%;
+  }
+  .cover {
+    min-height: 500px;
+  }
+  .card {
+    width: 100%;
+  }
+  .manuscripts {
+    padding-top: 0;
+  }
+  .carusel {
+    padding: calc(var(--index) * 3) 0;
+    height: calc(var(--index) * 35);
+  }
+  .carousel-track {
+    gap: 30px;
+  }
+  .carousel-slide.side {
+    width: calc(var(--index) * 15);
+  }
+  .carousel-slide.active {
+    width: calc(var(--index) * 18);
+    transform: scale(1);
+  }
+  .popup__content {
+    max-width: calc(var(--index) * 20);
+    height: calc(var(--index) * 15);
+  }
+  .popup__img {
+    max-width: calc(var(--index) * 20);
+  }
+  .input_telegram {
+    width: calc(var(--index) * 18);
+  }
+  .popup__close_telegram {
+    top: 8%;
+    left: 93%;
+  }
+  .form_telegram {
+    margin-top: calc(var(--index) * 7);
+  }
+  .form {
+    gap: 10px;
+  }
+  .popup__close_whatsApp {
+    top: 15%;
+    left: 80%;
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .container_main {
+    overflow: visible;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__content {
+    padding: 20px;
+  }
+  .main__left,
+  .main__right {
+    width: 100%;
+  }
+  .main__left {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--index) * 26);
+  }
+
+  .cards {
+    overflow: visible;
+  }
+  .puz {
+    transform: scale(0.12) translate(-369%, -366%);
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-400%, -3500%);
+    }
+    to {
+      transform: translate(-400%, 2200%);
+    }
+  }
+  .puzzles {
+    height: calc(var(--index) * 22);
+    width: calc(var(--index) * 17);
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-400%, -3500%);
+    opacity: 0;
+    z-index: 10;
+  }
+  .typewriter {
+    max-width: calc(var(--index) * 38);
+  }
+  .sound__wrapper {
+    right: -69%;
+    top: -68px;
+    height: calc(var(--index) * 2);
+    max-width: 200px;
+  }
+  .typewriter__wrapper {
+    top: 50%;
+    right: 0;
+    width: auto;
+  }
+
+  .box-text {
+    font-size: calc(var(--index) * 0.54);
+    top: calc(var(--index) * 11.2);
+    left: calc(var(--index) * 20.5);
+  }
+  .sound__is {
+    right: 30px;
+    scale: 0.3;
+    top: calc(var(--index) * -2);
+  }
+  .cover {
+    min-height: 400px;
+  }
+  .card {
+    width: 100%;
+    height: 80%;
+  }
+  .manuscripts {
+    padding-top: 0;
+  }
+  .carusel {
+    padding: calc(var(--index) * 1) 0;
+    height: calc(var(--index) * 35);
+  }
+  .carousel-track {
+    gap: 15x;
+  }
+  .carousel-slide {
+    box-shadow: 0px 0px 12px 7px rgb(234, 238, 173);
+  }
+  .carousel-slide.side {
+    width: calc(var(--index) * 12);
+  }
+  .carousel-slide.active {
+    width: calc(var(--index) * 15);
+    transform: scale(1);
+  }
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 9);
+  }
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+  }
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+  .popup__close_telegram {
+    top: 6%;
+    left: 93%;
+  }
+  .popup__close_whatsApp {
+    top: 15%;
+    left: 80%;
+  }
+  .popup__message {
+    top: 158px;
+  }
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 85%;
+  }
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.85);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.85);
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .header__content-links {
+    gap: 10px;
+  }
+  .container_main {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__left {
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 21);
+    width: 100%;
+  }
+  .main__right {
+    width: 100%;
+  }
+  .main__left {
+    display: flex;
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 26);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .sound__is {
+    scale: 0.25;
+    right: calc(var(--index) * -1);
+    top: calc(var(--index) * -3);
+  }
+  .sound__wrapper {
+    top: -80px;
+    right: -48%;
+    height: 3px;
+  }
+  .puz {
+    transform: scale(0.1) translate(-450%, -456%);
+  }
+  .typewriter__wrapper {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-500%, -3300%);
+    }
+    to {
+      transform: translate(-500%, 2000%);
+    }
+  }
+
+  .box-text {
+    top: calc(var(--index) * 10.5);
+    left: calc(var(--index) * 19.5);
+  }
+
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-500%, -3300%);
+    opacity: 0;
+    z-index: 10;
+  }
+  .cards {
+    padding-top: 50px;
+  }
+  .manuscripts {
+    padding-top: 0;
+  }
+  .cover {
+    min-height: 400px;
+  }
+  .card {
+    scale: 0.7;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .carusel {
+    padding-top: 0;
+    height: calc(var(--index) * 30);
+  }
+  .carousel-track {
+    gap: 5px;
+    height: auto;
+    min-height: 0;
+  }
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+  .carousel-slide {
+    box-shadow: 0px 0px 10px 3px rgb(234, 238, 173);
+    /*box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color]; */
+  }
+  .carousel-slide.side {
+    height: auto;
+    width: calc(var(--index) * 12);
+  }
+  .carousel-slide.active {
+    height: auto;
+    width: calc(var(--index) * 15);
+  }
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 9);
+  }
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+  }
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+  .popup__close_telegram {
+    top: 6%;
+    left: 93%;
+  }
+  .popup__close_whatsApp {
+    top: 15%;
+    left: 80%;
+  }
+  .popup__message {
+    transform: perspective(600px) translate(0px, -200px);
+  }
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+
+@media (max-width: 575px) {
+  .container_main,
+  .main {
+    overflow: visible;
+  }
+  .container_main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .header__content {
+    padding: 10px;
+  }
+  .header__content-links {
+    gap: 10px;
+  }
+  .sound__wrapper {
+    max-width: 100px;
+    top: -37px;
+    right: -67%;
+    height: 40px;
+  }
+  .sound__is {
+    scale: 0.2;
+    right: -40px;
+    top: -60px;
+  }
+  .control-sound {
+    max-width: 80px;
+  }
+  .main__left {
+    left: -22px;
+    height: calc(var(--index) * 20);
+  }
+  .puz {
+    transform: scale(0.1) translate(-435%, -442%);
+  }
+  .typewriter__wrapper {
+    width: auto;
+  }
+  .typewriter {
+    max-width: calc(var(--index) * 31);
+  }
+  .box-text {
+    max-width: calc(var(--index) * 15);
+    font-size: calc(var(--index) * 0.47);
+    top: calc(var(--index) * 9.7);
+    left: calc(var(--index) * 17.7);
+  }
+  .manuscripts {
+    padding-top: 0;
+  }
+  .cover {
+    display: flex;
+    min-height: 300px;
+    justify-content: center;
+  }
+  .cards {
+    padding-top: 80px;
+  }
+  .card {
+    width: 65%;
+    height: 100%;
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-500%, -3100%);
+    }
+    to {
+      transform: translate(-500%, 2500%);
+    }
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-500%, -3100%);
+    opacity: 0;
+    z-index: 10;
+  }
+  .carusel {
+    padding: 40px 0;
+    height: auto;
+    min-height: 250px;
+  }
+  .carousel-container {
+    display: block;
+  }
+  .carusel__wrapper {
+    padding-top: 0;
+  }
+
+  .carousel-track {
+    min-height: 250px;
+    gap: 0;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* На мобильных показываем только один активный слайд */
+  .carousel-slide {
+    width: 210px !important;
+    height: auto !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    display: none;
+  }
+
+  .carousel-slide.active {
+    display: flex;
+    width: 210px !important;
+    height: auto !important;
+    transform: scale(1) !important;
+  }
+
+  /* Скрываем боковые слайды на мобильных */
+  .carousel-slide.side {
+    display: none;
+  }
+
+  .carousel-image {
+    border: 3px solid white;
+  }
+
+  /* Уменьшаем свечение на мобильных */
+  .carousel-slide::before {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    filter: blur(8px);
+  }
+
+  /* Адаптация кнопок для мобильных */
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20%;
+    object-fit: cover;
+    z-index: 10;
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+  }
+
+  .carousel-btn img.arrow-icon {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+  }
+  .carousel-btn:hover,
+  .carousel-btn:focus,
+  .carousel-btn:active {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  /* Индикаторы для мобильных */
+  /* .carousel-indicators {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+  }
+
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+  } */
+
+  .contacts__info {
+    gap: 5px;
+  }
+  .container_footer {
+    padding-bottom: 10px;
+  }
+  .footer__right {
+    margin-top: 10px;
+    gap: 5px;
+    padding-right: 10px;
+    flex-direction: column-reverse;
+  }
+  .footer__left {
+    padding-left: 10px;
+  }
+  .icon {
+    max-width: calc(var(--index) * 1.1);
+  }
+  .social {
+    padding-left: 5px;
+  }
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 8);
+  }
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+    padding: 2px;
+  }
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+  .popup__close_telegram {
+    top: 6%;
+    left: 93%;
+  }
+  .popup__text {
+    font-size: calc(var(--index) * 1.2);
+  }
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+}

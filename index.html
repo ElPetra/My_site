@@ -11,10 +11,28 @@
       href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+    <!--Фавикон-->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/images/result/pero32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/images/pero16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./src/images/result/pero32.png"
+    />
   </head>
   <header class="header">
-    <div class="container container_header">
-      <div class="header__content">
+    <div class="header__content">
+      <div class="container container_header">
         <div class="header__content-img">
           <img src="./src/images/ink_bottle.webp" alt="" class="ink-bottle" />
         </div>
@@ -26,13 +44,25 @@
             </a>
           </button>
           <button class="header-link" disabled>
-            <img class="btn-img" src="./src/images/btn.webp" />
-            <p class="btn-txt portfolio">Портфолио</p>
+            <a class="links" href="./portfolio.pdf" target="_blank">
+              <img class="btn-img" src="./src/images/btn.webp" />
+              <p class="btn-txt portfolio">Портфолио</p>
+            </a>
           </button>
           <button class="header-link" disabled>
             <a class="links" href="./resume.pdf" target="_blank">
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Резюме</p>
+            </a>
+          </button>
+          <button class="header-link" disabled>
+            <a
+              class="links"
+              href="./сертификаты/all certificates.pdf"
+              target="_blank"
+            >
+              <img class="btn-img" src="./src/images/btn.webp" />
+              <p class="btn-txt">Дипломы</p>
             </a>
           </button>
           <button
@@ -50,9 +80,52 @@
           <p class="btn-txt">Брось монетку</p>
         </button> -->
         </div>
-      </div>
-      <img src="./src/images/ink-flow.webp" alt="" class="ink_flow" />
+        <!-- Бургер-меню для мобильных -->
+<div class="burger-menu" id="burgerMenu">
+  <img src="./src/images/books_old.webp" alt="Меню" class="burger-icon">
+</div>
+
+<!-- Мобильное меню -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu__content">
+    <button class="mobile-menu__close" id="mobileMenuClose">Х</button>
+    <div class="mobile-menu__links">
+      <button class="mobile-link">
+        <a class="links" href="./about_me.pdf" target="_blank">
+          <img class="btn-img" src="./src/images/btn.webp" />
+          <p class="btn-txt">Обо мне</p>
+        </a>
+      </button>
+      <button class="mobile-link">
+        <a class="links" href="./portfolio.pdf" target="_blank">
+          <img class="btn-img" src="./src/images/btn.webp" />
+          <p class="btn-txt portfolio">Портфолио</p>
+        </a>
+      </button>
+      <button class="mobile-link">
+        <a class="links" href="./resume.pdf" target="_blank">
+          <img class="btn-img" src="./src/images/btn.webp" />
+          <p class="btn-txt">Резюме</p>
+        </a>
+      </button>
+      <button class="mobile-link">
+        <a class="links" href="./src/sertificates/all-certificates.pdf" target="_blank">
+          <img class="btn-img" src="./src/images/btn.webp" />
+          <p class="btn-txt">Дипломы</p>
+        </a>
+      </button>
+      <button class="mobile-link">
+        <a class="links" href="#contacts">
+          <img class="btn-img" src="./src/images/btn.webp" />
+          <p class="btn-txt">Контакты</p>
+        </a>
+      </button>
     </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <img src="./src/images/ink-flow.webp" alt="" class="ink_flow" />
     <div class="popup" id="portfolioPopup">
       <div class="popup__body">
         <div class="popup__content_portfolio">
@@ -151,6 +224,11 @@
   </header>
   <body>
     <section class="main">
+      <!-- <button class="btn__control-sound"> -->
+      <div class="sound__wrapper">
+        <img class="sound__is" src="./src/images/sound_is.png" />
+        <img class="control-sound" src="./src/images/sound.webp" />
+      </div>
       <div class="container_main container">
         <div class="main__left">
           <div class="puzzles">
@@ -168,32 +246,43 @@
           </div>
         </div>
         <div class="main__right">
-          <!-- <button class="btn__control-sound"> -->
-          <img class="control-sound" src="./src/images/sound.webp" />
           <!-- </button> -->
           <img class="drop" src="./src/images/drop2.webp" />
-          <img
-            class="typewriter"
-            src="./src/images/typewriter_new.webp"
-            id="typewriter"
-          />
-          <div class="box-text d-none">
-            <p class="print-text">Приветствую Вас на моей страничке!</p>
-            <p class="print-text">Меня зовут Елена. Я начинающий</p>
-            <p class="print-text">frontend-разработчик. Я инженер и</p>
-            <p class="print-text">по складу ума, и по специальности.</p>
-            <p class="print-text">20 лет работаю в сфере геодезии и</p>
-            <p class="print-text">картографии. &#128301; Пройдя путь от</p>
-            <p class="print-text">техника-картографа до технического</p>
-            <p class="print-text">директора, я решила, что пора</p>
-            <p class="print-text">осваивать новые просторы и брать</p>
-            <p class="print-text">новые вершины &#128507; В настоящее время</p>
-            <p class="print-text">я закончила учиться в offline-</p>
-            <p class="print-text">школе. Мною изучены и освоены</p>
-            <p class="print-text">HTML, CSS, Sass, GIT,</p>
-            <p class="print-text">
-              JavaScript, React. И это только начало... &#128521;
-            </p>
+          <div class="typewriter__wrapper">
+            <img
+              class="typewriter"
+              src="./src/images/typewriter_new.webp"
+              id="typewriter"
+            />
+            <div class="box-text d-none">
+              <p class="print-text">Приветствую Вас на моей страничке!</p>
+              <p class="print-text">
+                Меня зовут Елена. Я frontend-разработчик.
+              </p>
+              <p class="print-text">Я инженер и по складу ума, и по</p>
+              <p class="print-text">специальности. 20 лет отработала в сфере</p>
+              <p class="print-text">
+                геодезии и картографии. &#128301; Пройдя путь
+              </p>
+              <p class="print-text">от техника-картографа до технического</p>
+              <p class="print-text">директора, я решила, что пора</p>
+              <p class="print-text">осваивать новые просторы и брать</p>
+              <p class="print-text">
+                новые вершины &#128507; Я училась в offline-
+              </p>
+              <p class="print-text">школе, проходила стажировки, прошла</p>
+              <p class="print-text">
+                профессиональную переподготовку в Финансовом
+              </p>
+              <p class="print-text">
+                университете и продолжаю учиться дальше...
+              </p>
+              <p class="print-text">Мой стек сейчас: HTML, CSS, Sass, GIT,</p>
+              <p class="print-text">JavaScript, React, Typescript.</p>
+              <p class="print-text">И это только начало... &#128521;</p>
+              <p class="print-text">Если вы хотите сотрудничать, напишите</p>
+              <p class="print-text">мне в WhatsApp, telegram или email</p>
+            </div>
           </div>
         </div>
       </div>
@@ -209,56 +298,58 @@
         <div class="manuscripts">
           <div class="cover"></div>
         </div>
-        <div class="popup" id="whatsApp">
-          <div class="popup__body">
-            <div class="popup__content">
-              <img class="popup__img" src="./src/images/pergament.webp" />
-              <a href="" class="popup__close_whatsApp close-popup">X</a>
-              <form action="#" class="form form_whatsApp" method="POST">
-                <input
-                  class="input_whatsApp"
-                  type="text"
-                  placeholder="Напишите Ваше предложение о сотрудничестве ;)"
-                />
-                <button class="popup__btn_whatsApp" type="submit">
-                  Отправить
-                </button>
-              </form>
-            </div>
+      </div>
+      <div class="popup" id="whatsApp">
+        <div class="popup__body">
+          <div class="popup__content">
+            <img class="popup__img" src="./src/images/pergament.webp" />
+            <a href="" class="popup__close_whatsApp close-popup">X</a>
+            <form action="#" class="form form_whatsApp" method="POST">
+              <input
+                class="input_whatsApp"
+                type="text"
+                placeholder="Напишите Ваше предложение о сотрудничестве ;)"
+              />
+              <button class="popup__btn_whatsApp" type="submit">
+                Отправить
+              </button>
+            </form>
           </div>
         </div>
-        <div class="popup" id="telegram">
-          <div class="popup__body">
-            <div class="popup__content">
-              <img class="popup__img" src="./src/images/telegr.webp" />
-              <a href="" class="popup__close_telegram close-popup">X</a>
-              <form action="#" class="form form_telegram" method="POST">
-                <input
-                  class="input_telegram"
-                  type="text"
-                  placeholder="Напишите Ваше предложение о сотрудничестве ;)"
-                />
-                <button class="popup__btn_telegram" type="submit">
-                  Отправить
-                </button>
-              </form>
-            </div>
+      </div>
+      <div class="popup" id="telegram">
+        <div class="popup__body">
+          <div class="popup__content">
+            <img class="popup__img" src="./src/images/telegr.webp" />
+            <a href="" class="popup__close_telegram close-popup">X</a>
+            <form action="#" class="form form_telegram" method="POST">
+              <input
+                class="input_telegram"
+                type="text"
+                placeholder="Напишите Ваше предложение о сотрудничестве ;)"
+              />
+              <button class="popup__btn_telegram" type="submit">
+                Отправить
+              </button>
+            </form>
           </div>
         </div>
-        <div class="popup__message" id="telegram-move">
-          <div class="popup__move__content">
-            <img class="img__move" src="./src/images/telegram-go.png" />
-          </div>
+      </div>
+      <div class="popup__message" id="telegram-move">
+        <div class="popup__move__content">
+          <img class="img__move" src="./src/images/telegram-go.png" />
         </div>
-        <div class="popup__message" id="whatsApp-move">
-          <div class="popup__move__content">
-            <img class="img__move" src="./src/images/letters.gif" />
-          </div>
+      </div>
+      <div class="popup__message" id="whatsApp-move">
+        <div class="popup__move__content">
+          <img class="img__move" src="./src/images/letters.gif" />
         </div>
-        <div class="popup" id="vkontakte">
-          <div class="popup__body">
-            <div class="popup__content popup__content_vkontakte">
-              <a href="" class="popup__close_vkontakte close-popup">X</a>
+      </div>
+      <div class="popup" id="vkontakte">
+        <div class="popup__body">
+          <div class="popup__content popup__content_vkontakte">
+            <a href="" class="popup__close_vkontakte close-popup">X</a>
+            <div class="popup__wraper">
               <img class="popup__img_vkontakte" src="./src/images/fig.webp" />
               <p class="popup__text">Privat life! &#128521;</p>
             </div>
@@ -267,12 +358,25 @@
       </div>
     </section>
 
+    <section class="carusel">
+      <div class="container">
+        <div class="carusel__wrapper">
+<div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Слайды будут добавляться через JavaScript -->
+        </div>
+      </div>
+        </div>
+      </div>
+    </section>
+
+
     <footer class="footer">
       <div class="container container_footer">
         <div class="footer__left">
-          <p class="logo">
+          <a class="logo" href="https://github.com/ElPetra" target="_blank">
             Elpetra<img class="feather" src="./src/images/feather.webp" />
-          </p>
+          </a>
         </div>
         <div class="footer__middle">
           <p class="thanks">Спасибо за просмотр!</p>
@@ -315,6 +419,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./script2.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
