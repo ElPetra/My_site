@@ -801,6 +801,7 @@ function createNavigationButtons() {
 
   // Создаем кнопки только для мобильных
   if (isMobile) {
+    
     const prevBtn = document.createElement("button");
     prevBtn.className = "carousel-btn prev";
     prevBtn.innerHTML =
