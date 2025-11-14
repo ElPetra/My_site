@@ -1,33 +1,37 @@
 .cards {
-  background-color: #f0e4e4;
+  padding-top: 100px;
+  background-color: #e2dcd2;
+  height: auto;
 }
+
 .manuscripts {
   max-width: calc(var(--index) * 30);
   margin: 0 auto;
   padding-top: 100px;
-  // padding-bottom: 100px;
 }
+
 .cover {
-  // border: 1px solid grey;
-  min-height: 400px;
+  min-height: 600px;
   position: relative;
 }
+
 .card {
-  width: 80%;
+  width: 100%;
   height: 80%;
   box-shadow: 3px 3px 5px #333;
   position: absolute;
   transition: all ease 5s;
-  left: 10%;
-  top: 15%;
   max-width: calc(var(--index) * 28);
 }
+
 .go {
   left: -999999px;
 }
+
 .cardInside {
   position: relative;
 }
+
 .link {
   position: absolute;
   top: 50px;
@@ -36,4 +40,97 @@
   color: #300d0d;
   cursor: url(../../src/images/wrist.webp), pointer;
   font-size: calc(var(--index) * 0.7);
+}
+
+/* МЕДИАЗАПРОСЫ ДЛЯ CARDS SECTION */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .cover {
+    min-height: 800px;
+  }
+
+  .card {
+    width: 100%;
+    height: 80%;
+  }
+}
+
+/* Адаптив для экранов 1200 - 1919 */
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .cover {
+    min-height: 500px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .manuscripts {
+    padding-top: 0;
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .cards {
+    overflow: visible;
+  }
+
+  .cover {
+    min-height: 400px;
+  }
+
+  .card {
+    width: 100%;
+    height: 80%;
+  }
+
+  .manuscripts {
+    padding-top: 0;
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+@media (max-width: 767px) and (min-width: 576px) {
+  .cards {
+    padding-top: 50px;
+  }
+
+  .manuscripts {
+    padding-top: 0;
+  }
+
+  .cover {
+    min-height: 400px;
+  }
+
+  .card {
+    scale: 0.7;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  .manuscripts {
+    padding-top: 0;
+  }
+
+  .cover {
+    display: flex;
+    min-height: 300px;
+    justify-content: center;
+  }
+
+  .cards {
+    padding-top: 80px;
+  }
+
+  .card {
+    width: 65%;
+    height: 100%;
+  }
 }

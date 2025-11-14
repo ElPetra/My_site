@@ -1,0 +1,385 @@
+/* Стили для карусели сертификатов */
+.carusel {
+  background-image: url(../images/Carousel.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: calc(var(--index) * 28);
+  min-height: 300px;
+  background-color: #e2dcd2; /* Fallback цвет если картинка не загрузится */
+  position: relative;
+  padding: 60px 0;
+}
+
+.carusel__wrapper {
+  width: 100%;
+  padding-top: 110px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  cursor: grab;
+  min-height: 400px;
+  gap: 30px;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px 10px rgb(234, 238, 173);
+}
+
+/* Центральный слайд - большой */
+.carousel-slide.active {
+  width: 550px;
+  height: auto;
+  transform: scale(1);
+  z-index: 3;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Боковые слайды - меньшие */
+.carousel-slide.side {
+  width: 450px;
+  height: auto;
+  transform: scale(0.9);
+  opacity: 0.9;
+  z-index: 2;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Свечение вокруг слайдов */
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(
+    45deg,
+    #ffd700,
+    #ffed4e,
+    #fff9c4,
+    #ffed4e,
+    #ffd700
+  );
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(15px);
+}
+
+.carousel-slide.active::before {
+  opacity: 0.6;
+}
+
+.carousel-slide.side::before {
+  opacity: 0.3;
+}
+
+/* Изображения внутри слайдов */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid white;
+}
+
+/* Анимация при перетаскивании */
+.carousel-track.dragging {
+  transition: none;
+}
+
+/* Кнопки навигации карусели */
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  position: absolute;
+  bottom: 20%;
+  object-fit: cover;
+  z-index: 10;
+  background: transparent; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.carousel-btn img.arrow-icon {
+  width: 100%; 
+  height: 100%;
+  object-fit: contain; 
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus,
+.carousel-btn:active {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Индикаторы карусели */
+// .carousel-indicators {
+//   position: absolute;
+//   bottom: 40%;
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-direction: row;
+// }
+
+// .carousel-indicator {
+//   width: 8px;
+//   height: 8px;
+//   background: #ccc;
+//   border-radius: 50%;
+//   cursor: pointer;
+// }
+
+// .carousel-indicator.active {
+//   background: #ffd700;
+// }
+
+/* МЕДИАЗАПРОСЫ ДЛЯ SLIDER/CAROUSEL */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .carusel {
+    padding: 110px 0;
+  }
+
+  .carousel-track {
+    gap: 100px;
+  }
+
+  .carousel-slide.side {
+    transform: scale(1.2);
+  }
+
+  .carousel-slide.active {
+    width: 650px;
+    transform: scale(1);
+  }
+}
+
+/* Адаптив для экранов 1200 - 1919 */
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .carusel {
+    padding: calc(var(--index) * 3) 0;
+    height: calc(var(--index) * 35);
+  }
+
+  .carousel-track {
+    gap: 30px;
+  }
+
+  .carousel-slide.side {
+    width: calc(var(--index) * 15);
+  }
+
+  .carousel-slide.active {
+    width: calc(var(--index) * 18);
+    transform: scale(1);
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .carusel {
+    padding: calc(var(--index) * 1) 0;
+    height: calc(var(--index) * 35);
+  }
+
+  .carousel-track {
+    gap: 15x;
+  }
+
+  .carousel-slide {
+    box-shadow: 0px 0px 12px 7px rgb(234, 238, 173);
+  }
+
+  .carousel-slide.side {
+    width: calc(var(--index) * 12);
+  }
+
+  .carousel-slide.active {
+    width: calc(var(--index) * 15);
+    transform: scale(1);
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+@media (max-width: 767px) and (min-width: 576px) {
+  .carusel {
+    padding-top: 0;
+    height: calc(var(--index) * 30);
+  }
+
+  .carousel-track {
+    gap: 5px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-slide {
+    box-shadow: 0px 0px 10px 3px rgb(234, 238, 173);
+  }
+
+  .carousel-slide.side {
+    height: auto;
+    width: calc(var(--index) * 12);
+  }
+
+  .carousel-slide.active {
+    height: auto;
+    width: calc(var(--index) * 15);
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  .carusel {
+    padding: 40px 0;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .carousel-container {
+    display: block;
+  }
+
+  .carusel__wrapper {
+    padding-top: 0;
+  }
+
+  .carousel-track {
+    min-height: 250px;
+    gap: 0;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* На мобильных показываем только один активный слайд */
+  .carousel-slide {
+    width: 210px !important;
+    height: auto !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    display: none;
+  }
+
+  .carousel-slide.active {
+    display: flex;
+    width: 210px !important;
+    height: auto !important;
+    transform: scale(1) !important;
+  }
+
+  /* Скрываем боковые слайды на мобильных */
+  .carousel-slide.side {
+    display: none;
+  }
+
+  .carousel-image {
+    border: 3px solid white;
+  }
+
+  /* Уменьшаем свечение на мобильных */
+  .carousel-slide::before {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    filter: blur(8px);
+  }
+  /* Адаптация кнопок для мобильных */
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20%;
+    object-fit: cover;
+    z-index: 10;
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+  }
+
+  .carousel-btn img.arrow-icon {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+  }
+  .carousel-btn:hover,
+  .carousel-btn:focus,
+  .carousel-btn:active {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  /* Индикаторы для мобильных */
+  /* .carousel-indicators {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+  }
+
+  .carousel-indicator {
+    width: 8px;
+    height: 8px;
+  } */
+}

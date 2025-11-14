@@ -801,7 +801,7 @@ function createNavigationButtons() {
 
   // Создаем кнопки только для мобильных
   if (isMobile) {
-    
+
     const prevBtn = document.createElement("button");
     prevBtn.className = "carousel-btn prev";
     prevBtn.innerHTML =
@@ -1000,3 +1000,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Очистка при уходе со страницы
 window.addEventListener("beforeunload", destroyCarousel);
+
+// Универсальный обработчик для всех кнопок закрытия попапов
+document.addEventListener('DOMContentLoaded', function() {
+  // Обработчик для всех кнопок закрытия с классом close-popup
+  const closeButtons = document.querySelectorAll('.close-popup');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const popup = this.closest('.popup');
+      if (popup) {
+        popupClose(popup);
+      }
+    });
+  });
+});

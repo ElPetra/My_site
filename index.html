@@ -56,11 +56,7 @@
             </a>
           </button>
           <button class="header-link" disabled>
-            <a
-              class="links"
-              href="./all-certificates.pdf"
-              target="_blank"
-            >
+            <a class="links" href="./allcertificates.pdf" target="_blank">
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Дипломы</p>
             </a>
@@ -81,48 +77,52 @@
         </button> -->
         </div>
         <!-- Бургер-меню для мобильных -->
-<div class="burger-menu" id="burgerMenu">
-  <img src="./src/images/books_old.webp" alt="Меню" class="burger-icon">
-</div>
+        <div class="burger-menu" id="burgerMenu">
+          <img
+            src="./src/images/books_old.webp"
+            alt="Меню"
+            class="burger-icon"
+          />
+        </div>
 
-<!-- Мобильное меню -->
-<div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu__content">
-    <button class="mobile-menu__close" id="mobileMenuClose">Х</button>
-    <div class="mobile-menu__links">
-      <button class="mobile-link">
-        <a class="links" href="./about_me.pdf" target="_blank">
-          <img class="btn-img" src="./src/images/btn.webp" />
-          <p class="btn-txt">Обо мне</p>
-        </a>
-      </button>
-      <button class="mobile-link">
-        <a class="links" href="./portfolio.pdf" target="_blank">
-          <img class="btn-img" src="./src/images/btn.webp" />
-          <p class="btn-txt portfolio">Портфолио</p>
-        </a>
-      </button>
-      <button class="mobile-link">
-        <a class="links" href="./resume.pdf" target="_blank">
-          <img class="btn-img" src="./src/images/btn.webp" />
-          <p class="btn-txt">Резюме</p>
-        </a>
-      </button>
-      <button class="mobile-link">
-        <a class="links" href="./allcertificates.pdf" target="_blank">
-          <img class="btn-img" src="./src/images/btn.webp" />
-          <p class="btn-txt">Дипломы</p>
-        </a>
-      </button>
-      <button class="mobile-link">
-        <a class="links" href="#contacts">
-          <img class="btn-img" src="./src/images/btn.webp" />
-          <p class="btn-txt">Контакты</p>
-        </a>
-      </button>
-    </div>
-  </div>
-</div>
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+          <div class="mobile-menu__content">
+            <button class="mobile-menu__close close-popup" id="mobileMenuClose">Х</button>
+            <div class="mobile-menu__links">
+              <button class="mobile-link">
+                <a class="links" href="./about_me.pdf" target="_blank">
+                  <img class="btn-img" src="./src/images/btn.webp" />
+                  <p class="btn-txt">Обо мне</p>
+                </a>
+              </button>
+              <button class="mobile-link">
+                <a class="links" href="./portfolio.pdf" target="_blank">
+                  <img class="btn-img" src="./src/images/btn.webp" />
+                  <p class="btn-txt portfolio">Портфолио</p>
+                </a>
+              </button>
+              <button class="mobile-link">
+                <a class="links" href="./resume.pdf" target="_blank">
+                  <img class="btn-img" src="./src/images/btn.webp" />
+                  <p class="btn-txt">Резюме</p>
+                </a>
+              </button>
+              <button class="mobile-link">
+                <a class="links" href="./allcertificates.pdf" target="_blank">
+                  <img class="btn-img" src="./src/images/btn.webp" />
+                  <p class="btn-txt">Дипломы</p>
+                </a>
+              </button>
+              <button class="mobile-link">
+                <a class="links" href="#contacts">
+                  <img class="btn-img" src="./src/images/btn.webp" />
+                  <p class="btn-txt">Контакты</p>
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <img src="./src/images/ink-flow.webp" alt="" class="ink_flow" />
@@ -325,6 +325,7 @@
             <form action="#" class="form form_telegram" method="POST">
               <input
                 class="input_telegram"
+                id="input_telegram"
                 type="text"
                 placeholder="Напишите Ваше предложение о сотрудничестве ;)"
               />
@@ -361,15 +362,14 @@
     <section class="carusel">
       <div class="container">
         <div class="carusel__wrapper">
-<div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Слайды будут добавляться через JavaScript -->
-        </div>
-      </div>
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Слайды будут добавляться через JavaScript -->
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
 
     <footer class="footer">
       <div class="container container_footer">

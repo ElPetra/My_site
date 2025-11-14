@@ -1,40 +1,46 @@
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #f0e4e4;
-  // position: relative;
+  background-color: #e2dcd2;
 }
+
 .container_header {
   overflow: hidden;
-}
-.header__content {
   flex-direction: row;
   justify-content: space-between;
+  display: flex;
   align-items: center;
+}
+
+.header__content {
   background-color: #543d3d;
   padding: 15px;
-  display: flex;
 }
+
 .header__content-black {
   background-color: black;
 }
+
 .header__content-links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
 }
+
 .ink-bottle {
   max-width: calc(var(--index) * 3);
   transition: 3s;
   cursor: url(../../src/images/wrist.webp), pointer;
   pointer-events: auto;
 }
+
 .ink_flow {
-  max-width: calc(var(--index) * 53);
+  width: 100%;
   transition: 3s;
   opacity: 0;
 }
+
 .header-link {
   width: 100%;
   transition: 2s;
@@ -42,14 +48,16 @@
   position: relative;
   cursor: url(../../src/images/wrist.webp), pointer;
 }
+
 .header_black {
   background-color: #000;
   transition: 4s;
 }
+
 .btn-img {
   max-width: calc(var(--index) * 5);
-  // position: relative;
 }
+
 .btn-txt {
   font-family: "Vezitsa";
   font-weight: 600;
@@ -59,6 +67,162 @@
   left: calc(var(--index) * 2.5);
   transform: translate(-50%, -50%);
 }
-.links {
+
+/* Бургер-меню и всплывающий список */
+/* Бургер-меню */
+.burger-menu {
+  display: none;
   cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.burger-icon {
+  max-width: calc(var(--index) * 6);
+  width: 100%;
+}
+
+/* Мобильное меню */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(84, 61, 61, 0.95);
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__content {
+  background-color: #543d3d;
+  padding: 40px 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.open .mobile-menu__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 1.4);
+  color: #300d0d;
+}
+
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.mobile-link {
+  position: relative;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  border: none;
+  background: none;
+}
+
+.mobile-link .btn-img {
+  max-width: calc(var(--index) * 12);
+}
+
+.mobile-link .btn-txt {
+  font-family: "Vezitsa";
+  font-weight: 600;
+  font-size: calc(var(--index) * 1.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #300d0d;
+}
+
+/* Адаптив для мобильных - скрытие основного меню */
+@media (max-width: 575px) {
+  .header__content-links {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .container_header {
+    justify-content: space-between;
+  }
+
+  .header__content-img {
+    flex: 1;
+  }
+}
+
+/* МЕДИАЗАПРОСЫ ДЛЯ HEADER */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .header__content {
+    padding: 25px;
+  }
+}
+
+/* Адаптив для экранов 1200 - 1919 */
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .header__content {
+    padding: 25px;
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .header__content {
+    padding: 20px;
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+@media (max-width: 767px) and (min-width: 576px) {
+  .header__content-links {
+    gap: 10px;
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  .header__content {
+    padding: 10px;
+  }
+
+  .header__content-links {
+    gap: 10px;
+  }
 }

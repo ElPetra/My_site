@@ -1,0 +1,558 @@
+/* Стили для всплывающих окон */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+  z-index: 10;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0px) rotate(0deg);
+  opacity: 1;
+}
+
+.popup__content {
+  color: black;
+  max-width: calc(var(--index) * 18);
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(var(--index) * 13);
+}
+
+.popup__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.popup__img {
+  width: 100%;
+  position: absolute;
+  max-width: 500px;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* WhatsApp Popup */
+.popup__close_whatsApp {
+  width: calc(var(--index) * 2);
+  height: calc(var(--index) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 7%;
+  left: 75%;
+  font-family: "Boyarsky";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.input_whatsApp {
+  width: calc(var(--index) * 13);
+  padding: 5px;
+  font-family: "Boyarsky";
+  background-color: #f0d7a5;
+  box-shadow: 8px 5px 10px 0 #300d0d;
+}
+
+.input_whatsApp::placeholder {
+  font-family: "Olietta script-Poesia";
+  font-size: calc(var(--index) * 0.65);
+}
+
+.popup__btn_whatsApp {
+  font-family: "Boyarsky";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Telegram Popup */
+.popup__close_telegram {
+  width: calc(var(--index) * 2);
+  height: calc(var(--index) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 3%;
+  left: 88%;
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.8);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.form_telegram {
+  margin-top: 120px;
+}
+
+.input_telegram {
+  width: calc(var(--index) * 16);
+  padding: 5px;
+  margin-top: 40px;
+  font-family: "Rubik";
+  background-color: #f0dd7f;
+  z-index: 10;
+}
+
+.input_telegram::placeholder {
+  font-family: "Montserrat";
+  font-size: calc(var(--index) * 0.5);
+  color: #300d0d;
+}
+
+.popup__btn_telegram {
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 1);
+  color: #5f1d1d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* VKontakte Popup */
+.popup__content_vkontakte {
+  width: 100%;
+  background-color: #fff;
+  height: calc(var(--index) * 15);
+  max-width: calc(var(--index) * 20);
+}
+
+.popup__wraper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.popup__close_vkontakte {
+  display: flex;
+  width: calc(var(--index) * 2);
+  height: calc(var(--index) * 2);
+  position: absolute;
+  top: 2%;
+  left: 90%;
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.7);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup__img_vkontakte {
+  max-width: calc(var(--index) * 3);
+}
+
+.popup__text {
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 1);
+  color: #300d0d;
+}
+
+/* Portfolio Popup */
+#portfolioPopup {
+  z-index: 5;
+}
+
+.popup__content_portfolio {
+  max-width: calc(var(--index) * 30);
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.popup__close_portfolio {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  font-family: "Rubik";
+  font-size: calc(var(--index) * 0.7);
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.popup__img_portfolio {
+  max-width: calc(var(--index) * 40);
+  position: absolute;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup__text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.text__link {
+  margin-top: 10px;
+  font-family: "Maxmillion";
+  color: #300d0d;
+  cursor: url(../../src/images/wrist.webp), pointer;
+  font-size: calc(var(--index) * 0.8);
+  z-index: 5;
+}
+
+.text__stack {
+  font-family: "Rubik";
+  color: #300d0d;
+  font-size: calc(var(--index) * 0.6);
+  z-index: 5;
+}
+
+/* Анимированные сообщения */
+.popup__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  max-width: calc(var(--index) * 20);
+  margin: 0 auto;
+  transform: perspective(600px) translate(0px, -100px);
+}
+
+.img__move {
+  max-width: calc(var(--index) * 15);
+}
+
+.opacity {
+  visibility: visible;
+}
+
+.move {
+  transform: perspective(600px) translate(500%, -200%);
+  transition: 5s;
+}
+
+/* МЕДИАЗАПРОСЫ ДЛЯ ПОПАПОВ */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .form {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .popup__content {
+    max-width: 640px;
+    height: 445px;
+  }
+
+  .popup__img {
+    width: 100%;
+    max-width: 600px;
+  }
+  .form_telegram {
+    margin-top: 200px;
+  }
+  .input_telegram {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: #300d0d;
+  }
+
+  .popup__close_telegram {
+    top: 24px;
+    left: 87%;
+  }
+
+  .popup__close_whatsApp {
+    top: 49px;
+    left: 76%;
+  }
+  .popup__content_vkontakte {
+    height: calc(var(--index) * 15);
+  }
+}
+
+/* Адаптив для экранов 1200 - 1919 */
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .popup__content {
+    max-width: calc(var(--index) * 20);
+    height: calc(var(--index) * 15);
+  }
+
+  .popup__img {
+    max-width: calc(var(--index) * 20);
+  }
+
+  .input_telegram {
+    width: calc(var(--index) * 18);
+  }
+
+  .popup__close_telegram {
+    top: 5%;
+    left: 90%;
+  }
+
+  .form_telegram {
+    margin-top: calc(var(--index) * 7);
+  }
+
+  .form {
+    gap: 10px;
+  }
+
+  .popup__close_whatsApp {
+    top: 15%;
+    left: 80%;
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 9);
+  }
+
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+  }
+
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .popup__close_telegram {
+    top: 1%;
+    left: 90%;
+  }
+
+  .popup__close_whatsApp {
+    top: 10%;
+    left: 80%;
+  }
+
+  .popup__message {
+    top: 158px;
+  }
+
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 85%;
+  }
+
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.85);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.85);
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+@media (max-width: 767px) and (min-width: 576px) {
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 9);
+  }
+
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+  }
+
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .popup__close_telegram {
+    top: 1%;
+    left: 90%;
+  }
+
+  .popup__close_whatsApp {
+    top: 10%;
+    left: 80%;
+  }
+
+  .popup__message {
+    transform: perspective(600px) translate(0px, -200px);
+  }
+
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  .popup__content {
+    width: 100%;
+    max-width: calc(var(--index) * 22);
+    height: calc(var(--index) * 15);
+  }
+
+  .form_telegram {
+    width: 100%;
+    margin-top: calc(var(--index) * 8);
+  }
+
+  .input_telegram {
+    width: 100%;
+    margin-top: 10px;
+    font-size: calc(var(--index) * 0.7);
+    padding: 2px;
+  }
+
+  .form {
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .input_telegram::-moz-placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .input_telegram::placeholder {
+    font-family: "Montserrat";
+    font-size: calc(var(--index) * 0.65);
+    color: #300d0d;
+  }
+
+  .popup__close_telegram {
+    top: 1%;
+    left: 90%;
+  }
+
+  .popup__text {
+    font-size: calc(var(--index) * 1.2);
+  }
+
+  .input_whatsApp {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  .input_whatsApp::-moz-placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+
+  .input_whatsApp::placeholder {
+    font-family: "Olietta script-Poesia";
+    font-size: calc(var(--index) * 0.8);
+  }
+  .popup__close_whatsApp {
+    top: 14px;
+    left: 77%;
+  }
+}

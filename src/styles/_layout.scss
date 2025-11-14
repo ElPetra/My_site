@@ -1,16 +1,78 @@
+/* Основные layout стили */
 html {
   scroll-behavior: smooth;
 }
+
 .container {
   max-width: calc(var(--index) * 53);
   margin: 0 auto;
   box-sizing: content-box;
-  background-color: #f0e4e4;
   width: 100%;
+  height: 100%;
 }
+
 .d-none {
-  display: none !important; 
+  display: none !important;
 }
+
 .body-bgr {
-  background-color: #E1EDE6;
+  background-color: #e2dcd2;
+}
+
+/* Анимация дрожания для кнопок в хэдере */
+.links {
+  cursor: url(../../src/images/wrist.webp), pointer;
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
+
+.links:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Ключевые кадры для анимации дрожания */
+@keyframes shake {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  10% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  20% {
+    transform: translateX(1px) translateY(1px);
+  }
+  30% {
+    transform: translateX(-1px) translateY(0);
+  }
+  40% {
+    transform: translateX(1px) translateY(-1px);
+  }
+  50% {
+    transform: translateX(-1px) translateY(1px);
+  }
+  60% {
+    transform: translateX(1px) translateY(0);
+  }
+  70% {
+    transform: translateX(-1px) translateY(-1px);
+  }
+  80% {
+    transform: translateX(1px) translateY(1px);
+  }
+  90% {
+    transform: translateX(-1px) translateY(0);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* МЕДИАЗАПРОСЫ ДЛЯ LAYOUT И КОНТЕЙНЕРА */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .container {
+    max-width: 2000px;
+    padding: 0 40px;
+  }
 }

@@ -1,32 +1,77 @@
 .main {
-  background-color: #f0e4e4;
+  background-color: #e2dcd2;
+  position: relative;
 }
+
 .container_main {
   display: flex;
   flex-direction: row;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
-  // padding: 15px 10px;
+  overflow: visible;
 }
-.main__left, .main__right {
+
+.main__left {
+  width: calc(var(--index) * 20);
+  height: calc(var(--index) * 25);
+  width: 50%;
+}
+
+.main__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sound__wrapper {
+  height: calc(var(--index) * 5);
+  max-width: calc(var(--index) * 10);
+  display: flex;
   position: relative;
-  // transform: scale(0.4);
-  // max-width: calc(var(--index) * 70);
+  width: 100%;
+  max-width: 300px;
+  top: -120px;
+  right: -75%;
+  height: 100px;
+}
+
+.sound__is {
+  scale: 0.4;
+  position: absolute;
+  right: calc(var(--index) * 4);
+  top: calc(var(--index) * 1);
+  transition: transform 0.3s ease;
+}
+
+.sound__is.sound-active {
+  transform: scale(0.9);
+}
+
+.typewriter__wrapper {
+  position: relative;
   width: 100%;
 }
+
+/* Пазлы */
 .puzzles {
   cursor: url(../../src/images/wrist.webp), pointer;
+  position: relative;
+  height: calc(var(--index) * 16);
+  width: calc(var(--index) * 12);
 }
+
 .puz {
-    max-width: calc(var(--index) * 150);
+  max-width: calc(var(--index) * 150);
   border-radius: 20%;
-  left: 0;
-  top: 0;
+  left: -4%;
+  top: -6%;
   transform: scale(0.13) translate(-331%, -330%);
   position: absolute;
 }
 
+/* Анимации пазлов */
 @keyframes move-puzzl-1 {
   from {
     opacity: 1;
@@ -34,10 +79,12 @@
     transform: perspective(100px) translate(-50%, -50%) rotate(-30deg);
   }
 }
+
 .puzzl1 {
   animation: move-puzzl-1;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-2 {
   from {
     opacity: 1;
@@ -45,10 +92,12 @@
     transform: perspective(100px) translate(50%, -100%) rotate(25deg);
   }
 }
+
 .puzzl2 {
   animation: move-puzzl-2;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-3 {
   from {
     opacity: 1;
@@ -56,10 +105,12 @@
     transform: perspective(100px) translate(200%, -100%) rotate(55deg);
   }
 }
+
 .puzzl3 {
   animation: move-puzzl-3;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-4 {
   from {
     opacity: 1;
@@ -67,10 +118,12 @@
     transform: perspective(100px) translate(-200%, -80%) rotate(-70deg);
   }
 }
+
 .puzzl4 {
   animation: move-puzzl-4;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-5 {
   from {
     opacity: 1;
@@ -78,10 +131,12 @@
     transform: perspective(100px) translate(-200%, -150%) rotate(300deg);
   }
 }
+
 .puzzl5 {
   animation: move-puzzl-5;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-6 {
   from {
     opacity: 1;
@@ -89,10 +144,12 @@
     transform: perspective(100px) translate(900%, -150%) rotate(-90deg);
   }
 }
+
 .puzzl6 {
   animation: move-puzzl-6;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-7 {
   from {
     opacity: 1;
@@ -100,10 +157,12 @@
     transform: perspective(100px) translate(-200%, 250%) rotate(90deg);
   }
 }
+
 .puzzl7 {
   animation: move-puzzl-7;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-8 {
   from {
     opacity: 1;
@@ -111,10 +170,12 @@
     transform: perspective(100px) translate(10%, 1250%) rotate(330deg);
   }
 }
+
 .puzzl8 {
   animation: move-puzzl-8;
   animation-duration: 5s;
 }
+
 @keyframes move-puzzl-9 {
   from {
     opacity: 1;
@@ -122,89 +183,407 @@
     transform: perspective(100px) translate(1000%, 400%) rotate(30deg);
   }
 }
+
 .puzzl9 {
   animation: move-puzzl-9;
   animation-duration: 5s;
 }
+
 .puz-reverse {
   animation-direction: reverse;
 }
-.typewriter {
-  // margin-top: 50px;
-  max-width: calc(var(--index) * 35);
-  object-fit: cover;
-  position: relative;
-  cursor: url(../../src/images/wrist.webp), pointer;
-}
-.opasity{
+
+.opasity {
   opacity: 0;
 }
 
+/* Пишущая машинка */
+.typewriter {
+  width: 100%;
+  max-width: calc(var(--index) * 35);
+  object-fit: cover;
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+/* Капля */
 @keyframes move-drop {
   from {
-    // opacity: 1;
     transition: all 0.8s ease 0s;
-    transform: translate(800%, -1300%);
-  } to {
-    transform: translate(800%, 2100%);
+    transform: translate(-500%, -1300%);
+  }
+  to {
+    transform: translate(-500%, 3000%);
   }
 }
+
 .drop {
   position: absolute;
   max-width: calc(var(--index) * 2);
-  transform: translate(800%, -1300%);
+  transform: translate(-500%, -1300%);
   opacity: 0;
   z-index: 10;
 }
+
 .drop-start {
   animation: move-drop;
   animation-duration: 5s;
   animation-timing-function: ease-in;
 }
+
 .drop-finish {
-opacity: 0;
+  opacity: 0;
 }
+
+/* Текст на машинке */
 .box-text {
+  width: 100%;
+  max-width: calc(var(--index) * 15);
   font-family: "GNUTypewriter";
   font-weight: 600;
   color: #300d0d;
   line-height: 1.2;
-  font-size: calc(var(--index) * 0.6);
+  font-size: calc(var(--index) * 0.5);
   position: absolute;
   top: calc(var(--index) * 10.5);
-  left: calc(var(--index) * 20);
-  transform: rotate(9deg) translate(-50%, -50%);
+  left: calc(var(--index) * 19.5);
+  transform: rotate(10deg) translate(-50%, -50%);
 }
+
 .fade-in {
   opacity: 0;
   transition: 0.3s ease-in-out;
   max-width: 400px;
   transform: rotate(10deg);
-  line-height:150%;
+  line-height: 150%;
   white-space: pre-line;
   width: 100%;
 }
+
 .control-sound {
   position: absolute;
   max-width: calc(var(--index) * 7);
   right: 0;
-  top: -22%;
+  top: 0;
   cursor: url(../../src/images/wrist.webp), pointer;
 }
 
-@media (max-width: 700px) {
-.container_main {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.main__right, .main__left {
-  top: 0;
-  left: 0;
-  max-width: calc(var(--index) * 15);
-}
-.main__right {
-  top: 400px;
-}
+/* МЕДИАЗАПРОСЫ */
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .main {
+    height: 1400px;
+  }
+  .container_main {
+    gap: 40px;
+    justify-content: space-around;
+    align-items: top;
+    height: 70vh;
+  }
+  .main__right {
+    width: 55%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+  }
+
+  .main__left {
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 28);
+  }
+
+  .puz {
+    max-width: calc(var(--index) * 250);
+    border-radius: 20%;
+    left: 0;
+    top: 0;
+    transform: scale(0.17) translate(-217%, -229%);
+    position: absolute;
+  }
+
+  .typewriter__wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    top: 10%;
+  }
+
+  .typewriter {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    scale: 1.2;
+    top: 0;
+  }
+
+  .box-text {
+    width: 500px;
+    font-size: 18.5px;
+    top: 273px;
+    left: 587px;
+  }
+  .sound__is {
+    scale: 0.7;
+    right: calc(var(--index) * 6);
+    top: calc(var(--index) * 2);
+  }
+
+  .control-sound {
+    max-width: 250px;
+  }
+  .sound__wrapper {
+    top: -250px;
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-100%, -1300%);
+    }
+    to {
+      transform: translate(-100%, 3500%);
+    }
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-100%, -1300%);
+    opacity: 0;
+    z-index: 10;
+  }
 }
 
+/* Адаптив для экранов 1200 - 1919 */
+
+@media (max-width: 1919px) and (min-width: 1200px) {
+  .main {
+    height: calc(var(--index) * 40);
+  }
+  .main__right,
+  .main__left {
+    width: 50%;
+  }
+  .typewriter__wrapper {
+    top: 10%;
+    width: auto;
+  }
+  .typewriter {
+    scale: 1.4;
+  }
+  .box-text {
+    font-size: calc(var(--index) * 0.52);
+    top: calc(var(--index) * 5.5);
+    left: calc(var(--index) * 15);
+  }
+  .puz {
+    transform: scale(0.13) translate(-326%, -330%);
+  }
+  .sound__wrapper {
+    right: -75%;
+  }
+  .sound__is {
+    right: 83px;
+    top: 20%;
+  }
+}
+
+/* Адаптив для экранов 768 - 1199 */
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .container_main {
+    overflow: visible;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main__left,
+  .main__right {
+    width: 100%;
+  }
+  .main__left {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--index) * 26);
+  }
+  .sound__wrapper {
+    right: -73%;
+    top: -113px;
+    height: calc(var(--index) * 2);
+    max-width: 200px;
+  }
+  .sound__is {
+    right: 30px;
+    scale: 0.3;
+    top: calc(var(--index) * -2);
+  }
+  .puz {
+    transform: scale(0.12) translate(-369%, -366%);
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-400%, -3500%);
+    }
+    to {
+      transform: translate(-400%, 2200%);
+    }
+  }
+  .puzzles {
+    height: calc(var(--index) * 22);
+    width: calc(var(--index) * 17);
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-400%, -3500%);
+    opacity: 0;
+    z-index: 10;
+  }
+  .typewriter {
+    max-width: calc(var(--index) * 38);
+  }
+  .typewriter__wrapper {
+    top: 50%;
+    right: 0;
+    width: auto;
+  }
+
+  .box-text {
+    font-size: calc(var(--index) * 0.54);
+    top: calc(var(--index) * 11.2);
+    left: calc(var(--index) * 20.5);
+  }
+}
+
+/* Адаптив для экранов 576 - 767 */
+
+@media (max-width: 767px) and (min-width: 576px) {
+  .container_main {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__right {
+    width: 100%;
+  }
+  .main__left {
+    display: flex;
+    width: calc(var(--index) * 20);
+    height: calc(var(--index) * 26);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .sound__is {
+    scale: 0.25;
+    right: -11px;
+    top: -29px;
+  }
+  .sound__wrapper {
+    top: -60px;
+    right: -74%;
+    height: 10px;
+    max-width: 150px;
+  }
+  .puz {
+    transform: scale(0.1) translate(-450%, -456%);
+  }
+  .typewriter__wrapper {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-500%, -3300%);
+    }
+    to {
+      transform: translate(-500%, 2000%);
+    }
+  }
+
+  .box-text {
+    top: calc(var(--index) * 10.5);
+    left: calc(var(--index) * 19.5);
+  }
+
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-500%, -3300%);
+    opacity: 0;
+    z-index: 10;
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+
+@media (max-width: 575px) {
+  .container_main,
+  .main {
+    overflow: visible;
+  }
+  .container_main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .sound__wrapper {
+    max-width: 100px;
+    top: -45px;
+    right: -72%;
+    height: 40px;
+  }
+  .sound__is {
+    scale: 0.2;
+    right: -40px;
+    top: -60px;
+  }
+  .control-sound {
+    max-width: 80px;
+  }
+  .main__left {
+    left: -22px;
+    height: calc(var(--index) * 20);
+  }
+  .puz {
+    transform: scale(0.1) translate(-435%, -442%);
+  }
+  .typewriter__wrapper {
+    width: auto;
+  }
+  .typewriter {
+    max-width: calc(var(--index) * 31);
+  }
+  .box-text {
+    max-width: calc(var(--index) * 15);
+    font-size: calc(var(--index) * 0.47);
+    top: calc(var(--index) * 9.7);
+    left: calc(var(--index) * 17.7);
+  }
+  @keyframes move-drop {
+    from {
+      transition: all 0.8s ease 0s;
+      transform: translate(-500%, -3100%);
+    }
+    to {
+      transform: translate(-500%, 2500%);
+    }
+  }
+  .drop {
+    position: absolute;
+    max-width: calc(var(--index) * 2);
+    transform: translate(-500%, -3100%);
+    opacity: 0;
+    z-index: 10;
+  }
+}

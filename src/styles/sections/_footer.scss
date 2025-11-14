@@ -1,12 +1,13 @@
 .footer {
   background-color: #543d3d;
 }
+
 .container_footer {
   display: flex;
   justify-content: space-between;
   background-color: #543d3d;
-  //   align-items: center;
 }
+
 .footer__left {
   display: flex;
   flex-direction: row;
@@ -14,14 +15,18 @@
   margin-top: 10px;
   padding-left: 15px;
 }
+
 .logo {
   font-family: "Maxmillion";
   color: #300d0d;
   font-size: calc(var(--index) * 1.2);
+  cursor: url(../../src/images/wrist.webp), pointer;
 }
+
 .feather {
-      max-width: calc(var(--index) * 2);
+  max-width: calc(var(--index) * 2);
 }
+
 .footer__middle {
   display: flex;
   flex-direction: column;
@@ -29,14 +34,17 @@
   justify-content: center;
   margin-top: 10px;
 }
+
 .thanks {
   font-family: "GNUTypewriter", "Old Soviet";
   color: #300d0d;
   font-size: calc(var(--index) * 0.8);
 }
+
 .ekg {
   max-width: calc(var(--index) * 8);
 }
+
 .footer__right {
   margin-top: 10px;
   display: flex;
@@ -45,18 +53,22 @@
   gap: calc(var(--index) * 2);
   padding-right: 15px;
 }
+
 .social {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: calc(var(--index) * 0.8);
+  margin-top: 15px;
 }
+
 .icon {
   max-width: calc(var(--index) * 1.5);
   cursor: url(../../src/images/wrist.webp), pointer;
   border: none;
   width: 100%;
 }
+
 .contacts {
   display: flex;
   flex-direction: column;
@@ -65,6 +77,7 @@
   gap: 5px;
   border: 3px solid transparent;
 }
+
 .contacts__info {
   display: flex;
   flex-direction: row;
@@ -72,20 +85,62 @@
   align-items: center;
   gap: 10px;
 }
+
 .info {
   font-family: "GNUTypewriter", "Old Soviet";
   color: #300d0d;
   font-size: calc(var(--index) * 0.6);
-  // cursor: url(../../images/wrist.webp), pointer;
 }
+
 .icon_telephone {
   max-width: calc(var(--index) * 2);
 }
+
+.info_tel {
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
 .icon_contacts {
   max-width: calc(var(--index) * 1.5);
   border: none;
   width: 100%;
 }
-// .contacts:target {
-//   border-color: #71a819;
-// }
+
+/* МЕДИАЗАПРОСЫ ДЛЯ FOOTER */
+
+/* Адаптив для больших экранов (2100px и выше) */
+@media (min-width: 2100px) {
+  .social {
+    margin-top: 15px;
+  }
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  .contacts__info {
+    gap: 5px;
+  }
+
+  .container_footer {
+    padding-bottom: 10px;
+  }
+
+  .footer__right {
+    margin-top: 10px;
+    gap: 5px;
+    padding-right: 10px;
+    flex-direction: column-reverse;
+  }
+
+  .footer__left {
+    padding-left: 10px;
+  }
+
+  .icon {
+    max-width: calc(var(--index) * 1.1);
+  }
+
+  .social {
+    padding-left: 5px;
+  }
+}

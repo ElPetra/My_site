@@ -3,12 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --index: calc(1vw + 1vh);
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   cursor: url(../../src/images/pero40.png), auto;
 }
@@ -17,6 +20,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 button {
   cursor: pointer;
   display: inline-block;
@@ -26,6 +30,7 @@ button {
   border: none;
 }
 
+/* Подключение шрифтов */
 @font-face {
   font-family: "Arnold BocklinC";
   src: url("../fonts/ArnoldBocklinC.eot");
@@ -47,6 +52,7 @@ button {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Old Soviet";
   src: url("../fonts/OldSovietRegular.eot");
@@ -58,6 +64,7 @@ button {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "GNUTypewriter";
   src: url("../fonts/GNUTypewriter.eot");
@@ -69,16 +76,6 @@ button {
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Ballison";
-  src: url("../fonts/Ballison.eot");
-  src: url("../fonts/Ballison.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Ballison.woff2") format("woff2"),
-    url("../fonts/Ballison.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
   font-family: "Ballison";
@@ -87,16 +84,6 @@ button {
     url("../fonts/Ballison.woff2") format("woff2"),
     url("../fonts/Ballison.woff") format("woff");
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "England";
-  src: url("../fonts/EnglandBold-Bold.eot");
-  src: url("../fonts/EnglandBold-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/EnglandBold-Bold.woff2") format("woff2"),
-    url("../fonts/EnglandBold-Bold.woff") format("woff");
-  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -111,6 +98,7 @@ button {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Maxmillion";
   src: url("../fonts/MaxmillionDEMO.eot");
@@ -121,45 +109,47 @@ button {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
-    font-family: 'Olietta script-Poesia';
-    src: url('../fonts/Oliettascript-Poesia-BoldItalic.eot');
-    src: url('../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Oliettascript-Poesia-BoldItalic.woff2') format('woff2'),
-        url('../fonts/Oliettascript-Poesia-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Boyarsky';
-    src: url('../fonts/ScriptPlain.eot');
-    src: url('../fonts/ScriptPlain.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ScriptPlain.woff2') format('woff2'),
-        url('../fonts/ScriptPlain.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Medium.eot');
-    src: url('../fonts/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Montserrat-Medium.woff2') format('woff2'),
-        url('../fonts/Montserrat-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Olietta script-Poesia";
+  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot");
+  src: url("../fonts/Oliettascript-Poesia-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Oliettascript-Poesia-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Oliettascript-Poesia-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Rubik';
-    src: url('../fonts/Rubik-Bold.eot');
-    src: url('../fonts/Rubik-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Rubik-Bold.woff2') format('woff2'),
-        url('../fonts/Rubik-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Boyarsky";
+  src: url("../fonts/ScriptPlain.eot");
+  src: url("../fonts/ScriptPlain.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ScriptPlain.woff2") format("woff2"),
+    url("../fonts/ScriptPlain.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.eot");
+  src: url("../fonts/Montserrat-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Medium.woff2") format("woff2"),
+    url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Bold.eot");
+  src: url("../fonts/Rubik-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Rubik-Bold.woff2") format("woff2"),
+    url("../fonts/Rubik-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
