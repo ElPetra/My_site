@@ -805,13 +805,13 @@ function createNavigationButtons() {
     const prevBtn = document.createElement("button");
     prevBtn.className = "carousel-btn prev";
     prevBtn.innerHTML =
-      '<img src="/src/images/left.webp" alt="Previous" class="arrow-icon">';
+      '<img src="src/images/left.webp" alt="Previous" class="arrow-icon">';
     prevBtn.addEventListener("click", () => carouselPrev());
 
     const nextBtn = document.createElement("button");
     nextBtn.className = "carousel-btn next";
     nextBtn.innerHTML =
-      '<img src="/src/images/right.webp" alt="Next" class="arrow-icon">';
+      '<img src="src/images/right.webp" alt="Next" class="arrow-icon">';
     nextBtn.addEventListener("click", () => carouselNext());
 
     carouselContainer.appendChild(prevBtn);
