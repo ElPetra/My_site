@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let dropTimers = [];
 
 let soundTyper = new Howl({
-  src: ["./src/sounds/zvuk-pechatnaya-mashinka.mp3"],
+  src: ["src/sounds/zvuk-pechatnaya-mashinka.mp3"],
   html5: true,
   autoplay: false,
   volume: 0.3,
@@ -83,7 +83,7 @@ let soundTyper = new Howl({
 });
 
 let soundDrop = new Howl({
-  src: ["./src/sounds/zvuk-kapli.mp3"],
+  src: ["src/sounds/zvuk-kapli.mp3"],
   html5: true,
   autoplay: false,
   howl: null,
