@@ -152,6 +152,25 @@ html {
   animation: shake 0.5s ease-in-out;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: calc(var(--index) * 1.5);
+  margin-bottom: calc(var(--index) * 2);
+  color: #300d0d;
+  font-family: "Boyarsky", serif;
+}
+
 /* Ключевые кадры для анимации дрожания */
 @keyframes shake {
   0% {

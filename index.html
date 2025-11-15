@@ -3,7 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petra</title>
+    <!-- Основные SEO теги -->
+    <title>
+      Елена Петровская Petra ElPetra - Frontend разработчик | React, JavaScript,
+      TypeScript
+    </title>
+    <meta
+      name="description"
+      content="Junior Frontend разработчик и фронтендер с опытом в React, JavaScript, TypeScript. Ищу работу junior фронтенд-разработчика. Портфолио проектов."
+    />
+    <meta
+      name="keywords"
+      content="frontend разработчик, фронтенд разработчик, фронтендер, junior, junior+, frontend-разработчик, React, JavaScript, TypeScript, HTML, CSS, веб-разработка, портфолио, frontend developer, разработка сайтов, junior frontend разработчик, junior frontend developer, начинающий фронтенд разработчик, фронтенд разработчик с коммерческим опытом, frontend программист, разработчик интерфейсов, React разработчик, JavaScript разработчик, frontend React "
+    />
+    <meta name="author" content="Елена Petra" />
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Елена Petra - Frontend разработчик" />
+    <meta
+      property="og:description"
+      content="Frontend разработчик с опытом в React, JavaScript, TypeScript. Портфолио проектов."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:image" content="./src/images/photo.webp" />
+    <!-- Schema.org структурированные данные -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Елена Петровская Petra",
+        "jobTitle": "Frontend разработчик",
+        "url": "https://elpetra.github.io",
+        "sameAs": ["https://github.com/ElPetra", "https://t.me/@ElPetra1"],
+        "knowsAbout": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
+          "TypeScript",
+          "Git",
+          "SCSS",
+          "Sass",
+          "ООП",
+          "API",
+          "Scrum",
+          "Git",
+          "Agile",
+          "BEM",
+          "БЭМ",
+          "ES6",
+          "Webpack",
+          "Jira",
+          "Jest",
+          "Redux",
+          "Figma"
+        ],
+        "description": "Frontend разработчик с опытом создания веб-приложений",
+        "email": "kursorr@gmail.com",
+        "telephone": "+7-921-919-20-32"
+      }
+    </script>
     <link rel="stylesheet" href="./src/styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,28 +88,61 @@
       sizes="180x180"
       href="./src/images/result/pero32.png"
     />
-  </head>
-  <header class="header">
+    <!-- Preload критичных ресурсов -->
+    <link rel="preload" href="./src/images/photo.webp" as="image" />
+    <link rel="preload" href="./src/styles/style.css" as="style" />
+
+    <!-- Preconnect к важным доменам -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    </head>
+   <!--Хедер-->
+  <header class="header" role="banner">
     <div class="header__content">
       <div class="container container_header">
         <div class="header__content-img">
-          <img src="./src/images/ink_bottle.webp" alt="" class="ink-bottle" />
+          <img
+            src="./src/images/ink_bottle.webp"
+            alt="Чернильница - символ творчества фронтенд разработчика"
+            class="ink-bottle"
+          />
         </div>
-        <div class="header__content-links">
+        <nav
+          class="header__content-links"
+          role="navigation"
+          aria-label="Основная навигация"
+        >
           <button class="header-link" disabled>
-            <a class="links" href="./about_me.pdf" target="_blank">
+            <a
+              class="links"
+              href="./about_me.pdf"
+              target="_blank"
+              aria-label="Скачать PDF с информацией обо мне"
+            >
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Обо мне</p>
             </a>
           </button>
           <button class="header-link" disabled>
-            <a class="links" href="./portfolio.pdf" target="_blank">
+            <a
+              class="links"
+              href="./portfolio.pdf"
+              target="_blank"
+              aria-label="Скачать PDF с моим портфолио"
+            >
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt portfolio">Портфолио</p>
             </a>
           </button>
           <button class="header-link" disabled>
-            <a class="links" href="./resume.pdf" target="_blank">
+            <a
+              class="links"
+              href="./resume.pdf"
+              target="_blank"
+              aria-label="Скачать PDF с моим резюме"
+            >
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Резюме</p>
             </a>
@@ -60,6 +152,7 @@
               class="links"
               href="./allcertificates.pdf"
               target="_blank"
+              aria-label="Скачать PDF с моими сертификатами и дипломами"
             >
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Дипломы</p>
@@ -70,7 +163,11 @@
             class="header-link header-link_contacts"
             disabled
           >
-            <a class="links" href="#contacts">
+            <a
+              class="links"
+              href="#contacts"
+              aria-label="Перейти к моим контактам по якорной ссылке"
+            >
               <img class="btn-img" src="./src/images/btn.webp" />
               <p class="btn-txt">Контакты</p>
             </a>
@@ -79,12 +176,12 @@
           <img class="btn-img" src="./src/images/btn.webp">
           <p class="btn-txt">Брось монетку</p>
         </button> -->
-        </div>
+        </nav>
         <!-- Бургер-меню для мобильных -->
         <div class="burger-menu" id="burgerMenu">
           <img
             src="./src/images/books_old.webp"
-            alt="Меню"
+            alt="Меню сайта фронтенд разработчика"
             class="burger-icon"
           />
         </div>
@@ -92,7 +189,9 @@
         <!-- Мобильное меню -->
         <div class="mobile-menu" id="mobileMenu">
           <div class="mobile-menu__content">
-            <button class="mobile-menu__close close-popup" id="mobileMenuClose">Х</button>
+            <button class="mobile-menu__close close-popup" id="mobileMenuClose">
+              Х
+            </button>
             <div class="mobile-menu__links">
               <button class="mobile-link">
                 <a class="links" href="./about_me.pdf" target="_blank">
@@ -136,90 +235,111 @@
           <img class="popup__img_portfolio" src="./src/images/pergament.webp" />
           <a href="" class="popup__close_portfolio close-popup">X</a>
           <div class="popup__text">
-            <a class="text__link" href="https://ubit.store/" target="_blank">
-              - "https://ubit.store/"
+            <a
+              class="text__link"
+              href="https://ubit.store/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              - Ubit Store - Интернет-магазин
             </a>
             <p class="text__stack">
-              Принимала участие в верстке и написании логики в команде<br />
-              Stack: HTML, CSS, JavaScript
+              <strong>Роль:</strong> Frontend разработчик в команде<br />
+              <strong>Технологии:</strong> HTML, CSS, JavaScript<br />
+              <strong>Задачи:</strong> Верстка и разработка клиентской логики
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/rick-and-morty/"
               target="_blank"
             >
-              - "https://elpetra.github.io/rick-and-morty/"
+              - Rick and Morty API приложение
             </a>
             <p class="text__stack">
-              Работа с фильтрацией, сортировкой, поиском, пагинацией,
-              регистрацией<br />
-              Stack: React, Redux Toolkit, Context API, lazy + Suspense, LS
+              <strong>Технологии:</strong> React, Redux Toolkit, Context API<br />
+              <strong>Функционал:</strong> Фильтрация, поиск, пагинация,
+              авторизация<br />
+              <strong>Особенности:</strong> Lazy loading, Local Storage
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/Harry-Potter/"
               target="_blank"
             >
-              - "https://elpetra.github.io/Harry-Potter/"
+              - Harry-Potter API приложение
             </a>
             <p class="text__stack">
-              Работа с фильтрацией, поиском, API<br />
-              Stack: React, HTML, CSS modules
+              <strong>Технологии:</strong> React, HTML, CSS modules, Context
+              API<br />
+              <strong>Функционал:</strong> Фильтрация, поиск, API<br />
+              <strong>Особенности:</strong> Local Storage
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/Emoji-react/"
               target="_blank"
             >
-              - "https://elpetra.github.io/Emoji-react/"
+              - Emoji API приложение
             </a>
             <p class="text__stack">
-              Работа с поиском, пагинацией, API<br />
-              Stack: React, HTML, CSS modules
+              <strong>Технологии:</strong> React, HTML, CSS modules, Context
+              API<br />
+              <strong>Функционал:</strong> Фильтрация, поиск, пагинация, API<br />
+              <strong>Особенности:</strong> Local Storage
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/InkHouse_pictures/"
               target="_blank"
             >
-              - "https://elpetra.github.io/InkHouse_pictures/"
+              - InkHouse pictures интернет магазин
             </a>
             <p class="text__stack">
-              Работа с фильтрацией, корзиной, LocalStorage, API<br />
-              Stack: JavaScript, HTML, SCSS, LS
+              <strong>Технологии:</strong> JavaScript, HTML, SCSS, LS, Context
+              API<br />
+              <strong>Функционал:</strong> Фильтрация, корзина товаров,
+              LocalStorage, API<br />
+              <strong>Особенности:</strong> Local Storage, SCSS
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/Weather/"
               target="_blank"
             >
-              - "https://elpetra.github.io/Weather/"
+              - Погода приложение
             </a>
             <p class="text__stack">
-              Работа с API<br />
-              Stack: JavaScript, HTML, SCSS
+              <strong>Технологии:</strong> JavaScript, HTML, SCSS, Context
+              API<br />
+              <strong>Функционал:</strong> API, определение геолокации по ip<br />
+              <strong>Особенности:</strong> API, определение геолокации по ip,
+              SCSS
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/coin/"
               target="_blank"
             >
-              - "https://elpetra.github.io/coin/"
+              - Игра брось монетку
             </a>
             <p class="text__stack">
-              Работа с библиотекой для аудио howler.js<br />
-              Stack: JavaScript, HTML, SCSS
+              <strong>Технологии:</strong> JavaScript, HTML, SCSS<br />
+              <strong>Функционал:</strong> Работа с библиотекой для аудио
+              howler.js<br />
+              <strong>Особенности:</strong> Работа с библиотекой для аудио
+              howler.js, SCSS
             </p>
             <a
               class="text__link"
               href="https://elpetra.github.io/rock-paper-scissors/"
               target="_blank"
             >
-              - "https://elpetra.github.io/rock-paper-scissors/"
+              - Игра камень-ножницы-бумага
             </a>
             <p class="text__stack">
-              Просто развлекитесь &#128521;<br />
-              Stack: JavaScript, HTML, SCSS
+              <strong>Технологии:</strong> JavaScript, HTML, SCSS<br />
+              <strong>Функционал:</strong> JS<br />
+              <strong>Особенности:</strong> SCSS
             </p>
           </div>
         </div>
@@ -227,87 +347,98 @@
     </div>
   </header>
   <body>
-    <section class="main">
-      <!-- <button class="btn__control-sound"> -->
-      <div class="sound__wrapper">
-        <img class="sound__is" src="./src/images/sound_is.png" />
-        <img class="control-sound" src="./src/images/sound.webp" />
-      </div>
-      <div class="container_main container">
-        <div class="main__left">
-          <div class="puzzles">
-            <!-- <img src="./src/images/1puz.webp" class="puz puzzl1 opasity" />
-          <img src="./src/images/2puz.webp" class="puz puzzl2 opasity" />
-          <img src="./src/images/3puz.webp" class="puz puzzl3 opasity" />
-          <img src="./src/images/4puz.webp" class="puz puzzl4 opasity" />
-          <img src="./src/images/5puz.webp" class="puz puzzl5 opasity" />
-          <img src="./src/images/6puz.webp" class="puz puzzl6 opasity" />
-          <img src="./src/images/7puz.webp" class="puz puzzl7 opasity" />
-          <img src="./src/images/8puz.webp" class="puz puzzl8 opasity" />
-          <img src="./src/images/9puz.webp" class="puz puzzl9 opasity" /> -->
-            <img src="./src/images/photo.webp" class="myPhoto d-none photo" />
-            <img src="./src/images/smile.webp" class="myPhoto d-none smile" />
-          </div>
+    <main role="main">
+      <section class="main" aria-labelledby="about-heading">
+        <h1 id="about-heading" class="visually-hidden">
+          Обо мне - Frontend разработчик Елена Petra
+        </h1>
+        <!-- <button class="btn__control-sound"> -->
+        <div class="sound__wrapper">
+          <img class="sound__is" src="./src/images/sound_is.png" />
+          <img class="control-sound" src="./src/images/sound.webp" />
         </div>
-        <div class="main__right">
-          <!-- </button> -->
-          <img class="drop" src="./src/images/drop2.webp" />
-          <div class="typewriter__wrapper">
-            <img
-              class="typewriter"
-              src="./src/images/typewriter_new.webp"
-              id="typewriter"
-            />
-            <div class="box-text d-none">
-              <p class="print-text">Приветствую Вас на моей страничке!</p>
-              <p class="print-text">
-                Меня зовут Елена. Я frontend-разработчик.
-              </p>
-              <p class="print-text">Я инженер и по складу ума, и по</p>
-              <p class="print-text">специальности. 20 лет отработала в сфере</p>
-              <p class="print-text">
-                геодезии и картографии. &#128301; Пройдя путь
-              </p>
-              <p class="print-text">от техника-картографа до технического</p>
-              <p class="print-text">директора, я решила, что пора</p>
-              <p class="print-text">осваивать новые просторы и брать</p>
-              <p class="print-text">
-                новые вершины &#128507; Я училась в offline-
-              </p>
-              <p class="print-text">школе, проходила стажировки, прошла</p>
-              <p class="print-text">
-                профессиональную переподготовку в Финансовом
-              </p>
-              <p class="print-text">
-                университете и продолжаю учиться дальше...
-              </p>
-              <p class="print-text">Мой стек сейчас: HTML, CSS, Sass, GIT,</p>
-              <p class="print-text">JavaScript, React, Typescript.</p>
-              <p class="print-text">И это только начало... &#128521;</p>
-              <p class="print-text">Если вы хотите сотрудничать, напишите</p>
-              <p class="print-text">мне в WhatsApp, telegram или email.</p>
+        <div class="container_main container">
+          <div class="main__left">
+            <div class="puzzles">
+              <!-- <img src="./src/images/1puz.webp" class="puz puzzl1 opasity" />
+            <img src="./src/images/2puz.webp" class="puz puzzl2 opasity" />
+            <img src="./src/images/3puz.webp" class="puz puzzl3 opasity" />
+            <img src="./src/images/4puz.webp" class="puz puzzl4 opasity" />
+            <img src="./src/images/5puz.webp" class="puz puzzl5 opasity" />
+            <img src="./src/images/6puz.webp" class="puz puzzl6 opasity" />
+            <img src="./src/images/7puz.webp" class="puz puzzl7 opasity" />
+            <img src="./src/images/8puz.webp" class="puz puzzl8 opasity" />
+            <img src="./src/images/9puz.webp" class="puz puzzl9 opasity" /> -->
+              <img src="./src/images/photo.webp" class="myPhoto d-none photo" />
+              <img src="./src/images/smile.webp" class="myPhoto d-none smile" />
+            </div>
+          </div>
+          <div class="main__right">
+            <!-- </button> -->
+            <img class="drop" src="./src/images/drop2.webp" />
+            <div class="typewriter__wrapper">
+              <img
+                class="typewriter"
+                src="./src/images/typewriter_new.webp"
+                id="typewriter"
+              />
+              <div class="box-text d-none">
+                <p class="print-text">Приветствую Вас на моей страничке!</p>
+                <p class="print-text">
+                  Меня зовут Елена. Я frontend-разработчик.
+                </p>
+                <p class="print-text">Я инженер и по складу ума, и по</p>
+                <p class="print-text">
+                  специальности. 20 лет отработала в сфере
+                </p>
+                <p class="print-text">
+                  геодезии и картографии. &#128301; Пройдя путь
+                </p>
+                <p class="print-text">от техника-картографа до технического</p>
+                <p class="print-text">директора, я решила, что пора</p>
+                <p class="print-text">осваивать новые просторы и брать</p>
+                <p class="print-text">
+                  новые вершины &#128507; Я училась в offline-
+                </p>
+                <p class="print-text">школе, проходила стажировки, прошла</p>
+                <p class="print-text">
+                  профессиональную переподготовку в Финансовом
+                </p>
+                <p class="print-text">
+                  университете и продолжаю учиться дальше...
+                </p>
+                <p class="print-text">Мой стек сейчас: HTML, CSS, Sass, GIT,</p>
+                <p class="print-text">JavaScript, React, Typescript.</p>
+                <p class="print-text">И это только начало... &#128521;</p>
+                <p class="print-text">Если вы хотите сотрудничать, напишите</p>
+                <p class="print-text">мне в WhatsApp, telegram или email.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <audio id="myAudio">
-        <source
-          src="./src/sounds/zvuk-pechatnaya-mashinka.mp3"
-          preload="auto"
-        />
-      </audio>
-    </section>
-    <section class="cards">
+        <audio id="myAudio">
+          <source
+            src="./src/sounds/zvuk-pechatnaya-mashinka.mp3"
+            preload="auto"
+          />
+        </audio>
+      </section>
+    </main>
+    <section class="cards" aria-labelledby="portfolio-heading">
       <div class="container">
+        <h2 id="portfolio-heading" class="section-title visually-hidden">
+          Портфолио сайтов Frontend разработчика
+        </h2>
         <div class="manuscripts">
           <div class="cover"></div>
         </div>
       </div>
-
     </section>
-
-    <section class="carusel">
+    <section class="carusel" aria-labelledby="certificates-heading">
       <div class="container">
+        <h2 id="certificates-heading" class="section-title visually-hidden">
+          Сертификаты и дипломы фронтенд разработчика
+        </h2>
         <div class="carusel__wrapper">
           <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack">
@@ -317,11 +448,17 @@
         </div>
       </div>
     </section>
-
-    <footer class="footer">
+    <!--Футер-->
+    <footer class="footer" role="contentinfo">
       <div class="container container_footer">
         <div class="footer__left">
-          <a class="logo" href="https://github.com/ElPetra" target="_blank">
+          <a
+            class="logo"
+            href="https://github.com/ElPetra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Мой GitHub профиль"
+          >
             Elpetra<img class="feather" src="./src/images/feather.webp" />
           </a>
         </div>
@@ -330,35 +467,61 @@
           <img class="ekg" src="./src/images/ekg.gif" />
         </div>
         <div class="footer__right">
-          <div class="social">
-            <a>
-              <img class="icon icon_tg" src="./src/images/telegram_s.webp" />
+          <div class="social" role="list" aria-label="Социальные сети">
+            <a role="listitem" aria-label="Telegram">
+              <img
+                class="icon icon_tg"
+                src="./src/images/telegram_s.webp"
+                alt="Связаться с разработчиком через Telegram"
+              />
             </a>
-            <a>
-              <img class="icon icon_vk" src="./src/images/vk.webp" />
+            <a role="listitem" aria-label="Vkontakte">
+              <img
+                class="icon icon_vk"
+                src="./src/images/vk.webp"
+                alt="Связаться с разрабом через Vkontakte"
+              />
             </a>
-            <a href="#whatsApp">
-              <img class="icon icon_wa" src="./src/images/WhatsApp_s.webp" />
+            <a href="#whatsApp" role="listitem" aria-label="WhatsApp">
+              <img
+                class="icon icon_wa"
+                src="./src/images/WhatsApp_s.webp"
+                alt="Связаться с фронтендером через WhatsApp"
+              />
             </a>
           </div>
-          <div class="contacts" id="contacts">
+          <div
+            class="contacts"
+            id="contacts"
+            itemscope
+            itemtype="https://schema.org/Person"
+          >
+            <h3 class="visually-hidden">Контактная информация</h3>
             <div class="contacts__info">
-              <img class="icon_contacts" src="./src/images/pigeon.webp" />
-              <p class="info">kursorr@gmail.com</p>
+              <img
+                class="icon_contacts"
+                src="./src/images/pigeon.webp"
+                alt="Иконка email frontend-разработчика"
+              />
+              <p class="info" itemprop="email">kursorr@gmail.com</p>
             </div>
             <div class="contacts__info">
               <img
                 class="icon_contacts icon_telephone"
                 src="./src/images/telephone.webp"
+                alt="Иконка телефона frontend разработчика"
               />
-              <a class="info info_tel" href="tel:+79219192032"
+              <a
+                class="info info_tel"
+                href="tel:+79219192032"
+                itemprop="telephone"
                 >+7-921-919-20-32</a
               >
             </div>
           </div>
         </div>
       </div>
-            <div class="popup" id="whatsApp">
+      <div class="popup" id="whatsApp">
         <div class="popup__body">
           <div class="popup__content">
             <img class="popup__img" src="./src/images/pergament.webp" />
