@@ -281,23 +281,41 @@ inkBottle.addEventListener("click", function () {
   }
 });
 
-puzzles.addEventListener("mouseover", function (event) {
-  if (event.target.classList.contains("photo")) {
-    puzzles.innerHTML = `<div class="puzzles"> 
+  //  touch-события для мобильных
+if ("ontouchstart" in window) {
+  puzzles.addEventListener("touchstart", function (event) {
+    if (event.target.classList.contains("photo")) {
+      puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/smile.webp" class="puz myPhoto smile" />
-        </div>`;
-    photo.classList.remove("d-none");
-  }
-});
+      </div>`;
+    }
+  });
 
-puzzles.addEventListener("mouseout", function (event) {
-  if (event.target.classList.contains("smile")) {
-    puzzles.innerHTML = `<div class="puzzles"> 
+  puzzles.addEventListener("touchend", function (event) {
+    if (event.target.classList.contains("smile")) {
+      puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
-        </div>`;
-    smile.classList.add("d-none");
-  }
-});
+      </div>`;
+    }
+  });
+} else {
+  // Оригинальные mouse события для десктопа
+  puzzles.addEventListener("mouseover", function (event) {
+    if (event.target.classList.contains("photo")) {
+      puzzles.innerHTML = `<div class="puzzles"> 
+        <img src="./src/images/smile.webp" class="puz myPhoto smile" />
+      </div>`;
+    }
+  });
+
+  puzzles.addEventListener("mouseout", function (event) {
+    if (event.target.classList.contains("smile")) {
+      puzzles.innerHTML = `<div class="puzzles"> 
+        <img src="./src/images/photo.webp" class="puz myPhoto photo" />
+      </div>`;
+    }
+  });
+}
 
 puzzles.addEventListener("click", function () {
   // Блокируем скролл на время анимации
@@ -327,13 +345,14 @@ puzzles.addEventListener("click", function () {
           </div>`;
   }, 5000);
   setTimeout(() => {
-    puzzles.innerHTML = `<div class="puzzles"> 
+    puzzles.innerHTML = `<div class="puzzles">
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
         </div>`;
     // Восстанавливаем скролл после завершения анимации
     document.body.style.overflow = "";
   }, 10000);
 });
+
 
 function typeText() {
   if (isTypingInProgress) {
@@ -558,10 +577,20 @@ function popupClose(popupActive) {
   popupActive.classList.remove("open");
 }
 
+// function sendToWhatsapp(text, phone) {
+//   text = encodeURIComponent(text);
+//   let url = `https://web.whatsapp.com/send?phone=${phone}&text=${text}&source=&data=`;
+//   window.open(url);
+// }
+//Замена функции с использованием официального API
 function sendToWhatsapp(text, phone) {
   text = encodeURIComponent(text);
-  let url = `https://web.whatsapp.com/send?phone=${phone}&text=${text}&source=&data=`;
-  window.open(url);
+  const formattedPhone = phone.replace(/\D/g, ""); // Убираем все не-цифры
+
+  // Универсальный URL который работает на всех устройствах
+  const url = `https://api.whatsapp.com/send?phone=${formattedPhone}&text=${text}`;
+
+  window.open(url, "_blank");
 }
 
 formWhatsApp.addEventListener("submit", (e) => {
