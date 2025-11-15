@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 let dropTimers = [];
 
 let soundTyper = new Howl({
-  src: ["./src/sounds/zvuk-pechatnaya-mashinka.mp3"],
+  src: ["src/sounds/zvuk-pechatnaya-mashinka.mp3"],
   html5: true,
   autoplay: false,
   volume: 0.3,
@@ -84,7 +84,7 @@ let soundTyper = new Howl({
 });
 
 let soundDrop = new Howl({
-  src: ["./src/sounds/zvuk-kapli.mp3"],
+  src: ["src/sounds/zvuk-kapli.mp3"],
   html5: true,
   autoplay: false,
   howl: null,
@@ -835,13 +835,13 @@ function createNavigationButtons() {
     const prevBtn = document.createElement("button");
     prevBtn.className = "carousel-btn prev";
     prevBtn.innerHTML =
-      '<img src="/src/images/left.webp" alt="Previous" class="arrow-icon">';
+      '<img src="https://github.com/ElPetra/My_site/blob/main/src/images/left.webp?raw=true" alt="Previous" class="arrow-icon">';
     prevBtn.addEventListener("click", () => carouselPrev());
 
     const nextBtn = document.createElement("button");
     nextBtn.className = "carousel-btn next";
     nextBtn.innerHTML =
-      '<img src="/src/images/right.webp" alt="Next" class="arrow-icon">';
+      '<img src="https://github.com/ElPetra/My_site/blob/main/src/images/right.webp?raw=true" alt="Next" class="arrow-icon">';
     nextBtn.addEventListener("click", () => carouselNext());
 
     carouselContainer.appendChild(prevBtn);
