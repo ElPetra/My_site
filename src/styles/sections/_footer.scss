@@ -1,5 +1,6 @@
 .footer {
   background-color: #543d3d;
+  position: relative;
 }
 
 .container_footer {
@@ -17,6 +18,7 @@
 }
 
 .logo {
+  padding-top: 5px;
   font-family: "Maxmillion";
   color: #300d0d;
   font-size: calc(var(--index) * 1.2);
@@ -69,6 +71,10 @@
   width: 100%;
 }
 
+.icon_tg:hover, .icon_vk:hover, .icon_wa:hover, .logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
 .contacts {
   display: flex;
   flex-direction: column;
@@ -126,14 +132,14 @@
   }
 
   .footer__right {
-    margin-top: 10px;
+    margin-top: 5px;
     gap: 5px;
     padding-right: 10px;
     flex-direction: column-reverse;
   }
 
   .footer__left {
-    padding-left: 10px;
+    padding-left: 5px;
   }
 
   .icon {
@@ -142,5 +148,9 @@
 
   .social {
     padding-left: 5px;
+    margin-top: 0;
+  }
+  .logo {
+    padding-top: 0;
   }
 }

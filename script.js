@@ -17,7 +17,8 @@ let vkontakte = document.querySelector(".icon_vk");
 let whatsApp = document.querySelector(".icon_wa");
 const formWhatsApp = document.querySelector(".form_whatsApp");
 const formTelegram = document.querySelector(".form_telegram");
-let fly = document.querySelector(".popup__message");
+let telegramMove = document.getElementById("telegram-move");
+let whatsAppMove = document.getElementById("whatsApp-move");
 let soundIs = document.querySelector(".sound__is");
 // Переменные для бургер-меню
 let burgerMenu = document.getElementById("burgerMenu");
@@ -586,17 +587,46 @@ function sendMessage(text) {
   xht.open("GET", url);
   xht.send();
 }
-
+// Улетающий конверт для Telegram
 formTelegram.addEventListener("submit", (e) => {
   e.preventDefault();
   const text = e.currentTarget.querySelector("input").value;
   sendMessage(text);
   e.target.closest(".popup").classList.remove("open");
-  fly.classList.add("opacity", "move");
-  e.currentTarget.querySelector("input").value = "";
-  setTimeout(() => {
-    fly.classList.remove("opacity", "move");
-  }, 5000);
+  
+  // Анимация для Telegram
+  if (telegramMove) {
+    telegramMove.classList.add("opacity");
+    telegramMove.classList.add("telegram-move-animation"); 
+    
+    e.currentTarget.querySelector("input").value = "";
+    
+    setTimeout(() => {
+      telegramMove.classList.remove("opacity");
+      telegramMove.classList.remove("telegram-move-animation");
+    }, 5000);
+  }
+});
+
+// Фейерверк для WhatsApp
+formWhatsApp.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const text = e.currentTarget.querySelector("input").value;
+  sendToWhatsapp(text, telNumber);
+  e.target.closest(".popup").classList.remove("open");
+
+  // Анимация для WhatsApp
+  if (whatsAppMove) {
+    whatsAppMove.classList.add("opacity");
+    whatsAppMove.classList.add("whatsapp-move-animation");
+
+    e.currentTarget.querySelector("input").value = "";
+
+    setTimeout(() => {
+      whatsAppMove.classList.remove("opacity");
+       whatsAppMove.classList.remove("whatsapp-move-animation");
+    }, 5000);
+  }
 });
 
 vkontakte.addEventListener("click", function () {

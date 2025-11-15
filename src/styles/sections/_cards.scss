@@ -1,5 +1,5 @@
 .cards {
-  padding-top: 100px;
+  padding: 100px 0;
   background-color: #e2dcd2;
   height: auto;
 }
@@ -94,7 +94,7 @@
 /* Адаптив для экранов 576 - 767 */
 @media (max-width: 767px) and (min-width: 576px) {
   .cards {
-    padding-top: 50px;
+    padding: 50px 0;
   }
 
   .manuscripts {
@@ -126,7 +126,7 @@
   }
 
   .cards {
-    padding-top: 80px;
+    padding: 80px 0;
   }
 
   .card {

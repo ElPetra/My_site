@@ -977,7 +977,7 @@ html {
   }
 }
 .cards {
-  padding-top: 100px;
+  padding: 100px 0;
   background-color: #e2dcd2;
   height: auto;
 }
@@ -1062,7 +1062,7 @@ html {
 /* Адаптив для экранов 576 - 767 */
 @media (max-width: 767px) and (min-width: 576px) {
   .cards {
-    padding-top: 50px;
+    padding: 50px 0;
   }
   .manuscripts {
     padding-top: 0;
@@ -1088,7 +1088,7 @@ html {
     justify-content: center;
   }
   .cards {
-    padding-top: 80px;
+    padding: 80px 0;
   }
   .card {
     width: 65%;
@@ -1134,7 +1134,7 @@ html {
   justify-content: center;
   transition: transform 0.5s ease;
   cursor: grab;
-  min-height: 400px;
+  min-height: 550px;
   gap: 30px;
 }
 
@@ -1273,6 +1273,10 @@ html {
     padding: calc(var(--index) * 3) 0;
     height: calc(var(--index) * 35);
   }
+  .carousel-container {
+    height: 100%;
+    align-items: flex-start;
+  }
   .carousel-track {
     gap: 30px;
   }
@@ -1289,6 +1293,9 @@ html {
   .carusel {
     padding: calc(var(--index) * 1) 0;
     height: calc(var(--index) * 35);
+  }
+  .carousel-container {
+    height: 100%;
   }
   .carousel-track {
     gap: 15x;
@@ -1311,6 +1318,7 @@ html {
     height: calc(var(--index) * 30);
   }
   .carousel-track {
+    padding-bottom: 10px;
     gap: 5px;
     height: auto;
     min-height: 0;
@@ -1345,7 +1353,8 @@ html {
     padding-top: 0;
   }
   .carousel-track {
-    min-height: 250px;
+    padding-bottom: 15px;
+    min-height: 300px;
     gap: 0;
     justify-content: center;
     align-items: flex-end;
@@ -1428,6 +1437,7 @@ html {
 }
 .footer {
   background-color: #543d3d;
+  position: relative;
 }
 
 .container_footer {
@@ -1445,6 +1455,7 @@ html {
 }
 
 .logo {
+  padding-top: 5px;
   font-family: "Maxmillion";
   color: #300d0d;
   font-size: calc(var(--index) * 1.2);
@@ -1495,6 +1506,11 @@ html {
   cursor: url(../../src/images/wrist.webp), pointer;
   border: none;
   width: 100%;
+}
+
+.icon_tg:hover, .icon_vk:hover, .icon_wa:hover, .logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .contacts {
@@ -1550,19 +1566,23 @@ html {
     padding-bottom: 10px;
   }
   .footer__right {
-    margin-top: 10px;
+    margin-top: 5px;
     gap: 5px;
     padding-right: 10px;
     flex-direction: column-reverse;
   }
   .footer__left {
-    padding-left: 10px;
+    padding-left: 5px;
   }
   .icon {
     max-width: calc(var(--index) * 1.1);
   }
   .social {
     padding-left: 5px;
+    margin-top: 0;
+  }
+  .logo {
+    padding-top: 0;
   }
 }
 /* Стили для всплывающих окон */
@@ -1834,13 +1854,22 @@ html {
 
 /* Анимированные сообщения */
 .popup__message {
+  position: absolute;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
   visibility: hidden;
   max-width: calc(var(--index) * 20);
   margin: 0 auto;
-  transform: perspective(600px) translate(0px, -100px);
+}
+
+#telegram-move {
+  transform: perspective(600px) translate(193%, -200%);
+}
+
+#whatsApp-move {
+  transform: scale(2) translate(151%, -220%);
 }
 
 .img__move {
@@ -1849,13 +1878,39 @@ html {
 
 .opacity {
   visibility: visible;
+  opacity: 1;
 }
 
-.move {
-  transform: perspective(600px) translate(500%, -200%);
-  transition: 5s;
+/* Анимация движения для Telegram */
+.telegram-move-animation {
+  animation: telegramFly 2s ease-in-out forwards;
 }
 
+@keyframes telegramFly {
+  0% {
+    transform: perspective(600px) translate(193%, -200%);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(600px) translate(300%, -300%);
+    opacity: 0;
+  }
+}
+/* Анимация движения для WhatsApp */
+.whatsapp-move-animation {
+  animation: whatsappFly 2s ease-in-out forwards;
+}
+
+@keyframes whatsappFly {
+  0% {
+    transform: scale(2.5) translate(151%, -220%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translate(300%, -300%);
+    opacity: 0;
+  }
+}
 /* МЕДИАЗАПРОСЫ ДЛЯ ПОПАПОВ */
 /* Адаптив для больших экранов (2100px и выше) */
 @media (min-width: 2100px) {
@@ -1981,6 +2036,38 @@ html {
     font-family: "Olietta script-Poesia";
     font-size: calc(var(--index) * 0.85);
   }
+  #telegram-move {
+    transform: perspective(600px) translate(87%, -270%);
+  }
+  #whatsApp-move {
+    transform: scale(2) translate(62%, -272%);
+  }
+  .telegram-move-animation {
+    animation: telegramFly 1.1s ease-out forwards;
+  }
+  @keyframes telegramFly {
+    0% {
+      transform: perspective(600px) translate(87%, -270%);
+      opacity: 1;
+    }
+    100% {
+      transform: perspective(600px) translate(160%, -330%);
+      opacity: 0;
+    }
+  }
+  .whatsapp-move-animation {
+    animation: whatsappFly 1.1s ease-out forwards;
+  }
+  @keyframes whatsappFly {
+    0% {
+      transform: scale(2) translate(62%, -272%);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2) translate(120%, -300%);
+      opacity: 0;
+    }
+  }
 }
 /* Адаптив для экранов 576 - 767 */
 @media (max-width: 767px) and (min-width: 576px) {
@@ -2035,6 +2122,38 @@ html {
   .input_whatsApp::placeholder {
     font-family: "Olietta script-Poesia";
     font-size: calc(var(--index) * 0.8);
+  }
+  #telegram-move {
+    transform: perspective(600px) translate(73%, -200%);
+  }
+  #whatsApp-move {
+    transform: scale(2) translate(60%, -220%);
+  }
+  .telegram-move-animation {
+    animation: telegramFly 0.8s ease-out forwards;
+  }
+  @keyframes telegramFly {
+    0% {
+      transform: perspective(600px) translate(73%, -200%);
+      opacity: 1;
+    }
+    100% {
+      transform: perspective(600px) translate(120%, -300%);
+      opacity: 0;
+    }
+  }
+  .whatsapp-move-animation {
+    animation: whatsappFly 0.8s ease-out forwards;
+  }
+  @keyframes whatsappFly {
+    0% {
+      transform: scale(2) translate(60%, -220%);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2) translate(120%, -300%);
+      opacity: 0;
+    }
   }
 }
 /* Адаптив для экранов меньше 575 */
@@ -2091,5 +2210,46 @@ html {
   .popup__close_whatsApp {
     top: 14px;
     left: 77%;
+  }
+  #telegram-move {
+    transform: perspective(600px) translate(32%, -240%);
+  }
+  #whatsApp-move {
+    transform: scale(2) translate(32%, -240%);
+  }
+  .img__move {
+    max-width: calc(var(--index) * 15);
+  }
+  .opacity {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* Анимация движения для Telegram */
+  .telegram-move-animation {
+    animation: telegramFly 0.8s ease-out forwards;
+  }
+  @keyframes telegramFly {
+    0% {
+      transform: perspective(600px) translate(32%, -240%);
+      opacity: 1;
+    }
+    100% {
+      transform: perspective(600px) translate(80%, -300%);
+      opacity: 0;
+    }
+  }
+  /* Анимация движения для WhatsApp */
+  .whatsapp-move-animation {
+    animation: whatsappFly 0.8s ease-out forwards;
+  }
+  @keyframes whatsappFly {
+    0% {
+      transform: scale(2.5) translate(32%, -240%);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2) translate(80%, -300%);
+      opacity: 0;
+    }
   }
 }/*# sourceMappingURL=style.css.map */

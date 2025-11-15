@@ -37,7 +37,7 @@
   justify-content: center;
   transition: transform 0.5s ease;
   cursor: grab;
-  min-height: 400px;
+  min-height: 550px;
   gap: 30px;
 }
 
@@ -207,6 +207,11 @@
     height: calc(var(--index) * 35);
   }
 
+  .carousel-container {
+    height: 100%;
+    align-items: flex-start;
+  }
+
   .carousel-track {
     gap: 30px;
   }
@@ -226,6 +231,10 @@
   .carusel {
     padding: calc(var(--index) * 1) 0;
     height: calc(var(--index) * 35);
+  }
+
+  .carousel-container {
+    height: 100%;
   }
 
   .carousel-track {
@@ -254,6 +263,7 @@
   }
 
   .carousel-track {
+    padding-bottom: 10px;
     gap: 5px;
     height: auto;
     min-height: 0;
@@ -296,7 +306,8 @@
   }
 
   .carousel-track {
-    min-height: 250px;
+    padding-bottom: 15px;
+    min-height: 300px;
     gap: 0;
     justify-content: center;
     align-items: flex-end;
