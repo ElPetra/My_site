@@ -281,7 +281,7 @@ inkBottle.addEventListener("click", function () {
   }
 });
 
-  //  touch-события для мобильных
+//  touch-события для мобильных
 if ("ontouchstart" in window) {
   puzzles.addEventListener("touchstart", function (event) {
     if (event.target.classList.contains("photo")) {
@@ -301,7 +301,8 @@ if ("ontouchstart" in window) {
 } else {
   // Оригинальные mouse события для десктопа
   puzzles.addEventListener("mouseover", function (event) {
-    if (event.target.classList.contains("photo")) {
+    console.log("меняем фото на улыбку");
+        if (event.target.classList.contains("photo")) {
       puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/smile.webp" class="puz myPhoto smile" />
       </div>`;
@@ -309,6 +310,7 @@ if ("ontouchstart" in window) {
   });
 
   puzzles.addEventListener("mouseout", function (event) {
+    console.log("меняем на обычное фото");
     if (event.target.classList.contains("smile")) {
       puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
@@ -352,7 +354,6 @@ puzzles.addEventListener("click", function () {
     document.body.style.overflow = "";
   }, 10000);
 });
-
 
 function typeText() {
   if (isTypingInProgress) {
@@ -622,14 +623,14 @@ formTelegram.addEventListener("submit", (e) => {
   const text = e.currentTarget.querySelector("input").value;
   sendMessage(text);
   e.target.closest(".popup").classList.remove("open");
-  
+
   // Анимация для Telegram
   if (telegramMove) {
     telegramMove.classList.add("opacity");
-    telegramMove.classList.add("telegram-move-animation"); 
-    
+    telegramMove.classList.add("telegram-move-animation");
+
     e.currentTarget.querySelector("input").value = "";
-    
+
     setTimeout(() => {
       telegramMove.classList.remove("opacity");
       telegramMove.classList.remove("telegram-move-animation");
@@ -653,7 +654,7 @@ formWhatsApp.addEventListener("submit", (e) => {
 
     setTimeout(() => {
       whatsAppMove.classList.remove("opacity");
-       whatsAppMove.classList.remove("whatsapp-move-animation");
+      whatsAppMove.classList.remove("whatsapp-move-animation");
     }, 5000);
   }
 });
@@ -860,7 +861,6 @@ function createNavigationButtons() {
 
   // Создаем кнопки только для мобильных
   if (isMobile) {
-
     const prevBtn = document.createElement("button");
     prevBtn.className = "carousel-btn prev";
     prevBtn.innerHTML =
@@ -1061,13 +1061,13 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("beforeunload", destroyCarousel);
 
 // Универсальный обработчик для всех кнопок закрытия попапов
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Обработчик для всех кнопок закрытия с классом close-popup
-  const closeButtons = document.querySelectorAll('.close-popup');
-  closeButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+  const closeButtons = document.querySelectorAll(".close-popup");
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
       e.preventDefault();
-      const popup = this.closest('.popup');
+      const popup = this.closest(".popup");
       if (popup) {
         popupClose(popup);
       }

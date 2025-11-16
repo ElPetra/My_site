@@ -1113,6 +1113,10 @@ html {
     width: 65%;
     height: 100%;
   }
+  .link {
+    left: 30%;
+    font-size: calc(var(--index) * 0.8);
+  }
 }
 /* Стили для карусели сертификатов */
 .carusel {
