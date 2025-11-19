@@ -1531,7 +1531,10 @@ html {
   width: 100%;
 }
 
-.icon_tg:hover, .icon_vk:hover, .icon_wa:hover, .logo:hover {
+.icon_tg:hover,
+.icon_vk:hover,
+.icon_wa:hover,
+.logo:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
@@ -1561,6 +1564,13 @@ html {
 
 .icon_telephone {
   max-width: calc(var(--index) * 2);
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.icon_telephone:hover,
+.info_tel:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .info_tel {
@@ -1570,6 +1580,58 @@ html {
 .icon_contacts {
   max-width: calc(var(--index) * 1.5);
   border: none;
+  width: 100%;
+}
+
+/* Стили для второго футера */
+.footer-secondary {
+  background-color: #543d3d;
+  padding: 15px 0;
+  border-top: 1px solid #300d0d;
+}
+
+.container_footer-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-secondary__links {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-secondary__link {
+  cursor: url(../../src/images/wrist.webp) 16 16, pointer;
+  font-family: "GNUTypewriter", "Old Soviet";
+  color: #300d0d;
+  font-size: calc(var(--index) * 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.footer-secondary__link:hover {
+  cursor: url(../../src/images/wrist.webp) 16 16, pointer;
+  color: #f0d7a5;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.footer-secondary__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f0d7a5;
+  transition: width 0.3s ease;
+}
+
+.footer-secondary__link:hover::after {
   width: 100%;
 }
 
@@ -1606,6 +1668,36 @@ html {
   }
   .logo {
     padding-top: 0;
+  }
+}
+/* Адаптив для второго футера */
+@media (max-width: 767px) {
+  .footer-secondary {
+    padding: 10px 0;
+  }
+  .footer-secondary__links {
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-secondary__link {
+    font-size: calc(var(--index) * 0.7);
+  }
+}
+@media (max-width: 575px) {
+  .footer-secondary {
+    padding: 10px 0;
+  }
+  .footer-secondary__links {
+    gap: 15px;
+  }
+}
+@media (max-width: 575px) {
+  .footer-secondary {
+    padding: 5px 0;
+  }
+  .footer-secondary__links {
+    gap: 3px;
   }
 }
 /* Стили для всплывающих окон */
@@ -2274,5 +2366,122 @@ html {
       transform: scale(2) translate(80%, -300%);
       opacity: 0;
     }
+  }
+}
+/* Стили для баннера cookies */
+#cookieConsent {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #543d3d;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-family: "GNUTypewriter", sans-serif;
+  display: none;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-text {
+  margin: 0 0 15px 0;
+  font-family: "GNUTypewriter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "GNUTypewriter", sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cookie-btn-accept {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.cookie-btn-decline {
+  background: #300d0d;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cookie-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.crossed-cookie {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+}
+
+.crossed-cookie span {
+  position: relative;
+  margin: 0 2px;
+}
+
+.crossed-cookie span::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff4444;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.cookie-emodji {
+  margin-left: 5px;
+  margin: 0 2px;
+}
+
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+  #cookieConsent {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #543d3d;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10000;
+    font-family: "GNUTypewriter", sans-serif;
+    display: none;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .cookie-text {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+  }
+  .cookie-buttons {
+    gap: 10px;
+  }
+  .cookie-btn {
+    padding: 5px 10px;
+    font-size: 12px;
   }
 }/*# sourceMappingURL=style.css.map */

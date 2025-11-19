@@ -301,8 +301,7 @@ if ("ontouchstart" in window) {
 } else {
   // Оригинальные mouse события для десктопа
   puzzles.addEventListener("mouseover", function (event) {
-    console.log("меняем фото на улыбку");
-        if (event.target.classList.contains("photo")) {
+    if (event.target.classList.contains("photo")) {
       puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/smile.webp" class="puz myPhoto smile" />
       </div>`;
@@ -310,7 +309,6 @@ if ("ontouchstart" in window) {
   });
 
   puzzles.addEventListener("mouseout", function (event) {
-    console.log("меняем на обычное фото");
     if (event.target.classList.contains("smile")) {
       puzzles.innerHTML = `<div class="puzzles"> 
         <img src="./src/images/photo.webp" class="puz myPhoto photo" />
@@ -1071,6 +1069,222 @@ document.addEventListener("DOMContentLoaded", function () {
       if (popup) {
         popupClose(popup);
       }
+    });
+  });
+});
+
+// ==================== ВЕБ-АНАЛИТИКА ====================
+
+// Функция для отправки событий в Google Analytics
+function trackEvent(category, action, label) {
+  // Для Google Analytics
+  if (typeof gtag !== "undefined") {
+    gtag("event", action, {
+      event_category: category,
+      event_label: label,
+    });
+  }
+
+  // Локальное логирование (для отладки)
+  console.log(`📊 Analytics: ${category} - ${action} - ${label}`);
+
+  // Сохраняем в LocalStorage для резервного копирования
+  saveToLocalStorage(category, action, label);
+}
+
+// Резервное сохранение в LocalStorage
+function saveToLocalStorage(category, action, label) {
+  try {
+    const event = {
+      category,
+      action,
+      label,
+      timestamp: new Date().toISOString(),
+      url: window.location.href,
+    };
+
+    const events = JSON.parse(
+      localStorage.getItem("portfolio_analytics") || "[]"
+    );
+    events.push(event);
+
+    // Храним только последние 100 событий
+    if (events.length > 100) {
+      events.splice(0, events.length - 100);
+    }
+
+    localStorage.setItem("portfolio_analytics", JSON.stringify(events));
+  } catch (e) {
+    console.log("Ошибка сохранения аналитики:", e);
+  }
+}
+
+// Функция для работы с cookies (для GDPR)
+function setCookie(name, value, days) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+// Отслеживание уникальных посещений
+function trackUniqueVisit() {
+  // Проверяем согласие на cookies
+  const cookieConsent = getCookie("cookie_consent");
+  if (cookieConsent !== "true") {
+    console.log("📊 Аналитика: пользователь не дал согласие на cookies");
+    return;
+  }
+
+  const visitCookie = getCookie("portfolio_visit");
+  if (!visitCookie) {
+    setCookie("portfolio_visit", "true", 30); // Хранится 30 дней
+    trackEvent("User", "first_visit", "Первое посещение сайта");
+
+    // Отслеживаем источник перехода
+    trackEvent("Traffic", "source", document.referrer || "direct");
+  } else {
+    trackEvent("User", "return_visit", "Повторное посещение");
+  }
+}
+
+// ==================== ТРЕКИНГ СОБЫТИЙ ====================
+
+// Инициализация аналитики после загрузки DOM
+document.addEventListener("DOMContentLoaded", function () {
+  // Ждем немного перед трекингом посещений
+  setTimeout(() => {
+    trackUniqueVisit();
+  }, 1000);
+
+  // Клики по навигации
+  const navButtons = document.querySelectorAll(".header-link, .mobile-link");
+  navButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const buttonText =
+        this.querySelector(".btn-txt")?.textContent || "Unknown";
+      trackEvent("Navigation", "header_click", buttonText);
+    });
+  });
+
+  // Клики по социальным сетям
+  const socialIcons = document.querySelectorAll(".icon_tg, .icon_vk, .icon_wa");
+  socialIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+      const platform = this.classList.contains("icon_tg")
+        ? "Telegram"
+        : this.classList.contains("icon_vk")
+        ? "VKontakte"
+        : "WhatsApp";
+      trackEvent("Social", "click", platform);
+    });
+  });
+
+  // Отслеживание отправки форм
+  if (formWhatsApp) {
+    formWhatsApp.addEventListener("submit", function (e) {
+      trackEvent("Form", "submit", "WhatsApp Form");
+    });
+  }
+
+  if (formTelegram) {
+    formTelegram.addEventListener("submit", function (e) {
+      trackEvent("Form", "submit", "Telegram Form");
+    });
+  }
+
+  // Отслеживание интерактивных элементов
+  if (inkBottle) {
+    inkBottle.addEventListener("click", function () {
+      const state =
+        inkBottle.style.transform === "rotate(90deg)" ? "open" : "close";
+      trackEvent("Interaction", "ink_bottle", state);
+    });
+  }
+
+  if (typewriter) {
+    typewriter.addEventListener("click", function () {
+      trackEvent("Interaction", "typewriter", "text_animation");
+    });
+  }
+
+  if (puzzles) {
+    puzzles.addEventListener("click", function () {
+      trackEvent("Interaction", "puzzles", "animation_trigger");
+    });
+
+    puzzles.addEventListener("mouseover", function (event) {
+      if (event.target.classList.contains("photo")) {
+        trackEvent("Interaction", "photo_hover", "smile_show");
+      }
+    });
+  }
+
+  // Отслеживание звука
+  if (controlSound) {
+    controlSound.addEventListener("click", function () {
+      const state = isSoundEnabled ? "mute" : "unmute";
+      trackEvent("Interaction", "sound", state);
+    });
+  }
+
+  // Отслеживание мобильного меню
+  if (burgerMenu) {
+    burgerMenu.addEventListener("click", function () {
+      trackEvent("Navigation", "mobile_menu", "open");
+    });
+  }
+
+  // Отслеживание времени на сайте
+  let startTime = Date.now();
+  window.addEventListener("beforeunload", function () {
+    const timeSpent = Math.round((Date.now() - startTime) / 1000);
+    trackEvent("User", "time_spent", `${timeSpent} seconds`);
+  });
+
+  // Трекинг размера экрана и устройства
+  trackEvent(
+    "Technical",
+    "screen_size",
+    `${window.innerWidth}x${window.innerHeight}`
+  );
+  trackEvent("Technical", "device_type", isMobile ? "mobile" : "desktop");
+});
+
+// Отслеживание ошибок JavaScript
+window.addEventListener("error", function (e) {
+  trackEvent("Error", "javascript", e.message);
+});
+
+// Отслеживание ошибок загрузки ресурсов
+window.addEventListener("load", function () {
+  // Проверяем загрузились ли критичные ресурсы
+  const criticalImages = document.querySelectorAll("img[data-critical]");
+  criticalImages.forEach((img) => {
+    if (!img.complete || img.naturalHeight === 0) {
+      trackEvent("Error", "image_load", img.src);
+    }
+  });
+});
+
+// Обработка кликов по ссылкам во втором футере
+document.addEventListener("DOMContentLoaded", function () {
+  const policyLinks = document.querySelectorAll(".footer-secondary__link");
+
+  policyLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      // Трекинг аналитики
+      trackEvent("Legal", "click", this.textContent.trim());
     });
   });
 });

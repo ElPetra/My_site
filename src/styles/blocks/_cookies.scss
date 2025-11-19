@@ -1,0 +1,119 @@
+/* Стили для баннера cookies */
+#cookieConsent {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #543d3d;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-family: 'GNUTypewriter', sans-serif;
+  display: none;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-text {
+  margin: 0 0 15px 0;
+  font-family: 'GNUTypewriter', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cookie-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'GNUTypewriter', sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.cookie-btn-accept {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.cookie-btn-decline {
+  background: #300d0d;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.cookie-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: url(../../src/images/wrist.webp), pointer;
+}
+
+.crossed-cookie {
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+}
+
+.crossed-cookie span {
+  position: relative;
+  margin: 0 2px;
+}
+
+.crossed-cookie span::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ff4444;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+.cookie-emodji {
+  margin-left: 5px; 
+  margin: 0 2px;
+}
+
+
+
+/* Адаптив для экранов меньше 575 */
+
+@media (max-width: 575px) {
+  #cookieConsent {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: #543d3d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 10000;
+  font-family: 'GNUTypewriter', sans-serif;
+  display: none;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+  .cookie-text {
+  margin: 0 0 10px 0;
+  font-size: 12px;
+}
+.cookie-buttons {
+  gap: 10px;
+}
+.cookie-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+}

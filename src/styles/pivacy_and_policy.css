@@ -1,0 +1,386 @@
+/* Стили для страниц политики и соглашения */
+.policy-main {
+    background-color: #e2dcd2;
+    min-height: 80vh;
+    padding: 60px 0;
+}
+
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.policy-title {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 1.5);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.policy__h2 {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 1.2);
+    margin: 30px 0 20px 0;
+    line-height: 1.3;
+    border-bottom: 2px solid #543d3d;
+    padding-bottom: 10px;
+}
+
+.policy__h3 {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 0.9);
+    margin: 25px 0 15px 0;
+    line-height: 1.4;
+}
+
+.policy__h4 {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 0.75);
+    margin: 20px 0 10px 0;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+.policy-text {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 0.6);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.policy-text p {
+     margin-bottom: 15px;
+    text-align: justify;
+}
+
+.policy-text strong {
+    color: #543d3d;
+    font-weight: bold;
+}
+
+.policy-text ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.policy-text li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+.policy__back-to-main {
+    display: flex;
+    justify-content: center;
+}
+.back-to-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Vezitsa";
+    color: #300d0d;
+    font-size: calc(var(--index) * 0.65);
+    text-decoration: none;
+    cursor: url(../../src/images/wrist.webp), pointer;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.back-to-main img {
+    max-width: calc(var(--index) * 6);
+}
+
+.back-to-main:hover {
+    animation: shake 0.5s ease-in-out;
+}
+.back-to-main__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Адаптив для страниц политики */
+@media (max-width: 767px) {
+    .policy-main {
+        padding: 30px 0;
+    }
+    
+    .policy-content {
+        padding: 20px;
+        margin: 0 15px;
+    }
+    
+    .policy-title {
+        font-size: calc(var(--index) * 1.2);
+    }
+    
+    .policy__h2 {
+        font-size: calc(var(--index) * 1);
+    }
+    
+    .policy__h3 {
+        font-size: calc(var(--index) * 0.8);
+    }
+    
+    .policy__h4 {
+        font-size: calc(var(--index) * 0.7);
+    }
+    
+    .policy-text {
+        font-size: calc(var(--index) * 0.65);
+    }
+}
+
+/* Стили для формы согласия */
+.consent-form {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 2px solid #543d3d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.consent-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(84, 61, 61, 0.08);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(84, 61, 61, 0.2);
+}
+
+.consent-checkbox:hover {
+    background-color: rgba(84, 61, 61, 0.12);
+    border-color: rgba(84, 61, 61, 0.4);
+}
+
+.consent-checkbox input[type="checkbox"] {
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+  cursor: url(../../src/images/wrist.webp), pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #e2dcd2;
+    border: 3px solid #543d3d;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.consent-checkbox input[type="checkbox"]:checked {
+    background-color: #543d3d;
+    border-color: #300d0d;
+    box-shadow: 0 0 12px rgba(84, 61, 61, 0.5);
+    transform: scale(1.05);
+}
+
+.consent-checkbox input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e2dcd2;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.consent-checkbox input[type="checkbox"]:hover {
+    border-color: #300d0d;
+    transform: scale(1.08);
+}
+
+.consent-checkbox label {
+    font-family: "Inter", sans-serif;
+    color: #300d0d;
+    font-size: calc(var(--index) * 0.68);
+    line-height: 1.6;
+  cursor: url(../../src/images/wrist.webp), pointer;
+    flex: 1;
+    margin: 0;
+    font-weight: 600;
+}
+
+.consent-btn {
+    font-family: "Inter", sans-serif;
+    color: #e2dcd2;
+    background-color: #543d3d;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: calc(var(--index) * 0.75);
+    cursor: not-allowed;
+    transition: all 0.4s ease;
+    width: 100%;
+    max-width: 240px;
+    opacity: 0.6;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+.consent-btn:not(:disabled) {
+    background-color: #300d0d;
+    cursor: url(../../src/images/wrist.webp), pointer;
+    opacity: 1;
+}
+
+.consent-btn:not(:disabled):hover {
+    background-color: #543d3d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.consent-btn:not(:disabled):active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Анимация пульсации для активной кнопки */
+@keyframes gentlePulse {
+    0% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+    50% { box-shadow: 0 4px 20px rgba(84, 61, 61, 0.4); }
+    100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+}
+
+.consent-btn:not(:disabled) {
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* Сообщение об успехе */
+.consent-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid #c3e6cb;
+    font-family: "Inter", sans-serif;
+    font-size: calc(var(--index) * 0.65);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.consent-success.show {
+    display: block;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 767px) {
+    .consent-form {
+        padding: 25px;
+        margin: 30px 0;
+    }
+    
+    .consent-checkbox {
+        padding: 16px;
+        gap: 15px;
+    }
+    
+    .consent-checkbox input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .consent-checkbox input[type="checkbox"]:checked::after {
+        font-size: 16px;
+    }
+    
+    .consent-checkbox label {
+        font-size: calc(var(--index) * 0.72);
+    }
+    
+    .consent-btn {
+        padding: 14px 28px;
+        font-size: calc(var(--index) * 0.7);
+        max-width: 100%;
+          cursor: url(../../src/images/wrist.webp), pointer;
+    }
+}
+
+@media (max-width: 575px) {
+    .consent-form {
+        padding: 20px;
+        margin: 25px 0;
+    }
+    
+    .consent-checkbox {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .consent-checkbox input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .consent-checkbox input[type="checkbox"]:checked::after {
+        font-size: 15px;
+    }
+    
+    .consent-btn {
+        padding: 12px 24px;
+        font-size: calc(var(--index) * 0.68);
+    }
+}
+
+/* МЕДИАЗАПРОСЫ */
+/* Адаптив для экранов меньше 575 */
+@media (max-width: 575px) {
+    .policy-content {
+        padding: 15px;
+        margin: 0 10px;
+    }
+    
+    .policy-title {
+        font-size: calc(var(--index) * 1.1);
+    }
+    
+    .back-to-main {
+        font-size: calc(var(--index) * 0.6);
+        padding: 8px 16px;
+    }
+}
+
+
+/* Адаптив для соглашения */
+@media (max-width: 767px) {
+    .policy-date {
+        font-size: calc(var(--index) * 0.6);
+    }
+    
+    .policy-important {
+        padding: 10px;
+        margin: 10px 0;
+    }
+}

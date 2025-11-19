@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://фронтенд-разработчик.com/sitemap.xml
+Sitemap: https://frontend-developer.net/sitemap.xml

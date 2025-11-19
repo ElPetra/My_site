@@ -71,7 +71,10 @@
   width: 100%;
 }
 
-.icon_tg:hover, .icon_vk:hover, .icon_wa:hover, .logo:hover {
+.icon_tg:hover,
+.icon_vk:hover,
+.icon_wa:hover,
+.logo:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
@@ -100,6 +103,12 @@
 
 .icon_telephone {
   max-width: calc(var(--index) * 2);
+  cursor: url(../../src/images/wrist.webp), pointer;
+}
+.icon_telephone:hover,
+.info_tel:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .info_tel {
@@ -109,6 +118,58 @@
 .icon_contacts {
   max-width: calc(var(--index) * 1.5);
   border: none;
+  width: 100%;
+}
+
+/* Стили для второго футера */
+.footer-secondary {
+  background-color: #543d3d;
+  padding: 15px 0;
+  border-top: 1px solid #300d0d;
+}
+
+.container_footer-secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-secondary__links {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-secondary__link {
+  cursor: url(../../src/images/wrist.webp) 16 16, pointer;
+  font-family: "GNUTypewriter", "Old Soviet";
+  color: #300d0d;
+  font-size: calc(var(--index) * 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.footer-secondary__link:hover {
+  cursor: url(../../src/images/wrist.webp) 16 16, pointer;
+  color: #f0d7a5;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.footer-secondary__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #f0d7a5;
+  transition: width 0.3s ease;
+}
+
+.footer-secondary__link:hover::after {
   width: 100%;
 }
 
@@ -152,5 +213,42 @@
   }
   .logo {
     padding-top: 0;
+  }
+}
+
+/* Адаптив для второго футера */
+@media (max-width: 767px) {
+  .footer-secondary {
+    padding: 10px 0;
+  }
+
+  .footer-secondary__links {
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-secondary__link {
+    font-size: calc(var(--index) * 0.7);
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-secondary {
+    padding: 10px 0;
+  }
+
+  .footer-secondary__links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-secondary {
+    padding: 5px 0;
+  }
+
+  .footer-secondary__links {
+    gap: 3px;
   }
 }

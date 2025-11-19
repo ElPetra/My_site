@@ -1,8 +1,9 @@
-@import "../../src/styles/config";
-@import "../../src/styles/layout";
-@import "../../src/styles/sections/main";
-@import "../../src/styles/sections/header";
-@import "../../src/styles/sections/cards";
-@import "../../src/styles/sections/slider";
-@import "../../src/styles/sections/footer";
-@import "../styles/blocks/popups";
+@use "../../src/styles/config";
+@use "../../src/styles/layout";
+@use "../../src/styles/sections/main";
+@use "../../src/styles/sections/header";
+@use "../../src/styles/sections/cards";
+@use "../../src/styles/sections/slider";
+@use "../../src/styles/sections/footer";
+@use "../styles/blocks/popups";
+@use "../styles/blocks/cookies";
